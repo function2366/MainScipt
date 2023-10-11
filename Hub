@@ -2869,11 +2869,13 @@ if game.PlaceId == 2753915549 then
  
 
 --// Select Weapon
-function EquipTool(Tool)
-pcall(function()
-  game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[Tool])
-  end)
-end
+function EquipTool(ToolSe)
+		if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
+			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
+			wait(.2)
+			game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+		end
+	end
 
 
 
@@ -3225,7 +3227,7 @@ local Misc = Tab10:CreatePage("Misc")
 
 
 Main:Label("Choose Weapon")
-local Weaponlist = {"Melee","Sword","Gun","Blox Fruit"}
+
 
 
 local Dropdown = Main:Dropdown("Select Fast Attack",{"Slow","Fast","Super Fast"},"Fast",function(t)
@@ -3253,56 +3255,53 @@ end)
 end
 end)
 
+local Weaponlist = {"Melee","Sword","Fruit"}
 
 
 local Dropdown = Main:Dropdown("Select Weapon",Weaponlist,"Melee",function(v)
-    SelectWeapon = v
+    ChooseWeapon = v
 end)  
-spawn(function()
-    while wait() do
-    pcall(function()
-      if SelectWeapon == "Melee" then
-      for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-      if v.ToolTip == "Melee" then
-      if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-      SelectWeapon = v.Name
-      end
-      end
-      end
-      elseif SelectWeapon == "Sword" then
-      for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-      if v.ToolTip == "Sword" then
-      if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-      SelectWeapon = v.Name
-      end
-      end
-      end
-      elseif SelectWeapon == "Blox Fruit" then
-      for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-      if v.ToolTip == "Blox Fruit" then
-      if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-      SelectWeapon = v.Name
-      end
-      end
-      end
-      elseif SelectWeapon == "Gun" then
-      for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-      if v.ToolTip == "Gun" then
-      if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
-      SelectWeapon = v.Name
-      end
-      end
-      end
-      else
-        for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-      if v.ToolTip == SelectWeapon then
-      SelectWeapon = v.Name
-      end
-      end
-      end
-      end)
-    end
-    end)
+
+task.spawn(function()
+	while wait() do
+		pcall(function()
+			if ChooseWeapon == "Melee" then
+				for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+					if v.ToolTip == "Melee" then
+						if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+							SelectWeapon = v.Name
+						end
+					end
+				end
+			elseif ChooseWeapon == "Sword" then
+				for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+					if v.ToolTip == "Sword" then
+						if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+							SelectWeapon = v.Name
+						end
+					end
+				end
+			elseif ChooseWeapon == "Fruit" then
+				for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+					if v.ToolTip == "Blox Fruit" then
+						if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+							SelectWeapon = v.Name
+						end
+					end
+				end
+			else
+				for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+					if v.ToolTip == "Melee" then
+						if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
+							SelectWeapon = v.Name
+						end
+					end
+				end
+			end
+		end)
+	end
+end)
+
 
 Main:Label("Farming")
 
@@ -3338,7 +3337,6 @@ else
       repeat game:GetService("RunService").Heartbeat:wait()
 	  AutoHaki()
       EquipTool(SelectWeapon)
-	     
       Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
       v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
       v.HumanoidRootPart.Transparency = 1
@@ -4853,20 +4851,20 @@ end)
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
                     end   
                     if game.Players.LocalPlayer.Character:FindFirstChild("Superhuman") or game.Players.LocalPlayer.Backpack:FindFirstChild("Superhuman") then
-                        _G.SelectWeapon = "Superhuman"
+                        _GSelectWeapon = "Superhuman"
                     end  
                     if game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Character:FindFirstChild("Black Leg") or game.Players.LocalPlayer.Backpack:FindFirstChild("Electro") or game.Players.LocalPlayer.Character:FindFirstChild("Electro") or game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Character:FindFirstChild("Fishman Karate") or game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") or game.Players.LocalPlayer.Character:FindFirstChild("Dragon Claw") then
                         if game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") and game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg").Level.Value <= 299 then
-                            _G.SelectWeapon = "Black Leg"
+                            _GSelectWeapon = "Black Leg"
                         end
                         if game.Players.LocalPlayer.Backpack:FindFirstChild("Electro") and game.Players.LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value <= 299 then
-                            _G.SelectWeapon = "Electro"
+                            _GSelectWeapon = "Electro"
                         end
                         if game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate") and game.Players.LocalPlayer.Backpack:FindFirstChild("Fishman Karate").Level.Value <= 299 then
-                            _G.SelectWeapon = "Fishman Karate"
+                            _GSelectWeapon = "Fishman Karate"
                         end
                         if game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw") and game.Players.LocalPlayer.Backpack:FindFirstChild("Dragon Claw").Level.Value <= 299 then
-                            _G.SelectWeapon = "Dragon Claw"
+                            _GSelectWeapon = "Dragon Claw"
                         end
                         if game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg") and game.Players.LocalPlayer.Backpack:FindFirstChild("Black Leg").Level.Value >= 300 and game:GetService("Players")["LocalPlayer"].Data.Beli.Value >= 300000 then
                             UnEquipWeapon("Black Leg")
@@ -4926,14 +4924,14 @@ end)
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Black Leg") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Death Step") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Death Step") then
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg").Level.Value >= 450 then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
-                        _G.SelectWeapon = "Death Step"
+                        _GSelectWeapon = "Death Step"
                     end  
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Black Leg") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Black Leg").Level.Value >= 450 then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
-                        _G.SelectWeapon = "Death Step"
+                        _GSelectWeapon = "Death Step"
                     end  
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Black Leg").Level.Value <= 449 then
-                        _G.SelectWeapon = "Black Leg"
+                        _GSelectWeapon = "Black Leg"
                     end 
                 else 
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
@@ -4964,7 +4962,7 @@ end)
                                         OldCFrameShark = v.HumanoidRootPart.CFrame
                                         repeat task.wait()
                                             AutoHaki()
-                                            EquipWeapon(_G.SelectWeapon)
+                                            EquipWeapon(_GSelectWeapon)
                                             v.Head.CanCollide = false
                                             v.Humanoid.WalkSpeed = 0
                                             v.HumanoidRootPart.CanCollide = false
@@ -5001,14 +4999,14 @@ end)
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electric Claw") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electric Claw") then
                         if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value >= 400 then
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-                            _G.SelectWeapon = "Electric Claw"
+                            _GSelectWeapon = "Electric Claw"
                         end  
                         if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro").Level.Value >= 400 then
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-                            _G.SelectWeapon = "Electric Claw"
+                            _GSelectWeapon = "Electric Claw"
                         end  
                         if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value <= 399 then
-                            _G.SelectWeapon = "Electro"
+                            _GSelectWeapon = "Electro"
                         end 
                     else
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
@@ -5049,7 +5047,7 @@ end)
                                 until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-10371.4717, 330.764496, -10131.4199).Position).Magnitude <= 10
                                 wait(1)
                                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-                                _G.SelectWeapon = "Electric Claw"
+                                _GSelectWeapon = "Electric Claw"
                                 wait(.1)
                                 _G.AutoFarm = true
                             end
@@ -5070,14 +5068,14 @@ end)
                 if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Claw") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dragon Claw") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Talon") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dragon Talon") then
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Claw") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Claw").Level.Value >= 400 then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
-                        _G.SelectWeapon = "Dragon Talon"
+                        _GSelectWeapon = "Dragon Talon"
                     end  
                     if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dragon Claw") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dragon Claw").Level.Value >= 400 then
                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
-                        _G.SelectWeapon = "Dragon Talon"
+                        _GSelectWeapon = "Dragon Talon"
                     end  
                     if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Claw") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dragon Claw").Level.Value <= 399 then
-                        _G.SelectWeapon = "Dragon Claw"
+                        _GSelectWeapon = "Dragon Claw"
                     end 
                 else 
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","DragonClaw","2")
@@ -5272,6 +5270,23 @@ function BTP(P)
 	until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000
 end
 
+
+
+Setting:Toggle("Disabel Notification",Refec,function(vu)
+	Refec = vu
+	Refec = vu
+
+end)
+
+spawn(function()
+	while wait() do
+		if Refec then
+			game.Players.LocalPlayer.PlayerGui.Notifications.Enabled = false
+		else
+			game.Players.LocalPlayer.PlayerGui.Notifications.Enabled = true
+		end
+	end
+end)
 
 
 
@@ -6945,7 +6960,7 @@ spawn(function()
                      for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
                          if v.Name == "PirateBrigade" or v.Name == "PirateBasic" then
                             AutoHaki()
-                            EquipWeapon(_G.SelectWeapon)
+                            EquipWeapon(_GSelectWeapon)
                             Tween(v.HumanoidRootPart.CFrame * CFrame.new(0,20,3))
                             game:GetService("VirtualUser"):CaptureController()
                             game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
