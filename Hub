@@ -4067,7 +4067,6 @@ else
               repeat game:GetService("RunService").Heartbeat:wait()
 			  AutoHaki()
               EquipTool(SelectWeapon)
-			     
               Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
 			  v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
               v.HumanoidRootPart.Transparency = 1
@@ -4076,12 +4075,11 @@ else
               v.HumanoidRootPart.CanCollide = false
           --v.Humanoid:ChangeState(11)
           --v.Humanoid:ChangeState(14)
-              FarmPos = v.HumanoidRootPart.CFrame
+             FarmPos = v.HumanoidRootPart.CFrame
               MonFarm = v.Name
               NormalAttack()
               until not AutoFarmBone or not v.Parent or v.Humanoid.Health <= 0
               end
-			      
               end
               end
               for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
@@ -4100,6 +4098,10 @@ else
             end
           end)
           
+		 
+		  
+		  
+		  
           function BringBone()
         for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
       	  for x,y in pairs(game.Workspace.Enemies:GetChildren()) do
