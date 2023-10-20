@@ -4210,8 +4210,7 @@ else
 		
 		
 		
-		
-		
+	
 
 Main:Label("Katakuri")
 
@@ -4232,7 +4231,7 @@ Main:Label("Katakuri")
             repeat task.wait()
 			AutoHaki()
             EquipTool(SelectWeapon)
-			   
+
             Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
             v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
             v.HumanoidRootPart.Transparency = 1
@@ -6443,13 +6442,14 @@ Raid:Label("Esp")
 			UpdateDevilChams() 
 		end
 	end)
-	Raid:Toggle("ESP Flower (Sea2)",false,function(a)
+	if Second_Sea then
+	Raid:Toggle("ESP Flower",false,function(a)
 		FlowerESP = a
 		while FlowerESP do wait()
 			UpdateFlowerChams() 
 		end
 	end)
-
+end
 
 ---------------race v4
 
