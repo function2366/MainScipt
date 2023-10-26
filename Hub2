@@ -7140,6 +7140,68 @@ function CheckQuest()
                 4.3708237e-08, 1, -5.53307267e-08, -0.989806712, 5.11427594e-08, 0.142417297)
             VectorQuest = Vector3.new(-1146.59741, 14.1330338, -14445.6426, 0.142417297, 4.85419136e-08, 0.989806712,
                 4.3708237e-08, 1, -5.53307267e-08, -0.989806712, 5.11427594e-08, 0.142417297)
+
+
+
+                --------------
+
+
+            elseif LevelFarm == 41 then
+                Name = "Isle Outlaw [Lv. 2450]"
+                QuestName = "TikiQuest1"
+            
+                LevelQuest = 1
+                NameMon = "Islse Outlaw"
+            
+                CFrameQuest = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
+                VectorQuest = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
+            
+                CFrameQuest = CFrame.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+                VectorQuest = Vector3.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+            
+               elseif LevelFarm == 42 then
+                Name = "Island Boy [Lv. 2475]"
+                QuestName = "TikiQuest1"
+            
+                LevelQuest = 2
+                NameMon = "Island Boy"
+            
+                CFrameQuest = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
+                VectorQuest = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
+            
+                CFrameQuest = CFrame.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+                VectorQuest = Vector3.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+            
+            
+            elseif LevelFarm == 43 then
+                Name = "Sun-kissed Warrior [Lv. 2550]"
+                QuestName = "TikiQuest2"
+            
+                LevelQuest = 1
+                NameMon = "Sun-kissed Warrior"
+            
+                CFrameQuest = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
+                VectorQuest = CFrame.new(-16349.8779296875, 92.0808334350586, 1123.4169921875)
+            
+                CFrameQuest = CFrame.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+                VectorQuest = Vector3.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+            
+            
+            
+            elseif LevelFarm == 44 then
+                Name = "Isle Champion [Lv. 2525]"
+                QuestName = "TikiQuest2"
+            
+                LevelQuest = 2
+                NameMon = "Isle Champion"
+            
+                CFrameQuest = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
+                VectorQuest = CFrame.new(-16349.8779296875, 92.0808334350586, 1123.4169921875)
+            
+                CFrameQuest = CFrame.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+                VectorQuest = Vector3.new(-1147.5802001953125, 14.133035659790039, -14445.3037109375)
+            
+
         end
     end
 end
