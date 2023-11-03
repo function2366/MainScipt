@@ -3365,7 +3365,6 @@ end
           repeat task.wait(0.0001)
 		  AutoHaki()
           EquipTool(SelectWeapon)
-		     
           Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
           v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
           v.HumanoidRootPart.Transparency = 1
@@ -3388,8 +3387,6 @@ end
       end)
 	  
 	 
-
-
 
 Main:Button("Redeem All Code",function()
 		function UseCode(Text)
