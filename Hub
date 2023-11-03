@@ -1407,8 +1407,8 @@ QuestLv = 1
 NameMon = "Galley Pirate"
 CFrameQ = CFrame.new(5258.2788085938, 38.526931762695, 4050.044921875)
 CFrameMon = CFrame.new(5557.1684570313, 152.32717895508, 3998.7758789063)
-elseif Lv >= 650 or SelectMonster == "Galley Captain [Lv. 650]" or SelectArea == 'Fountain' then -- Galley Captain
-Ms = "Galley Captain [Lv. 650]"
+elseif Lv >= 650 or SelectMonster == "Galley Captain" or SelectArea == 'Fountain' then -- Galley Captain
+Ms = "Galley Captain"
 NameQuest = "FountainQuest"
 QuestLv = 2
 NameMon = "Galley Captain"
@@ -1417,106 +1417,106 @@ CFrameMon = CFrame.new(5677.6772460938, 92.786109924316, 4966.6323242188)
 end
 end
 if Second_Sea then
-if Lv == 700 or Lv <= 724 or SelectMonster == "Raider [Lv. 700]" or SelectArea == 'Area 1' then -- Raider
-Ms = "Raider [Lv. 700]"
+if Lv == 700 or Lv <= 724 or SelectMonster == "Raider" or SelectArea == 'Area 1' then -- Raider
+Ms = "Raider"
 NameQuest = "Area1Quest"
 QuestLv = 1
 NameMon = "Raider"
 CFrameQ = CFrame.new(-427.72567749023, 72.99634552002, 1835.9426269531)
 CFrameMon = CFrame.new(68.874565124512, 93.635643005371, 2429.6752929688)
-elseif Lv == 725 or Lv <= 774 or SelectMonster == "Mercenary [Lv. 725]" or SelectArea == 'Area 1' then -- Mercenary
-Ms = "Mercenary [Lv. 725]"
+elseif Lv == 725 or Lv <= 774 or SelectMonster == "Mercenary" or SelectArea == 'Area 1' then -- Mercenary
+Ms = "Mercenary"
 NameQuest = "Area1Quest"
 QuestLv = 2
 NameMon = "Mercenary"
 CFrameQ = CFrame.new(-427.72567749023, 72.99634552002, 1835.9426269531)
 CFrameMon = CFrame.new(-864.85009765625, 122.47104644775, 1453.1505126953)
-elseif Lv == 775 or Lv <= 799 or SelectMonster == "Swan Pirate [Lv. 775]" or SelectArea == 'Area 2' then -- Swan Pirate
-Ms = "Swan Pirate [Lv. 775]"
+elseif Lv == 775 or Lv <= 799 or SelectMonster == "Swan Pirate" or SelectArea == 'Area 2' then -- Swan Pirate
+Ms = "Swan Pirate"
 NameQuest = "Area2Quest"
 QuestLv = 1
 NameMon = "Swan Pirate"
 CFrameQ = CFrame.new(635.61151123047, 73.096351623535, 917.81298828125)
 CFrameMon = CFrame.new(1065.3669433594, 137.64012145996, 1324.3798828125)
-elseif Lv == 800 or Lv <= 874 or SelectMonster == "Factory Staff [Lv. 800]" or SelectArea == 'Area 2' then -- Factory Staff
-Ms = "Factory Staff [Lv. 800]"
+elseif Lv == 800 or Lv <= 874 or SelectMonster == "Factory Staff" or SelectArea == 'Area 2' then -- Factory Staff
+Ms = "Factory Staff"
 NameQuest = "Area2Quest"
 QuestLv = 2
 NameMon = "Factory Staff"
 CFrameQ = CFrame.new(635.61151123047, 73.096351623535, 917.81298828125)
 CFrameMon = CFrame.new(533.22045898438, 128.46876525879, 355.62615966797)
-elseif Lv == 875 or Lv <= 899 or SelectMonster == "Marine Lieutenant [Lv. 875]" or SelectArea == 'Marine' then -- Marine Lieutenant
-Ms = "Marine Lieutenant [Lv. 875]"
+elseif Lv == 875 or Lv <= 899 or SelectMonster == "Marine Lieutenan" or SelectArea == 'Marine' then -- Marine Lieutenant
+Ms = "Marine Lieutenant"
 NameQuest = "MarineQuest3"
 QuestLv = 1
 NameMon = "Marine Lieutenant"
 CFrameQ = CFrame.new(-2440.9934082031, 73.04190826416, -3217.7082519531)
 CFrameMon = CFrame.new(-2489.2622070313, 84.613594055176, -3151.8830566406)
-elseif Lv == 900 or Lv <= 949 or SelectMonster == "Marine Captain [Lv. 900]" or SelectArea == 'Marine' then -- Marine Captain
-Ms = "Marine Captain [Lv. 900]"
+elseif Lv == 900 or Lv <= 949 or SelectMonster == "Marine Captain" or SelectArea == 'Marine' then -- Marine Captain
+Ms = "Marine Captain"
 NameQuest = "MarineQuest3"
 QuestLv = 2
 NameMon = "Marine Captain"
 CFrameQ = CFrame.new(-2440.9934082031, 73.04190826416, -3217.7082519531)
 CFrameMon = CFrame.new(-2335.2026367188, 79.786659240723, -3245.8674316406)
-elseif Lv == 950 or Lv <= 974 or SelectMonster == "Zombie [Lv. 950]" or SelectArea == 'Zombie' then -- Zombie
-Ms = "Zombie [Lv. 950]"
+elseif Lv == 950 or Lv <= 974 or SelectMonster == "Zombie" or SelectArea == 'Zombie' then -- Zombie
+Ms = "Zombie"
 NameQuest = "ZombieQuest"
 QuestLv = 1
 NameMon = "Zombie"
 CFrameQ = CFrame.new(-5494.3413085938, 48.505931854248, -794.59094238281)
 CFrameMon = CFrame.new(-5536.4970703125, 101.08577728271, -835.59075927734)
-elseif Lv == 975 or Lv <= 999 or SelectMonster == "Vampire [Lv. 975]" or SelectArea == 'Zombie' then -- Vampire
-Ms = "Vampire [Lv. 975]"
+elseif Lv == 975 or Lv <= 999 or SelectMonster == "Vampire" or SelectArea == 'Zombie' then -- Vampire
+Ms = "Vampire"
 NameQuest = "ZombieQuest"
 QuestLv = 2
 NameMon = "Vampire"
 CFrameQ = CFrame.new(-5494.3413085938, 48.505931854248, -794.59094238281)
 CFrameMon = CFrame.new(-5806.1098632813, 16.722528457642, -1164.4384765625)
-elseif Lv == 1000 or Lv <= 1049 or SelectMonster == "Snow Trooper [Lv. 1000]" or SelectArea == 'Snow Mountain' then -- Snow Trooper
-Ms = "Snow Trooper [Lv. 1000]"
+elseif Lv == 1000 or Lv <= 1049 or SelectMonster == "Snow Trooper" or SelectArea == 'Snow Mountain' then -- Snow Trooper
+Ms = "Snow Trooper"
 NameQuest = "SnowMountainQuest"
 QuestLv = 1
 NameMon = "Snow Trooper"
 CFrameQ = CFrame.new(607.05963134766, 401.44781494141, -5370.5546875)
 CFrameMon = CFrame.new(535.21051025391, 432.74209594727, -5484.9165039063)
-elseif Lv == 1050 or Lv <= 1099 or SelectMonster == "Winter Warrior [Lv. 1050]" or SelectArea == 'Snow Mountain' then -- Winter Warrior
-Ms = "Winter Warrior [Lv. 1050]"
+elseif Lv == 1050 or Lv <= 1099 or SelectMonster == "Winter Warrior" or SelectArea == 'Snow Mountain' then -- Winter Warrior
+Ms = "Winter Warrior"
 NameQuest = "SnowMountainQuest"
 QuestLv = 2
 NameMon = "Winter Warrior"
 CFrameQ = CFrame.new(607.05963134766, 401.44781494141, -5370.5546875)
 CFrameMon = CFrame.new(1234.4449462891, 456.95419311523, -5174.130859375)
-elseif Lv == 1100 or Lv <= 1124 or SelectMonster == "Lab Subordinate [Lv. 1100]" or SelectArea == 'Ice Fire' then -- Lab Subordinate
-Ms = "Lab Subordinate [Lv. 1100]"
+elseif Lv == 1100 or Lv <= 1124 or SelectMonster == "Lab Subordinate" or SelectArea == 'Ice Fire' then -- Lab Subordinate
+Ms = "Lab Subordinate"
 NameQuest = "IceSideQuest"
 QuestLv = 1
 NameMon = "Lab Subordinate"
 CFrameQ = CFrame.new(-6061.841796875, 15.926671981812, -4902.0385742188)
 CFrameMon = CFrame.new(-5720.5576171875, 63.309471130371, -4784.6103515625)
-elseif Lv == 1125 or Lv <= 1174 or SelectMonster == "Horned Warrior [Lv. 1125]" or SelectArea == 'Ice Fire' then -- Horned Warrior
-Ms = "Horned Warrior [Lv. 1125]"
+elseif Lv == 1125 or Lv <= 1174 or SelectMonster == "Horned Warrior" or SelectArea == 'Ice Fire' then -- Horned Warrior
+Ms = "Horned Warrior"
 NameQuest = "IceSideQuest"
 QuestLv = 2
 NameMon = "Horned Warrior"
 CFrameQ = CFrame.new(-6061.841796875, 15.926671981812, -4902.0385742188)
 CFrameMon = CFrame.new(-6292.751953125, 91.181983947754, -5502.6499023438)
-elseif Lv == 1175 or Lv <= 1199 or SelectMonster == "Magma Ninja [Lv. 1175]" or SelectArea == 'Ice Fire' then -- Magma Ninja
-Ms = "Magma Ninja [Lv. 1175]"
+elseif Lv == 1175 or Lv <= 1199 or SelectMonster == "Magma Ninja" or SelectArea == 'Ice Fire' then -- Magma Ninja
+Ms = "Magma Ninja"
 NameQuest = "FireSideQuest"
 QuestLv = 1
 NameMon = "Magma Ninja"
 CFrameQ = CFrame.new(-5429.0473632813, 15.977565765381, -5297.9614257813)
 CFrameMon = CFrame.new(-5461.8388671875, 130.36347961426, -5836.4702148438)
-elseif Lv == 1200 or Lv <= 1249 or SelectMonster == "Lava Pirate [Lv. 1200]" or SelectArea == 'Ice Fire' then -- Lava Pirate
-Ms = "Lava Pirate [Lv. 1200]"
+elseif Lv == 1200 or Lv <= 1249 or SelectMonster == "Lava Pirate" or SelectArea == 'Ice Fire' then -- Lava Pirate
+Ms = "Lava Pirate"
 NameQuest = "FireSideQuest"
 QuestLv = 2
 NameMon = "Lava Pirate"
 CFrameQ = CFrame.new(-5429.0473632813, 15.977565765381, -5297.9614257813)
 CFrameMon = CFrame.new(-5251.1889648438, 55.164535522461, -4774.4096679688)
-elseif Lv == 1250 or Lv <= 1274 or SelectMonster == "Ship Deckhand [Lv. 1250]" or SelectArea == 'Ship' then -- Ship Deckhand
-Ms = "Ship Deckhand [Lv. 1250]"
+elseif Lv == 1250 or Lv <= 1274 or SelectMonster == "Ship Deckhand" or SelectArea == 'Ship' then -- Ship Deckhand
+Ms = "Ship Deckhand"
 NameQuest = "ShipQuest1"
 QuestLv = 1
 NameMon = "Ship Deckhand"
@@ -1525,8 +1525,8 @@ CFrameMon = CFrame.new(921.12365722656, 125.9839553833, 33088.328125)
 if Auto_Farm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 20000 then
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
 end
-elseif Lv == 1275 or Lv <= 1299 or SelectMonster == "Ship Engineer [Lv. 1275]" or SelectArea == 'Ship' then -- Ship Engineer
-Ms = "Ship Engineer [Lv. 1275]"
+elseif Lv == 1275 or Lv <= 1299 or SelectMonster == "Ship Engineer" or SelectArea == 'Ship' then -- Ship Engineer
+Ms = "Ship Engineer"
 NameQuest = "ShipQuest1"
 QuestLv = 2
 NameMon = "Ship Engineer"
@@ -1535,8 +1535,8 @@ CFrameMon = CFrame.new(886.28179931641, 40.47790145874, 32800.83203125)
 if Auto_Farm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 20000 then
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
 end
-elseif Lv == 1300 or Lv <= 1324 or SelectMonster == "Ship Steward [Lv. 1300]" or SelectArea == 'Ship' then -- Ship Steward
-Ms = "Ship Steward [Lv. 1300]"
+elseif Lv == 1300 or Lv <= 1324 or SelectMonster == "Ship Steward" or SelectArea == 'Ship' then -- Ship Steward
+Ms = "Ship Steward"
 NameQuest = "ShipQuest2"
 QuestLv = 1
 NameMon = "Ship Steward"
@@ -1545,8 +1545,8 @@ CFrameMon = CFrame.new(943.85504150391, 129.58183288574, 33444.3671875)
 if Auto_Farm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 20000 then
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
 end
-elseif Lv == 1325 or Lv <= 1349 or SelectMonster == "Ship Officer [Lv. 1325]" or SelectArea == 'Ship' then -- Ship Officer
-Ms = "Ship Officer [Lv. 1325]"
+elseif Lv == 1325 or Lv <= 1349 or SelectMonster == "Ship Officer" or SelectArea == 'Ship' then -- Ship Officer
+Ms = "Ship Officer"
 NameQuest = "ShipQuest2"
 QuestLv = 2
 NameMon = "Ship Officer"
@@ -1555,8 +1555,8 @@ CFrameMon = CFrame.new(955.38458251953, 181.08335876465, 33331.890625)
 if Auto_Farm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 20000 then
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(923.21252441406, 126.9760055542, 32852.83203125))
 end
-elseif Lv == 1350 or Lv <= 1374 or SelectMonster == "Arctic Warrior [Lv. 1350]" or SelectArea == 'Frost' then -- Arctic Warrior
-Ms = "Arctic Warrior [Lv. 1350]"
+elseif Lv == 1350 or Lv <= 1374 or SelectMonster == "Arctic Warrior" or SelectArea == 'Frost' then -- Arctic Warrior
+Ms = "Arctic Warrior"
 NameQuest = "FrostQuest"
 QuestLv = 1
 NameMon = "Arctic Warrior"
@@ -1565,22 +1565,22 @@ CFrameMon = CFrame.new(5935.4541015625, 77.26016998291, -6472.7568359375)
 if Auto_Farm and (CFrameMon.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude > 20000 then
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-6508.5581054688, 89.034996032715, -132.83953857422))
 end
-elseif Lv == 1375 or Lv <= 1424 or SelectMonster == "Snow Lurker [Lv. 1375]" or SelectArea == 'Frost' then -- Snow Lurker
-Ms = "Snow Lurker [Lv. 1375]"
+elseif Lv == 1375 or Lv <= 1424 or SelectMonster == "Snow Lurker" or SelectArea == 'Frost' then -- Snow Lurker
+Ms = "Snow Lurker"
 NameQuest = "FrostQuest"
 QuestLv = 2
 NameMon = "Snow Lurker"
 CFrameQ = CFrame.new(5668.1372070313, 28.202531814575, -6484.6005859375)
 CFrameMon = CFrame.new(5628.482421875, 57.574996948242, -6618.3481445313)
-elseif Lv == 1425 or Lv <= 1449 or SelectMonster == "Sea Soldier [Lv. 1425]" or SelectArea == 'Forgotten' then -- Sea Soldier
-Ms = "Sea Soldier [Lv. 1425]"
+elseif Lv == 1425 or Lv <= 1449 or SelectMonster == "Sea Soldier" or SelectArea == 'Forgotten' then -- Sea Soldier
+Ms = "Sea Soldier"
 NameQuest = "ForgottenQuest"
 QuestLv = 1
 NameMon = "Sea Soldier"
 CFrameQ = CFrame.new(-3054.5827636719, 236.87213134766, -10147.790039063)
 CFrameMon = CFrame.new(-3185.0153808594, 58.789089202881, -9663.6064453125)
-elseif Lv >= 1450 or SelectMonster == "Water Fighter [Lv. 1450]" or SelectArea == 'Forgotten' then -- Water Fighter
-Ms = "Water Fighter [Lv. 1450]"
+elseif Lv >= 1450 or SelectMonster == "Water Fighter" or SelectArea == 'Forgotten' then -- Water Fighter
+Ms = "Water Fighter"
 NameQuest = "ForgottenQuest"
 QuestLv = 2
 NameMon = "Water Fighter"
@@ -1589,127 +1589,127 @@ CFrameMon = CFrame.new(-3262.9301757813, 298.69036865234, -10552.529296875)
 end
 end
 if Third_Sea then
-if Lv == 1500 or Lv <= 1524 or SelectMonster == "Pirate Millionaire [Lv. 1500]" or SelectArea == 'Pirate Port' then -- Pirate Millionaire
-Ms = "Pirate Millionaire [Lv. 1500]"
+if Lv == 1500 or Lv <= 1524 or SelectMonster == "Pirate Millionaire" or SelectArea == 'Pirate Port' then -- Pirate Millionaire
+Ms = "Pirate Millionaire"
 NameQuest = "PiratePortQuest"
 QuestLv = 1
 NameMon = "Pirate Millionaire"
 CFrameQ = CFrame.new(-289.61752319336, 43.819011688232, 5580.0903320313)
 CFrameMon = CFrame.new(-435.68109130859, 189.69866943359, 5551.0756835938)
-elseif Lv == 1525 or Lv <= 1574 or SelectMonster == "Pistol Billionaire [Lv. 1525]" or SelectArea == 'Pirate Port' then -- Pistol Billoonaire
-Ms = "Pistol Billionaire [Lv. 1525]"
+elseif Lv == 1525 or Lv <= 1574 or SelectMonster == "Pistol Billionaire" or SelectArea == 'Pirate Port' then -- Pistol Billoonaire
+Ms = "Pistol Billionaire"
 NameQuest = "PiratePortQuest"
 QuestLv = 2
 NameMon = "Pistol Billionaire"
 CFrameQ = CFrame.new(-289.61752319336, 43.819011688232, 5580.0903320313)
 CFrameMon = CFrame.new(-236.53652954102, 217.46676635742, 6006.0883789063)
-elseif Lv == 1575 or Lv <= 1599 or SelectMonster == "Dragon Crew Warrior [Lv. 1575]" or SelectArea == 'Amazon' then -- Dragon Crew Warrior
-Ms = "Dragon Crew Warrior [Lv. 1575]"
+elseif Lv == 1575 or Lv <= 1599 or SelectMonster == "Dragon Crew Warrior" or SelectArea == 'Amazon' then -- Dragon Crew Warrior
+Ms = "Dragon Crew Warrior"
 NameQuest = "AmazonQuest"
 QuestLv = 1
 NameMon = "Dragon Crew Warrior"
 CFrameQ = CFrame.new(5833.1147460938, 51.60498046875, -1103.0693359375)
 CFrameMon = CFrame.new(6301.9975585938, 104.77153015137, -1082.6075439453)
-elseif Lv == 1600 or Lv <= 1624 or SelectMonster == "Dragon Crew Archer [Lv. 1600]" or SelectArea == 'Amazon' then -- Dragon Crew Archer
-Ms = "Dragon Crew Archer [Lv. 1600]"
+elseif Lv == 1600 or Lv <= 1624 or SelectMonster == "Dragon Crew Archer" or SelectArea == 'Amazon' then -- Dragon Crew Archer
+Ms = "Dragon Crew Archer"
 NameQuest = "AmazonQuest"
 QuestLv = 2
 NameMon = "Dragon Crew Archer"
 CFrameQ = CFrame.new(5833.1147460938, 51.60498046875, -1103.0693359375)
 CFrameMon = CFrame.new(6831.1171875, 441.76708984375, 446.58615112305)
-elseif Lv == 1625 or Lv <= 1649 or SelectMonster == "Female Islander [Lv. 1625]" or SelectArea == 'Amazon' then -- Female Islander
-Ms = "Female Islander [Lv. 1625]"
+elseif Lv == 1625 or Lv <= 1649 or SelectMonster == "Female Islander" or SelectArea == 'Amazon' then -- Female Islander
+Ms = "Female Islander"
 NameQuest = "AmazonQuest2"
 QuestLv = 1
 NameMon = "Female Islander"
 CFrameQ = CFrame.new(5446.8793945313, 601.62945556641, 749.45672607422)
 CFrameMon = CFrame.new(5792.5166015625, 848.14392089844, 1084.1818847656)
-elseif Lv == 1650 or Lv <= 1699 or SelectMonster == "Giant Islander [Lv. 1650]" or SelectArea == 'Amazon' then -- Giant Islander
-Ms = "Giant Islander [Lv. 1650]"
+elseif Lv == 1650 or Lv <= 1699 or SelectMonster == "Giant Islander" or SelectArea == 'Amazon' then -- Giant Islander
+Ms = "Giant Islander"
 NameQuest = "AmazonQuest2"
 QuestLv = 2
 NameMon = "Giant Islander"
 CFrameQ = CFrame.new(5446.8793945313, 601.62945556641, 749.45672607422)
 CFrameMon = CFrame.new(5009.5068359375, 664.11071777344, -40.960144042969)
-elseif Lv == 1700 or Lv <= 1724 or SelectMonster == "Marine Commodore [Lv. 1700]" or SelectArea == 'Marine Tree' then -- Marine Commodore
-Ms = "Marine Commodore [Lv. 1700]"
+elseif Lv == 1700 or Lv <= 1724 or SelectMonster == "Marine Commodore" or SelectArea == 'Marine Tree' then -- Marine Commodore
+Ms = "Marine Commodore"
 NameQuest = "MarineTreeIsland"
 QuestLv = 1
 NameMon = "Marine Commodore"
 CFrameQ = CFrame.new(2179.98828125, 28.731239318848, -6740.0551757813)
 CFrameMon = CFrame.new(2198.0063476563, 128.71075439453, -7109.5043945313)
-elseif Lv == 1725 or Lv <= 1774 or SelectMonster == "Marine Rear Admiral [Lv. 1725]" or SelectArea == 'Marine Tree' then -- Marine Rear Admiral
-Ms = "Marine Rear Admiral [Lv. 1725]"
+elseif Lv == 1725 or Lv <= 1774 or SelectMonster == "Marine Rear Admiral" or SelectArea == 'Marine Tree' then -- Marine Rear Admiral
+Ms = "Marine Rear Admiral"
 NameQuest = "MarineTreeIsland"
 QuestLv = 2
 NameMon = "Marine Rear Admiral"
 CFrameQ = CFrame.new(2179.98828125, 28.731239318848, -6740.0551757813)
 CFrameMon = CFrame.new(3294.3142089844, 385.41125488281, -7048.6342773438)
-elseif Lv == 1775 or Lv <= 1799 or SelectMonster == "Fishman Raider [Lv. 1775]" or SelectArea == 'Deep Forest' then -- Fishman Raide
-Ms = "Fishman Raider [Lv. 1775]"
+elseif Lv == 1775 or Lv <= 1799 or SelectMonster == "Fishman Raider" or SelectArea == 'Deep Forest' then -- Fishman Raide
+Ms = "Fishman Raider"
 NameQuest = "DeepForestIsland3"
 QuestLv = 1
 NameMon = "Fishman Raider"
 CFrameQ = CFrame.new(-10582.759765625, 331.78845214844, -8757.666015625)
 CFrameMon = CFrame.new(-10553.268554688, 521.38439941406, -8176.9458007813)
-elseif Lv == 1800 or Lv <= 1824 or SelectMonster == "Fishman Captain [Lv. 1800]" or SelectArea == 'Deep Forest' then -- Fishman Captain
-Ms = "Fishman Captain [Lv. 1800]"
+elseif Lv == 1800 or Lv <= 1824 or SelectMonster == "Fishman Captain" or SelectArea == 'Deep Forest' then -- Fishman Captain
+Ms = "Fishman Captain"
 NameQuest = "DeepForestIsland3"
 QuestLv = 2
 NameMon = "Fishman Captain"
 CFrameQ = CFrame.new(-10583.099609375, 331.78845214844, -8759.4638671875)
 CFrameMon = CFrame.new(-10789.401367188, 427.18637084961, -9131.4423828125)
-elseif Lv == 1825 or Lv <= 1849 or SelectMonster == "Forest Pirate [Lv. 1825]" or SelectArea == 'Deep Forest' then -- Forest Pirate
-Ms = "Forest Pirate [Lv. 1825]"
+elseif Lv == 1825 or Lv <= 1849 or SelectMonster == "Forest Pirate" or SelectArea == 'Deep Forest' then -- Forest Pirate
+Ms = "Forest Pirate"
 NameQuest = "DeepForestIsland"
 QuestLv = 1
 NameMon = "Forest Pirate"
 CFrameQ = CFrame.new(-13232.662109375, 332.40396118164, -7626.4819335938)
 CFrameMon = CFrame.new(-13489.397460938, 400.30349731445, -7770.251953125)
-elseif Lv == 1850 or Lv <= 1899 or SelectMonster == "Mythological Pirate [Lv. 1850]" or SelectArea == 'Deep Forest' then -- Mythological Pirate
-Ms = "Mythological Pirate [Lv. 1850]"
+elseif Lv == 1850 or Lv <= 1899 or SelectMonster == "Mythological Pirate" or SelectArea == 'Deep Forest' then -- Mythological Pirate
+Ms = "Mythological Pirate"
 NameQuest = "DeepForestIsland"
 QuestLv = 2
 NameMon = "Mythological Pirate"
 CFrameQ = CFrame.new(-13232.662109375, 332.40396118164, -7626.4819335938)
 CFrameMon = CFrame.new(-13508.616210938, 582.46228027344, -6985.3037109375)
-elseif Lv == 1900 or Lv <= 1924 or SelectMonster == "Jungle Pirate [Lv. 1900]" or SelectArea == 'Deep Forest' then -- Jungle Pirate
-Ms = "Jungle Pirate [Lv. 1900]"
+elseif Lv == 1900 or Lv <= 1924 or SelectMonster == "Jungle Pirate" or SelectArea == 'Deep Forest' then -- Jungle Pirate
+Ms = "Jungle Pirate"
 NameQuest = "DeepForestIsland2"
 QuestLv = 1
 NameMon = "Jungle Pirate"
 CFrameQ = CFrame.new(-12682.096679688, 390.88653564453, -9902.1240234375)
 CFrameMon = CFrame.new(-12267.103515625, 459.75262451172, -10277.200195313)
-elseif Lv == 1925 or Lv <= 1974 or SelectMonster == "Musketeer Pirate [Lv. 1925]" or SelectArea == 'Deep Forest' then -- Musketeer Pirate
-Ms = "Musketeer Pirate [Lv. 1925]"
+elseif Lv == 1925 or Lv <= 1974 or SelectMonster == "Musketeer Pirate" or SelectArea == 'Deep Forest' then -- Musketeer Pirate
+Ms = "Musketeer Pirate"
 NameQuest = "DeepForestIsland2"
 QuestLv = 2
 NameMon = "Musketeer Pirate"
 CFrameQ = CFrame.new(-12682.096679688, 390.88653564453, -9902.1240234375)
 CFrameMon = CFrame.new(-13291.5078125, 520.47338867188, -9904.638671875)
-elseif Lv == 1975 or Lv <= 1999 or SelectMonster == "Reborn Skeleton [Lv. 1975]" or SelectArea == 'Haunted Castle' then
-Ms = "Reborn Skeleton [Lv. 1975]"
+elseif Lv == 1975 or Lv <= 1999 or SelectMonster == "Reborn Skeleton" or SelectArea == 'Haunted Castle' then
+Ms = "Reborn Skeleton"
 NameQuest = "HauntedQuest1"
 QuestLv = 1
 NameMon = "Reborn Skeleton"
 CFrameQ = CFrame.new(-9480.80762, 142.130661, 5566.37305, -0.00655503059, 4.52954225e-08, -0.999978542, 2.04920472e-08, 1, 4.51620679e-08, 0.999978542, -2.01955679e-08, -0.00655503059)
 CFrameMon = CFrame.new(-8761.77148, 183.431747, 6168.33301, 0.978073597, -1.3950732e-05, -0.208259016, -1.08073925e-06, 1, -7.20630269e-05, 0.208259016, 7.07080399e-05, 0.978073597)
-elseif Lv == 2000 or Lv <= 2024 or SelectMonster == "Living Zombie [Lv. 2000]" or SelectArea == 'Haunted Castle' then
-Ms = "Living Zombie [Lv. 2000]"
+elseif Lv == 2000 or Lv <= 2024 or SelectMonster == "Living Zombie" or SelectArea == 'Haunted Castle' then
+Ms = "Living Zombie"
 NameQuest = "HauntedQuest1"
 QuestLv = 2
 NameMon = "Living Zombie"
 CFrameQ = CFrame.new(-9480.80762, 142.130661, 5566.37305, -0.00655503059, 4.52954225e-08, -0.999978542, 2.04920472e-08, 1, 4.51620679e-08, 0.999978542, -2.01955679e-08, -0.00655503059)
 CFrameMon = CFrame.new(-10103.7529, 238.565979, 6179.75977, 0.999474227, 2.77547141e-08, 0.0324240364, -2.58006327e-08, 1, -6.06848474e-08, -0.0324240364, 5.98163865e-08, 0.999474227)
-elseif Lv == 2025 or Lv <= 2049 or SelectMonster == "Demonic Soul [Lv. 2025]" or SelectArea == 'Haunted Castle' then
-Ms = "Demonic Soul [Lv. 2025]"
+elseif Lv == 2025 or Lv <= 2049 or SelectMonster == "Demonic Soul" or SelectArea == 'Haunted Castle' then
+Ms = "Demonic Soul"
 NameQuest = "HauntedQuest2"
 QuestLv = 1
 NameMon = "Demonic Soul"
 CFrameQ = CFrame.new(-9516.9931640625, 178.00651550293, 6078.4653320313)
 CFrameMon = CFrame.new(-9712.03125, 204.69589233398, 6193.322265625)
-elseif Lv == 2050 or Lv <= 2074 or SelectMonster == "Posessed Mummy [Lv. 2050]" or SelectArea == 'Haunted Castle' then
-Ms = "Posessed Mummy [Lv. 2050]"
+elseif Lv == 2050 or Lv <= 2074 or SelectMonster == "Posessed Mummy" or SelectArea == 'Haunted Castle' then
+Ms = "Posessed Mummy"
 NameQuest = "HauntedQuest2"
 QuestLv = 2
 NameMon = "Posessed Mummy"
@@ -1771,7 +1771,7 @@ QuestLv = 2
 NameMon = "Head Baker"
 CFrameQ = CFrame.new(-1928.31763, 37.7296638, -12840.626, 0.951068401, -0, -0.308980465, 0, 1, -0, 0.308980465, 0, 0.951068401)
 CFrameMon = CFrame.new(-2251.5791, 52.2714615, -13033.3965, -0.991971016, 0, -0.126466095, 0, 1, 0, 0.126466095, 0, -0.991971016)
-elseif Lv == 2300 or Lv <= 2324 or SelectMonster == "Cocoa Warrior [Lv. 2300]" or SelectArea == 'Choco Island' then
+elseif Lv == 2300 or Lv <= 2324 or SelectMonster == "Cocoa Warrior" or SelectArea == 'Choco Island' then
 Ms = "Cocoa Warrior"
 NameQuest = "ChocQuest1"
 QuestLv = 1
@@ -1848,13 +1848,13 @@ end
 --// Select Monster
 if First_Sea then
 tableMon = {
-  "Bandit [Lv. 5]","Monkey [Lv. 14]","Gorilla [Lv. 20]","Pirate [Lv. 35]","Brute [Lv. 45]","Desert Bandit [Lv. 60]","Desert Officer [Lv. 70]","Snow Bandit [Lv. 90]","Snowman [Lv. 100]","Chief Petty Officer [Lv. 120]","Sky Bandit [Lv. 150]","Dark Master [Lv. 175]","Prisoner [Lv. 190]", "Dangerous Prisoner [Lv. 210]","Toga Warrior [Lv. 250]","Gladiator [Lv. 275]","Military Soldier [Lv. 300]","Military Spy [Lv. 325]","Fishman Warrior [Lv. 375]","Fishman Commando [Lv. 400]","God's Guard [Lv. 450]","Shanda [Lv. 475]","Royal Squad [Lv. 525]","Royal Soldier [Lv. 550]","Galley Pirate [Lv. 625]","Galley Captain [Lv. 650]"
+  "Bandit","Monkey","Gorilla","Pirate","Brute","Desert Bandit","Desert Officer","Snow Bandit","Snowman","Chief Petty Officer","Sky Bandit","Dark Master","Prisoner", "Dangerous Prisoner","Toga Warrior","Gladiator","Military Soldier","Military Spy","Fishman Warrior","Fishman Commando","God's Guard","Shanda","Royal Squad","Royal Soldier","Galley Pirate","Galley Captain"
 } elseif Second_Sea then
 tableMon = {
-  "Raider [Lv. 700]","Mercenary [Lv. 725]","Swan Pirate [Lv. 775]","Factory Staff [Lv. 800]","Marine Lieutenant [Lv. 875]","Marine Captain [Lv. 900]","Zombie [Lv. 950]","Vampire [Lv. 975]","Snow Trooper [Lv. 1000]","Winter Warrior [Lv. 1050]","Lab Subordinate [Lv. 1100]","Horned Warrior [Lv. 1125]","Magma Ninja [Lv. 1175]","Lava Pirate [Lv. 1200]","Ship Deckhand [Lv. 1250]","Ship Engineer [Lv. 1275]","Ship Steward [Lv. 1300]","Ship Officer [Lv. 1325]","Arctic Warrior [Lv. 1350]","Snow Lurker [Lv. 1375]","Sea Soldier [Lv. 1425]","Water Fighter [Lv. 1450]"
+  "Raider","Mercenary","Swan Pirate","Factory Staff","Marine Lieutenant","Marine Captain","Zombie","Vampire","Snow Trooper","Winter Warrior","Lab Subordinate","Horned Warrior","Magma Ninja","Lava Pirate","Ship Deckhand","Ship Engineer","Ship Steward","Ship Officer","Arctic Warrior","Snow Lurker","Sea Soldier","Water Fighter"
 } elseif Third_Sea then
 tableMon = {
-  "Pirate Millionaire [Lv. 1500]","Dragon Crew Warrior [Lv. 1575]","Dragon Crew Archer [Lv. 1600]","Female Islander [Lv. 1625]","Giant Islander [Lv. 1650]","Marine Commodore [Lv. 1700]","Marine Rear Admiral [Lv. 1725]","Fishman Raider [Lv. 1775]","Fishman Captain [Lv. 1800]","Forest Pirate [Lv. 1825]","Mythological Pirate [Lv. 1850]","Jungle Pirate [Lv. 1900]","Musketeer Pirate [Lv. 1925]","Reborn Skeleton [Lv. 1975]","Living Zombie [Lv. 2000]","Demonic Soul [Lv. 2025]","Posessed Mummy [Lv. 2050]", "Peanut Scout [Lv. 2075]", "Peanut President [Lv. 2100]", "Ice Cream Chef [Lv. 2125]", "Ice Cream Commander [Lv. 2150]", "Cookie Crafter [Lv. 2200]", "Cake Guard [Lv. 2225]", "Baking Staff [Lv. 2250]", "Head Baker [Lv. 2275]", "Cocoa Warrior [Lv. 2300]", "Chocolate Bar Battler [Lv. 2325]", "Sweet Thief [Lv. 2350]", "Candy Rebel", "Candy Pirate [Lv. 2400]", "Snow Demon [Lv. 2425]"
+  "Pirate Millionaire","Dragon Crew Warrior","Dragon Crew Archer","Female Islander","Giant Islander","Marine Commodore","Marine Rear Admiral","Fishman Raider","Fishman Captain","Forest Pirate","Mythological Pirate","Jungle Pirate","Musketeer Pirate","Reborn Skeleton","Living Zombie","Demonic Soul","Posessed Mummy", "Peanut Scout", "Peanut President", "Ice Cream Chef", "Ice Cream Commander", "Cookie Crafter", "Cake Guard", "Baking Staff", "Head Baker", "Cocoa Warrior", "Chocolate Bar Battler", "Sweet Thief", "Candy Rebel", "Candy Pirate", "Snow Demon","Isle Outlaw","Island Boy","Isle Champion"
 }
 end
 
