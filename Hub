@@ -4561,30 +4561,17 @@ end)
 
 Main:Label("Farm Boss")
     
-       local Boss = {}
-    
-    for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-        if string.find(v.Name, "Boss") then
-            if v.Name == "Ice Admiral [Lv. 700] [Boss]" then
-                else
-                table.insert(Boss, v.Name)
-            end
-        end
-    end
-    
-    local selectedBoss = Main:Dropdown("Select Boss",Boss,nil,function(value)
-        SelectBoss = value
-    end)
+if First_Sea then
+BossTable = {"The Gorilla King","Bobby","Yeti","Mob Leader","Vice Admiral","Warden","Chief Warden","Swan","Magma Admiral","Fishman Lord","Wysper","Thunder God","Cyborg","Saber Expert"}
+elseif Second_Sea then
+BossTable = {"Diamond","Jeremy","Fajita","Don Swan","Smoke Admiral","Cursed Captain","Darkbeard","Order","Awakened Ice Admiral","Tide Keeper"}
+elseif Third_Sea then
+BossTable = {"Stone","Island Empress","Kilo Admiral","Captain Elephant","Beautiful Pirate","rip_indra True Form","Longma","Soul Reaper","Cake Queen"}
+end
 
-   Main:Button("Refresh Boss",function()
-        selectedBoss:Clear()
-            for i, v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do
-            if string.find(v.Name, "Boss") then
-                selectedBoss:Add(v.Name) 
-            end
-        end
-    end)
-
+Main:Dropdown("Select Boss",BossTable,function(value)
+    SelectBoss = value
+end)
 
 
 Main:Toggle('Auto Killing Boss', AutoFarmBossNoQuest, function(afbq)
@@ -4627,8 +4614,6 @@ wait(0.4)
 --v.Humanoid:ChangeState(14)
     FarmPos = v.HumanoidRootPart.CFrame
     MonFarm = v.Name
-    
-
     until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
     end
     end
@@ -4648,7 +4633,6 @@ Main:Label("Elite Boss")
         AutoEliteHunter = autoelitefunc
         StopTween(AutoEliteHunter)
     end)
-
     spawn(function()
         while task.wait() do
             if AutoEliteHunter then
