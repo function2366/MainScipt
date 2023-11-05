@@ -1820,21 +1820,14 @@ elseif Lv == 2450 or Lv <= 2474 then
     NameMon = "Isle Outlaw"
     CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
     CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
-elseif Lv == 2475 or Lv <= 2449 then
+elseif Lv == 2475 or Lv <= 2524 then
     Ms = "Island Boy"
     NameQuest = "TikiQuest1"
     QuestLv = 2
     NameMon = "Island Boy"
     CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
     CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
-elseif Lv == 2500 or Lv <= 2524 then
-    Ms = "Sun-kissed Warrior"
-    NameQuest = "TikiQuest2"
-    QuestLv = 1
-    NameMon = "Sun-kissed Warrior"
-    CFrameQ = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
-    CFrameMon = CFrame.new(-16349.8779296875, 92.0808334350586, 1123.4169921875)
-elseif Lv <= 2525 then
+elseif Lv >= 2525 then
     Ms = "Isle Champion"
     NameQuest = "TikiQuest2"
     QuestLv = 2
