@@ -4738,14 +4738,12 @@ spawn(function()
                                 v.HumanoidRootPart.CanCollide = false
                                 v.Head.CanCollide = false
                                 v.HumanoidRootPart.Size = Vector3.new(80,80,80)
-                                Tween(v.HumanoidRootPart.CFrame*Pos)
+                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                 sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
                             until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
                         end
                     else
-                        if _G.AutoAllBossHop then
-                            Hop()
-                        end
+                    
                     end
                 end
             end)
