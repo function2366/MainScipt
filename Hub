@@ -4637,7 +4637,7 @@ Main:Toggle('Auto Killing Boss', AutoFarmBossNoQuest, function(afbq)
   while task.wait(.1) do
   if AutoFarmBossNoQuest then
   pcall(function()
-    CheckBossQuest(selectBoss)
+    CheckBossQuest(SelectBoss)
 	wait(0.2)
     if BypassTP then
     if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameBoss.Position).Magnitude > 2500 then
@@ -4647,7 +4647,6 @@ wait(0.4)
     Tween(CFrameBoss)
     end
     else
-
       Tween(CFrameBoss)
     end
     if game:GetService("Workspace").Enemies:FindFirstChild(SelectBoss) then
@@ -4663,9 +4662,6 @@ wait(0.4)
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.CanCollide = false
-	   
---v.Humanoid:ChangeState(11)
---v.Humanoid:ChangeState(14)
     FarmPos = v.HumanoidRootPart.CFrame
     MonFarm = v.Name
     until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
@@ -4710,13 +4706,13 @@ Main:Label("Elite Boss")
                                                 --v.Humanoid:ChangeState(11)
                                                 FarmPos = v.HumanoidRootPart.CFrame
                                                 MonFarm = v.Name
-                                                
                                                 v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
                                             until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
                                         end
                                     end
                                 end
                             else
+                                if BypassTP then
                                 if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
                                     BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                 elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
@@ -4724,6 +4720,17 @@ Main:Label("Elite Boss")
                                 elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
                                     BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                 end
+                            else
+                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                end
+
+
+                            end
                             end
                         end
                     else
