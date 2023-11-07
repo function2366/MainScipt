@@ -3154,7 +3154,7 @@ function mobileGGEZ()
     ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
     ImageButton.Size = UDim2.new(0, 40, 0, 40)
     ImageButton.Draggable = true
-    ImageButton.BackgroundTransparency = -1
+    ImageButton.BackgroundTransparency = 1
     ImageButton.Image = "http://www.roblox.com/asset/?id=10978820412"
     ImageButton.MouseButton1Down:connect(function()
         game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
@@ -7883,3 +7883,14 @@ end)
 	        game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
 	    end)
 		
+
+
+        local NotificationHolder = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Module.Lua"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/BocusLuke/UI/main/STX/Client.Lua"))()
+
+wait(0.1)
+Notification:Notify(
+   {Title = "Fai Fao Hub", Description = "hello"},
+   {OutlineColor = Color3.fromRGB(80, 80, 80),Time = 5, Type = "option"},
+   {Image = "http://www.roblox.com/asset/?id=", ImageColor = Color3.fromRGB(255, 84, 84), Callback = function(State) print(tostring(State)) end}
+)
