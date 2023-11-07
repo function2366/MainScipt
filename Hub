@@ -4082,15 +4082,15 @@ spawn(function()
                 if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
                     if BypassTP then
                         wait()
-                       if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - BonePos.Position).Magnitude > 2500 then
-                       BTP(BonePos)
+                       if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - FaiFaoQuestBone.Position).Magnitude > 2500 then
+                       BTP(FaiFaoQuestBone)
                        wait(0.2)
-                       elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - BonePos.Position).Magnitude < 2500 then
+                       elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - FaiFaoQuestBone.Position).Magnitude < 2500 then
                        wait(0.4)
-                       Tween(BonePos)
+                       Tween(FaiFaoQuestBone)
                        end
                  else
-                         Tween(BonePos)
+                         Tween(FaiFaoQuestBone)
                          end
                 if (FaiFaoQuestBone.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then    
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest","HauntedQuest2",1)
