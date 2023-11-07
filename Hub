@@ -4628,11 +4628,12 @@ Main:Dropdown("Select Boss",BossTable,function(value)
 end)
 
 
+  --[[
 Main:Toggle('Auto Killing Boss', AutoFarmBossNoQuest, function(afbq)
 	  AutoFarmBossNoQuest = afbq
 	  StopTween(AutoFarmBossNoQuest)
 	  end)
-      --[[
+    
 	
 	spawn(function()
   while task.wait(.1) do
