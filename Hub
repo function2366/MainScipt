@@ -6143,19 +6143,19 @@ end
  end)
 
 
-Raid:Button("Buy Chip",function()
-     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",SelectChip)
-  	end)
+ Raid:Button("Buy Chip Select",function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",_G.SelectChip)
+end)
 
 
 
-    Raid:Button("Join Raid",function()
-      if Second_Sea then
-        fireclickdetector(Workspace.Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
+Raid:Button("Start Raid",function()
+    if Second_Sea then
+        fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
     elseif Third_Sea then
-        fireclickdetector(Workspace.Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
+        fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
     end
-    end)
+end)
 
 
 
