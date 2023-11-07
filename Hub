@@ -1806,7 +1806,7 @@ QuestLv = 1
 NameMon = "Candy Pirate"
 CFrameQ = CFrame.new(-1149.328, 13.5759039, -14445.6143, -0.156446099, 0, -0.987686574, 0, 1, 0, 0.987686574, 0, -0.156446099)
 CFrameMon = CFrame.new(-1437.56348, 17.1481285, -14385.6934, 0.173624337, -0, -0.984811902, 0, 1, -0, 0.984811902, 0, 0.173624337)
-elseif Lv == 2425 or Lv <= 2524 or SelectMonster == "Snow Demon" or SelectArea == 'Candy Island' then
+elseif Lv == 2425 or Lv <= 2449 or SelectMonster == "Snow Demon" or SelectArea == 'Candy Island' then
 Ms = "Snow Demon"
 NameQuest = "CandyQuest1"
 QuestLv = 2
