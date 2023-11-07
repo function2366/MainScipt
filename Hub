@@ -1814,26 +1814,26 @@ NameMon = "Snow Demon"
 CFrameQ = CFrame.new(-1149.328, 13.5759039, -14445.6143, -0.156446099, 0, -0.987686574, 0, 1, 0, 0.987686574, 0, -0.156446099)
 CFrameMon = CFrame.new(-916.222656, 17.1481285, -14638.8125, 0.866007268, 0, 0.500031412, 0, 1, 0, -0.500031412, 0, 0.866007268)
 elseif Lv == 2450 or Lv <= 2474 then
-    Ms = "Isle Outlaw"
-    NameQuest = "TikiQuest1"
-    QuestLv = 1
-    NameMon = "Isle Outlaw"
-    CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
-    CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
+Ms = "Isle Outlaw"
+NameQuest = "TikiQuest1"
+QuestLv = 1
+NameMon = "Isle Outlaw"
+CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
+CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
 elseif Lv == 2475 or Lv <= 2524 then
-    Ms = "Island Boy"
-    NameQuest = "TikiQuest1"
-    QuestLv = 2
-    NameMon = "Island Boy"
-    CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
-    CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
+Ms = "Island Boy"
+NameQuest = "TikiQuest1"
+QuestLv = 2
+NameMon = "Island Boy"
+CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
+CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
 elseif Lv >= 2525 then
-    Ms = "Isle Champion"
-    NameQuest = "TikiQuest2"
-    QuestLv = 2
-    NameMon = "Isle Champion"
-    CFrameQ = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
-    CFrameMon = CFrame.new(-16347.4150390625, 92.09503936767578, 1122.335205078125)
+Ms = "Isle Champion"
+NameQuest = "TikiQuest2"
+QuestLv = 2
+NameMon = "Isle Champion"
+CFrameQ = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
+CFrameMon = CFrame.new(-16347.4150390625, 92.09503936767578, 1122.335205078125)
 end
 end
 end
@@ -1851,7 +1851,7 @@ tableMon = {
 }
 end
 
---// Select Area
+--// Select Island
 if First_Sea then
 AreaList = {
   'Jungle', 'Buggy', 'Desert', 'Snow', 'Marine', 'Sky', 'Prison', 'Colosseum', 'Magma', 'Fishman', 'Sky Island', 'Fountain'
@@ -6131,10 +6131,18 @@ end
 --------------Raid
 
 
- Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"}
-
- Raid:Dropdown('Select Raid',Chips,"Flame",function(selchipf)
-     SelectChip = selchipf
+ SelectChip = selectraids or ""
+ Raidslist = {}
+ RaidsModule = require(game.ReplicatedStorage.Raids)
+ for i,v in pairs(RaidsModule.raids) do
+     table.insert(Raidslist,v)
+ end
+ for i,v in pairs(RaidsModule.advancedRaids) do
+     table.insert(Raidslist,v)
+ end
+ 
+ Raid:Dropdown("Select Chip",Raidslist,function(value)
+     SelectChip = value
  end)
 
 
@@ -6154,7 +6162,7 @@ Raid:Button("Buy Chip",function()
 
 
 
-Raid:Toggle("Kill Aura",KillAura,function(Value)
+Raid:Toggle("Auto Kill Aura",KillAura,function(Value)
   KillAura = Value
 end)
 
@@ -6178,7 +6186,7 @@ spawn(function()
 end)
 
 
-Raid:Toggle("Next Island",AutoNextIsland,function(Value)
+Raid:Toggle("Auto Next Island",AutoNextIsland,function(Value)
   AutoNextIsland = Value
 
 end)
@@ -6226,7 +6234,7 @@ end)
 
 
 
-Raid:Toggle("Unstore DF Low Bely",_G.Autofruit,function(value)
+Raid:Toggle("Get DF Low Bely",_G.Autofruit,function(value)
  _G.Autofruit = value
 end)
 spawn(function()
