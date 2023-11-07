@@ -4695,61 +4695,30 @@ spawn(function()
             pcall(function()
                 if game:GetService("Workspace").Enemies:FindFirstChild(SelectBoss) then
                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                        if v.Name == SelectBoss then
-                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                repeat task.wait()
-                                    AutoHaki()
-                                    EquipTool(SelectWeapon)
-                                    v.HumanoidRootPart.CanCollide = false
-                                    v.Humanoid.WalkSpeed = 0
-                                    v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
-                                    Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                    sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
-                                until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0
-                            end
-                        end
+                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    if v.Name == SelectBoss then
+                    repeat game:GetService("RunService").Heartbeat:wait()
+                    AutoHaki()
+                    EquipTool(SelectWeapon)
+                    Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                    v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
+                    v.HumanoidRootPart.Transparency = 1
+                    v.Humanoid.JumpPower = 0
+                    v.Humanoid.WalkSpeed = 0
+                    v.HumanoidRootPart.CanCollide = false
+                    FarmPos = v.HumanoidRootPart.CFrame
+                    MonFarm = v.Name
+                    until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
                     end
-                else
-                    if game:GetService("ReplicatedStorage"):FindFirstChild(SelectBoss) then
-                        Tween(game:GetService("ReplicatedStorage"):FindFirstChild(SelectBoss).HumanoidRootPart.CFrame * CFrame.new(5,10,2))
                     end
-                end
-            end)
-        end
-    end
-end)
-
-Main:Toggle("Auto Killing All Boss",_G.AutoAllBoss,function(value)
-    _G.AutoAllBoss = value
-    StopTween(_G.AutoAllBoss)
-end)
-
-spawn(function()
-    while wait() do
-        if _G.AutoAllBoss then
-            pcall(function()
-                for i,v in pairs(game.ReplicatedStorage:GetChildren()) do
-                    if string.find(v.Name,"Boss") then
-                        if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 17000 then
-                            repeat task.wait()
-                                AutoHaki()
-                                EquipTool(SelectWeapon)
-                                v.Humanoid.WalkSpeed = 0
-                                v.HumanoidRootPart.CanCollide = false
-                                v.Head.CanCollide = false
-                                v.HumanoidRootPart.Size = Vector3.new(80,80,80)
-                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                            until v.Humanoid.Health <= 0 or _G.AutoAllBoss == false or not v.Parent
-                        end
+                    end
                     else
-                    
+                      Tween(game:GetService("ReplicatedStorage"):FindFirstChild(SelectBoss).HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                     end
-                end
-            end)
-        end
-    end
-end)
+                    end)
+                  end
+                  end
+                end)
 
 
 Main:Label("Elite Boss")
