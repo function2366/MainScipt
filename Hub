@@ -3165,11 +3165,11 @@ mobileGGEZ()
 
 ----------------
 
-local bringfrec = 300
+local bringfrec = 350
 local posX = 5
 local posY = 45
 local posZ = 5
-local TweenSpeed = 300
+local TweenSpeed = 340
 
 --return Create
 ----------------
@@ -5581,7 +5581,7 @@ end)
 
 
 function BTP(P)
-	repeat wait(.1)
+	repeat wait(0.4)
 		game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
 		task.wait()
@@ -5591,6 +5591,7 @@ end
 
 
 function BTP(p)
+    wait(0,4)
 		pcall(function()
 			if (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2000 and not Auto_Raid and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
 				if NQuest == "FishmanQuest" then
