@@ -4345,6 +4345,7 @@ else
 
 Main:Toggle("Auto Katakuri V2",_G.AutoDoughKingV2,function(value)
 _G.AutoDoughKingV2 = value
+BTP(CFrame.new(744.7930908203125, 24.76934242248535, -12637.7255859375))
 StopTween(_G.AutoDoughKingV2)
 end)
 
