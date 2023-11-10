@@ -4741,7 +4741,7 @@ Main:Label("Elite Boss")
                                             repeat task.wait()
                                                 EquipTool(SelectWeapon)
 												AutoHaki()
-                                                Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                                Tween(v.HumanoidRootPart.CFrame * Pos)
                                                 MonsterPosition = v.HumanoidRootPart.CFrame
                                                 v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
                                                 v.Humanoid.JumpPower = 0
