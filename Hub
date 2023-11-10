@@ -4365,7 +4365,7 @@ spawn(function()
                                                 EquipTool(SelectWeapon)
 												AutoHaki()
 												
-				
+												BringBone()
                                                 Tween(y.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                             until not _G.AutoDoughKingV2
 											
@@ -4392,7 +4392,7 @@ spawn(function()
                                                     EquipTool(SelectWeapon)
 													AutoHaki()
 													
-					
+													BringBone()
                                                     Tween(v2.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                                 until not _G.AutoDoughKingV2
 												
@@ -4421,7 +4421,7 @@ spawn(function()
                                                     EquipTool(SelectWeapon)
 													AutoHaki()
 													
-					
+													BringBone()
                                                     Tween(y.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                                 until not _G.AutoDoughKingV2
 												
@@ -4435,7 +4435,7 @@ spawn(function()
                                                     EquipTool(SelectWeapon)
 													AutoHaki()
 													
-					
+													BringBone()
                                                     Tween(y.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                                 until not _G.AutoDoughKingV2
 												
