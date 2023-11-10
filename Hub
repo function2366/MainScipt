@@ -6390,35 +6390,27 @@ end
 
 --------------Raid
 
+local Chips = {"Flame","Ice","Quake","Light","Dark","Spider","Rumble","Magma","Human: Buddha","Sand","Bird: Phoenix","Dough"}
 
- SelectChip = selectraids or ""
- Raidslist = {}
- RaidsModule = require(game.ReplicatedStorage.Raids)
- for i,v in pairs(RaidsModule.raids) do
-     table.insert(Raidslist,v)
- end
- for i,v in pairs(RaidsModule.advancedRaids) do
-     table.insert(Raidslist,v)
- end
- 
- Raid:Dropdown("Select Chip",Raidslist,function(value)
-     SelectChip = value
- end)
+Raid:Dropdown('Select Raid',Chips,function(selchipf)
+    SelectChip = selchipf
+end)
 
 
- Raid:Button("Buy Chip Select",function()
+
+Raid:Button("Buy Chip Select",function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",SelectChip)
-end)
+     end)
 
 
 
-Raid:Button("Start Raid",function()
-    if Second_Sea then
-        fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
-    elseif Third_Sea then
-        fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
-    end
-end)
+   Raid:Button("Start Raid",function()
+     if Second_Sea then
+       fireclickdetector(Workspace.Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
+   elseif Third_Sea then
+       fireclickdetector(Workspace.Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
+   end
+   end)
 
 
 
