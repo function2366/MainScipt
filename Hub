@@ -4135,7 +4135,7 @@ end)
           function BringBone()
         for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
       	  for x,y in pairs(game.Workspace.Enemies:GetChildren()) do
-      	      if v.Name == v.Name then
+      	      if v.Name == y.Name then
          	       v.HumanoidRootPart.CFrame = y.HumanoidRootPart.CFrame
       	          v.HumanoidRootPart.Transparency = 0.5
         	        y.HumanoidRootPart.Transparency = 0.5
@@ -4359,7 +4359,7 @@ spawn(function()
                             if v.Count <= 19 then
 							Tween(CFrame.new(744.7930908203125, 24.76934242248535, -12637.7255859375))
                                 for x,y in pairs(game.Workspace.Enemies:GetChildren()) do
-                                    if v.Name == "Chocolate Bar Battler" then
+                                    if y.Name == "Chocolate Bar Battler" then
                                         if y:FindFirstChild("HumanoidRootPart") then
                                             repeat task.wait()
                                                 EquipTool(SelectWeapon)
@@ -4373,7 +4373,7 @@ spawn(function()
                                     end
                                 end
                                 for x,y in pairs(game.ReplicatedStorage:GetChildren()) do
-                                    if v.Name == "Chocolate Bar Battler" then
+                                    if y.Name == "Chocolate Bar Battler" then
                                         if y:FindFirstChild("HumanoidRootPart") then
                                             repeat task.wait()
                                                 Tween(y.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
@@ -4415,7 +4415,7 @@ spawn(function()
                                 else
                                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SweetChaliceNpc")
                                     for x,y in pairs(game.Workspace.Enemies:GetChildren()) do
-                                        if v.Name == "Diablo" or v.Name == "Urban" or v.Name == "Deandre" then
+                                        if y.Name == "Diablo" or y.Name == "Urban" or y.Name == "Deandre" then
                                             if y:FindFirstChild("HumanoidRootPart") then
                                                 repeat task.wait()
                                                     EquipTool(SelectWeapon)
@@ -4429,7 +4429,7 @@ spawn(function()
                                         end
                                     end
                                     for x,y in pairs(game.ReplicatedStorage:GetChildren()) do
-                                        if v.Name == "Diablo" or v.Name == "Urban" or v.Name == "Deandre" then
+                                        if y.Name == "Diablo" or y.Name == "Urban" or y.Name == "Deandre" then
                                             if y:FindFirstChild("HumanoidRootPart") then
                                                 repeat task.wait()
                                                     EquipTool(SelectWeapon)
