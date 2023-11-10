@@ -6407,7 +6407,7 @@ end
 
 
  Raid:Button("Buy Chip Select",function()
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",_G.SelectChip)
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc","Select",SelectChip)
 end)
 
 
