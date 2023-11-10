@@ -4173,7 +4173,7 @@ end)
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                    Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                    Tween(v.HumanoidRootPart.CFrame * Pos)
                                     v.HumanoidRootPart.Transparency = 1
                                     sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
 									
