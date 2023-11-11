@@ -3165,7 +3165,7 @@ mobileGGEZ()
 
 ----------------
 
-local bringfrec = 350
+local bringfrec = 270
 local posX = 5
 local posY = 45
 local posZ = 5
@@ -3208,11 +3208,9 @@ local Misc = Tab10:CreatePage("Misc")
 
 
 
-
 Main:Label("Choose Weapon")
 
 local Weaponlist = {"Melee","Sword","Fruit"}
-
 
 local Dropdown = Main:Dropdown("Select Weapon",Weaponlist,"Melee",function(v)
     ChooseWeapon = v
@@ -3401,7 +3399,6 @@ Main:Button("Redeem All Code",function()
     UseCode("TantaiGaming")
     UseCode("STRAWHATMAINE")
 end)
-
 
 
 Main:Button("FPS Booster",function()
@@ -4067,7 +4064,20 @@ else
           
 ]]
 
-local FaiFaoQuestBone = CFrame.new(-9516.99316, 172.017181, 6078.46533, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+local FaiFaoQuestBone =  CFrame.new(
+    -9505.55371,
+    172.448059,
+    6086.27588,
+    0.927873373,
+    -2.18353513e-09,
+    -0.37289542,
+    -4.01526146e-09,
+    1,
+    -1.58467728e-08,
+    0.37289542,
+    1.62010725e-08,
+    0.927873373
+)
 
 
 
@@ -5565,7 +5575,7 @@ end
       Setting:Toggle("Bring Mob",true,function(vu)
                 BringMobs = vu
 	                end)
-
+--[[
                     task.spawn(function()
                         while task.wait() do
                         if BringMobs then
@@ -5609,6 +5619,53 @@ end
                       end
                       end
 
+]]
+
+
+
+spawn(function()
+	while task.wait() do
+		pcall(function()
+			if BringMobs then
+				if AutoFarm then
+					if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+						for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+							if v.Name == Ms and (v.HumanoidRootPart.Position-FarmPos.Position).Magnitude <= 350 then
+								if v.Humanoid:FindFirstChild("Animator") then
+									v.Humanoid.Animator:Destroy()
+								end
+								v.Humanoid:ChangeState(11)
+								v.Humanoid.JumpPower = 0
+								v.Humanoid.WalkSpeed = 0
+								v.HumanoidRootPart.CanCollide = false
+								v.HumanoidRootPart.Size = Vector3.new(5,5,5)
+								v.HumanoidRootPart.CFrame = FarmPos
+								sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
+								Attack = true
+							end
+						end
+					end
+				else
+					for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+						if (v.HumanoidRootPart.Position-FarmPos.Position).Magnitude <= 350 then
+							if v.Humanoid:FindFirstChild("Animator") then
+								v.Humanoid.Animator:Destroy()
+							end
+							v.Humanoid:ChangeState(11)
+							v.Humanoid.JumpPower = 0
+							v.Humanoid.WalkSpeed = 0
+							v.HumanoidRootPart.CanCollide = false
+							v.HumanoidRootPart.Size = Vector3.new(5,5,5)
+							v.HumanoidRootPart.CFrame = FarmPos
+							sethiddenproperty(game.Players.LocalPlayer, "MaximumSimulationRadius",  math.huge)
+							sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  9e20)
+						end
+					end
+				end
+			end
+		end)
+	end
+end)
 
 
 	
