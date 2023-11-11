@@ -691,7 +691,7 @@ QuestLv = 1
 NameMon = "Isle Outlaw"
 CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
 CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
-elseif Lv == 2475 or Lv <= 2449 then
+elseif Lv == 2475 or Lv <= 2524 then
 Ms = "Island Boy"
 NameQuest = "TikiQuest1"
 QuestLv = 2
@@ -699,22 +699,12 @@ NameMon = "Island Boy"
 CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
 CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
 elseif Lv >= 2525 then
-Ms = "Sun-kissed Warriors"
-NameQuest = "TikiQuest2"
-QuestLv = 1
-NameMon = "Sun-kissed Warriors"
-CFrameQ = CFrame.new(-16268.9892578125, 96.36157989501953, 1041.82421875)
-CFrameMon = CFrame.new(-16180.95703125, 21.660547256469727, 1086.5899658203125)
-
---[[
-elseif Lv >= 2525 then
 Ms = "Isle Champion"
 NameQuest = "TikiQuest2"
 QuestLv = 2
 NameMon = "Isle Champion"
 CFrameQ = CFrame.new(-16747.970703125, 127.11614227294922, 1012.408447265625)
 CFrameMon = CFrame.new(-16823.248046875, 21.660547256469727, 1024.0660400390625)
-]]
 end
 end
 end
@@ -3352,8 +3342,8 @@ end
                 if _G.DriveMytic then
                     if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
-                            buyb = TPP(CFrame.new(-16207.6455078125, 10.102611541748047, 407.3146057128906))
-                            if (CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                            buyb = TPP(CFrame.new(-16204.966796875, 13.275421142578125, 472.41162109375))
+                            if (CFrame.new(-16133.9580078125, 31.885669708251953, 432.83660888671875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                 if buyb then buyb:Stop() end wait(.1)
                                 local args = {
                                     [1] = "BuyBoat",
