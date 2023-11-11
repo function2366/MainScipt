@@ -699,10 +699,10 @@ NameMon = "Island Boy"
 CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
 CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
 elseif Lv >= 2525 then
-Ms = "Sun-kissed Warrior"
+Ms = "Sun-kissed Warriors"
 NameQuest = "TikiQuest2"
 QuestLv = 1
-NameMon = "Sun-kissed Warrior"
+NameMon = "Sun-kissed Warriors"
 CFrameQ = CFrame.new(-16268.9892578125, 96.36157989501953, 1041.82421875)
 CFrameMon = CFrame.new(-16180.95703125, 21.660547256469727, 1086.5899658203125)
 
