@@ -3190,7 +3190,7 @@ end
 
     Tabs.Main:AddParagraph({
         Title = "Material",
-        Content = "Auto farm masterial"
+        Content = "Auto farm material"
     })
 
 
