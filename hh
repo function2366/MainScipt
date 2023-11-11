@@ -2005,7 +2005,7 @@ spawn(function()
         elseif Type == 5 then
             Pos = CFrame.new(-30,PosY,0)
         elseif Type == 6 then
-            Pos = CFrame.new(0,30,0)
+            Pos = CFrame.new(0,PosY,-30)
         end
         end
     end)
