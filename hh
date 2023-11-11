@@ -3292,7 +3292,7 @@ end
                 if _G.DriveMytic then
                     if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
-                            buyb = TPP(CFrame.new(-16206.5615, 9.06057358, 475.84668, -0.438452929, 1.33276634e-09, -0.89875412, 7.86230885e-08, 1, -3.68729971e-08, 0.89875412, -8.68298997e-08, -0.438452929))
+                            buyb = TPP(CFrame.new(-16207.6455078125, 10.102611541748047, 407.3146057128906))
                             if (CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                 if buyb then buyb:Stop() end wait(.1)
                                 local args = {
