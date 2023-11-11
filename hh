@@ -1916,7 +1916,7 @@ end
    spawn(function()
 			while task.wait() do
 				pcall(function()
-					if AutoFarmHeart or _G.AutoAllBoss or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+					if AutoFarmHeart or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
 						if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 							local Noclip = Instance.new("BodyVelocity")
 							Noclip.Name = "BodyClip"
@@ -1934,8 +1934,8 @@ end
 		spawn(function()
 			game:GetService("RunService").RenderStepped:Connect(function()
 				game.Players.LocalPlayer.Character.Stun.Value = 0
-				game.Players.LocalPlayer.Character.Humanoid.Sit = false
-				game.Players.LocalPlayer.Character.Busy.Value = false        
+				game.Players.LocalPlayer.Character.Humanoid.Sit = true
+				game.Players.LocalPlayer.Character.Busy.Value = true        
 			end)
 		end)
 
@@ -1945,7 +1945,7 @@ end
 spawn(function()
   pcall(function()
     game:GetService("RunService").Stepped:Connect(function()
-      if AutoFarmHeart or _G.AutoAllBoss or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+      if AutoFarmHeart or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
       for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
       if v:IsA("BasePart") then
       v.CanCollide = false
@@ -3364,6 +3364,11 @@ end
      end)
 
 
+     Tabs.Main:AddParagraph({
+        Title = "Elite Hunter",
+        Content = "Auto find and kill boss elite"
+    })
+
 
 
 
@@ -3373,7 +3378,73 @@ end
     })
 
 
-    
+
+ local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter", Default = false })
+
+ ToggleElite:OnChanged(function(Value)
+    AutoEliteHunter = Value
+    end)
+    Options.ToggleElite:SetValue(false)
+    spawn(function()
+        while task.wait() do
+            if AutoEliteHunter then
+                pcall(function()
+                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
+                            if game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
+                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        if v.Name == "Diablo" or v.Name == "Deandre" or v.Name == "Urban" then
+                                            repeat task.wait()
+                                                EquipTool(SelectWeapon)
+												AutoHaki()
+                                                Tween(v.HumanoidRootPart.CFrame * Pos)
+                                                MonsterPosition = v.HumanoidRootPart.CFrame
+                                                v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                                v.Humanoid.JumpPower = 0
+                                                v.Humanoid.WalkSpeed = 0
+                                                v.HumanoidRootPart.CanCollide = false
+                                                --v.Humanoid:ChangeState(14)
+                                                --v.Humanoid:ChangeState(11)
+                                                FarmPos = v.HumanoidRootPart.CFrame
+                                                MonFarm = v.Name
+                                                v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                                            until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
+                                        end
+                                    end
+                                end
+                            else
+                                if BypassTP then
+                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
+                                    BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
+                                    BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+                                    BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                end
+                            else
+                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                end
+
+
+                            end
+                            end
+                        end
+                    else
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+                    end
+                end)
+            end
+        end
+    end)
+
+
+
     local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Auto Hallow Scythe [Fully]", Default = false })
 
     ToggleHallow:OnChanged(function(Value)
@@ -3433,7 +3504,114 @@ end
            end)
         
            
+           local ToggleYama = Tabs.Main:AddToggle("ToggleYama", {Title = "Auto Get Yama", Default = false })
+           ToggleYama:OnChanged(function(Value)
+            _G.AutoYama = Value
+           end)
+           Options.ToggleYama:SetValue(false)
+           spawn(function()
+            while wait() do
+                if _G.AutoYama then
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter","Progress") >= 30 then
+                        repeat wait(.1)
+                            fireclickdetector(game:GetService("Workspace").Map.Waterfall.SealedKatana.Handle.ClickDetector)
+                        until game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Yama") or not _G.AutoYama
+                    end
+                end
+            end
+        end)
 
+
+        local ToggleTushita = Tabs.Main:AddToggle("ToggleTushita", {Title = "Auto Tushita", Default = false })
+        ToggleTushita:OnChanged(function(Value)
+            _G.Autotushita = Value
+        end)
+        Options.ToggleTushita:SetValue(false)
+        local FaiFaoTushita = CFrame.new(-10238.875976563, 389.7912902832, -9549.7939453125)
+        spawn(function()
+            while wait() do
+                if  _G.Autotushita then
+                    pcall(function()
+                        if game:GetService("Workspace").Enemies:FindFirstChild("Longma") then
+                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                if v.Name == "Longma" then
+                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                        repeat task.wait()
+                                            AutoHaki()
+                                            EquipTool(SelectWeapon)
+                                            v.HumanoidRootPart.CanCollide = false
+                                            v.Humanoid.WalkSpeed = 0
+                                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                            Tween(v.HumanoidRootPart.CFrame * Pos)
+                                            sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                        until not  _G.Autotushita or not v.Parent or v.Humanoid.Health <= 0
+                                    end
+                                end
+                            end
+                        else
+                        if BypassTP then
+                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - FaiFaoTushita.Position).Magnitude > 1500 then
+                        BTP(FaiFaoTushita)
+                        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - FaiFaoTushita.Position).Magnitude < 1500 then
+                        Tween(FaiFaoTushita)
+                        end
+                    else
+                        Tween(FaiFaoTushita)
+                    end
+                        Tween(CFrame.new(-10238.875976563, 389.7912902832, -9549.7939453125))
+                            if game:GetService("ReplicatedStorage"):FindFirstChild("Longma") then
+                                Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Longma").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                            else
+                            end
+                        end
+                    end)
+                end
+            end
+        end)
+
+
+        local ToggleHoly = Tabs.Main:AddToggle("ToggleHoly", {Title = "Auto Holy Torch", Default = false })
+        ToggleHoly:OnChanged(function(Value)
+            _G.AutoHolyTorch = Value
+        end)
+        Options.ToggleHoly:SetValue(false)
+        spawn(function()
+            while wait(.5) do
+                pcall(function()
+                    if _G.AutoHolyTorch then
+                        if game.Players.LocalPlayer.Backpack:FindFirstChild("Holy Torch") or game.Players.LocalPlayer.Character:FindFirstChild("Holy Torch") then
+                            repeat wait(.2)
+                                EquipWeapon("Holy Torch")
+                                Tween(CFrame.new(-10752.4434, 415.261749, -9367.43848, 1, 0, 0, 0, 1, 0, 0, 0, 1))
+                            until (Vector3.new(-10752.4434, 415.261749, -9367.43848)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            wait(2)
+                            repeat wait(.2)
+                                EquipWeapon("Holy Torch")
+                                Tween(CFrame.new(-11671.6289, 333.78125, -9474.31934, 0.300932229, 0, -0.953645527, 0, 1, 0, 0.953645527, 0, 0.300932229))
+                            until (Vector3.new(-11671.6289, 333.78125, -9474.31934)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            wait(2)
+                            repeat wait(.2)
+                                EquipWeapon("Holy Torch")
+                                Tween(CFrame.new(-12133.1406, 521.507446, -10654.292, 0.80428642, 0, -0.594241858, 0, 1, 0, 0.594241858, 0, 0.80428642))
+                            until (Vector3.new(-12133.1406, 521.507446, -10654.292)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            wait(2)
+                            repeat wait(.2)
+                                EquipWeapon("Holy Torch")
+                                Tween(CFrame.new(-13336.127, 484.521179, -6985.31689, 0.853732228, 0, -0.520712316, 0, 1, 0, 0.520712316, 0, 0.853732228))
+                            until (Vector3.new(-13336.127, 484.521179, -6985.31689)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            wait(2)
+                            EquipWeapon("Holy Torch")
+                            repeat wait(.2)
+                                Tween(CFrame.new(-13487.623, 336.436188, -7924.53857, -0.982848108, 0, 0.184417039, 0, 1, 0, -0.184417039, 0, -0.982848108))
+                            until (Vector3.new(-13487.623, 336.436188, -7924.53857)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            wait(2)
+                            Com()
+                            wait(20)
+                        end
+                    end
+                end)
+            end
+        end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Setting
