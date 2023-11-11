@@ -3219,11 +3219,10 @@ end
         SelectMaterial = Value
     end)
 
-    
 
     local ToggleMaterial = Tabs.Main:AddToggle("ToggleMaterial", {Title = "Auto Farm Material", Default = false })
 
-    ToggleMaterial:OnChanged(function()
+    ToggleMaterial:OnChanged(function(Value)
         AutoFarmMaterial = Value
     end)
     Options.ToggleMaterial:SetValue(false)
@@ -3289,7 +3288,7 @@ end
 
     local ToggleTerrorshark = Tabs.Main:AddToggle("ToggleTerrorshark", {Title = "Auto Kill Terrorshark", Default = false })
 
-    ToggleTerrorshark:OnChanged(function()
+    ToggleTerrorshark:OnChanged(function(Value)
         _G.AutoTerrorshark = Value
     end)
     Options.ToggleTerrorshark:SetValue(false)
@@ -3328,7 +3327,7 @@ end
 
      local TogglePiranha = Tabs.Main:AddToggle("TogglePiranha", {Title = "Auto Kill Piranha", Default = false })
 
-     TogglePiranha:OnChanged(function()
+     TogglePiranha:OnChanged(function(Value)
         _G.farmpiranya = Value
      end)
      Options.TogglePiranha:SetValue(false)
@@ -3377,7 +3376,7 @@ end
     
     local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Auto Hallow Scythe [Fully]", Default = false })
 
-    ToggleHallow:OnChanged(function()
+    ToggleHallow:OnChanged(function(Value)
         AutoHallowSycthe = Value
     end)
     Options.ToggleHallow:SetValue(false)
