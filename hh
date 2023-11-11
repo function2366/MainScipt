@@ -1931,13 +1931,7 @@ end
 			end
 		end)
 
-		spawn(function()
-			game:GetService("RunService").RenderStepped:Connect(function()
-				game.Players.LocalPlayer.Character.Stun.Value = 0
-				game.Players.LocalPlayer.Character.Humanoid.Sit = true
-				game.Players.LocalPlayer.Character.Busy.Value = true        
-			end)
-		end)
+	
 
 
 
