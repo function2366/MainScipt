@@ -1706,42 +1706,13 @@ if game.PlaceId == 2753915549 then
                 NameMon = "Candy Pirate"
                 CFrameQuest = CFrame.new(-1150.0400390625, 20.378934860229492, -14446.3349609375)
                 CFrameMon = CFrame.new(-1310.5003662109375, 26.016523361206055, -14562.404296875)
-            elseif MyLevel == 2425 or MyLevel <= 2449 then
+            elseif MyLevel >= 2525 then
                 Mon = "Snow Demon"
                 LevelQuest = 2
                 NameQuest = "CandyQuest1"
                 NameMon = "Snow Demon"
 				CFrameQuest = CFrame.new(-1147.2296142578125, 14.133421897888184, -14445.1162109375)
                 CFrameMon = CFrame.new(-923.905029296875, 100.98135375976562, -14330.78125)
-
-            elseif MyLevel == 2450 or MyLevel <= 2474 then
-                Mon = "Isle Outlaw"
-                LevelQuest = 1
-                NameQuest = "TikiQuest1"
-                NameMon = "Isle Outlaw"
-                CFrameQuest = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
-                CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
-            elseif MyLevel == 2475 or MyLevel <= 2499 then
-                Mon = "Island Boy"
-                LevelQuest = 2
-                NameQuest = "TikiQuest1"
-                NameMon = "Island Boy"
-                CFrameQuest = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
-                CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
-            elseif MyLevel == 2500 or MyLevel <= 2524 then
-                Mon = "Sun-kissed Warrior"
-                LevelQuest = 1
-                NameQuest = "TikiQuest2"
-                NameMon = "Sun-kissed Warriors"
-                CFrameQuest = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
-                CFrameMon = CFrame.new(-16349.8779296875, 92.0808334350586, 1123.4169921875)
-            elseif MyLevel == 2525 or MyLevel <= 2550 then
-                Mon = "Isle Champion"
-                LevelQuest = 2
-                NameQuest = "TikiQuest2"
-                NameMon = "Isle Champion"
-                CFrameQuest = CFrame.new(-16539.078125, 55.68632888793945, 1051.5738525390625)
-                CFrameMon = CFrame.new(-16347.4150390625, 92.09503936767578, 1122.335205078125)
             end
         end
     end
