@@ -2072,7 +2072,7 @@ until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).
 end
 
 function BTP(p)
-wait(0,4)
+wait(0.4)
     pcall(function()
         if (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2000 and not Auto_Raid and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
             if NQuest == "FishmanQuest" then
