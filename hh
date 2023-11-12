@@ -3301,9 +3301,6 @@ end
     })
 
 
-
-
-
     local ToggleBoat = Tabs.Main:AddToggle("ToggleBoat", {Title = "Auto Buy Boat", Default = false })
 
     ToggleBoat:OnChanged(function(Value)
@@ -3365,6 +3362,24 @@ end
         end
     end)
 
+
+
+   local ToggleTW = Tabs.Main:AddToggle("ToggleTW", {Title = "Auto Press W", Default = false })
+
+   ToggleTW:OnChanged(function(Value)
+    _G.AutoW = Value
+    end)
+    Options.ToggleTW:SetValue(false)
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if AutoW then
+                    game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
+                end
+            end)
+        end
+        end)
+    
 
 
     local ToggleTerrorshark = Tabs.Main:AddToggle("ToggleTerrorshark", {Title = "Auto Kill Terrorshark", Default = false })
