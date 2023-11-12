@@ -3322,7 +3322,7 @@ end
                                 
                             
                                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                                if (CFrame.new(-16133.9580078125, 31.885669708251953, 432.83660888671875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 5 then
+                                if (CFrame.new(-16133.9580078125, 31.885669708251953, 432.83660888671875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 0.1 then
                             end
                         elseif game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                             if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
