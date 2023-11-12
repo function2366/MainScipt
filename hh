@@ -4243,7 +4243,7 @@ end
 
 
 
-local DropdownIsland = Tabs.Player:AddDropdown("DropdownIsland", {
+local DropdownIsland = Tabs.Teleport:AddDropdown("DropdownIsland", {
     Title = "Select Island",
     Values = IslandList,
     Multi = false,
