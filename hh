@@ -4203,7 +4203,7 @@ end)
 
 local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Default = false })
 ToggleTeleport:OnChanged(function(Value)
-    _G.TeleportPly = value
+    _G.TeleportPly = Value
     pcall(function()
         if _G.TeleportPly then
             repeat Tween(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
