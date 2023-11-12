@@ -4204,3 +4204,8 @@ Options.ToggleQuanSat:SetValue(false)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 --Teleport
+Tabs.Teleport:AddParagraph({
+    Title = "World",
+    Content = "Sea1 & Sea2 & Sea3"
+})
+
