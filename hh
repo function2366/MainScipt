@@ -3315,15 +3315,15 @@ end
                 if _G.DriveMytic then
                     if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
-                            wait(2)
                             buyb = TPP(CFrame.new(-16204.966796875, 13.275421142578125, 472.41162109375))
+                            wait(2)
                                 local args = {
                                     [1] = "BuyBoat",
                                     [2] = "PirateGrandBrigade",
                                 }
                                 
                                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                                wait(1)
+                                wait(2)
                                 if (CFrame.new(-16133.9580078125, 31.885669708251953, 432.83660888671875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 0.1 then
                             end
                         elseif game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
@@ -4213,7 +4213,7 @@ Tabs.Player:AddButton({
                     Title = "Confirm",
                     Callback = function()
                         Playerslist = {}
-        SelectedPly:Refresh()
+        SelectedPly:clear()
         for i,v in pairs(game:GetService("Players"):GetChildren()) do  
             SelectedPly:Add(v.Name)
         end
