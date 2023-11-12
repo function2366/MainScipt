@@ -3311,17 +3311,18 @@ end
         while wait() do
             pcall(function()
                 if _G.DriveMytic then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
                     if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                             buyb = TPP(CFrame.new(-16204.966796875, 13.275421142578125, 472.41162109375))
                             if (CFrame.new(-16133.9580078125, 31.885669708251953, 432.83660888671875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
-                                if buyb then buyb:Stop() end wait(.1)
                                 local args = {
                                     [1] = "BuyBoat",
                                     [2] = "PirateGrandBrigade"
                                 }
-    
+                                
                                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
                             end
                         elseif game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                             if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
