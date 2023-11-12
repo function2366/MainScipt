@@ -3031,21 +3031,7 @@ ToggleBone:OnChanged(function(Value)
     AutoFarmBone = Value
 end)
 Options.ToggleBone:SetValue(false)
-local FaiFaoQuestBone =  CFrame.new(
-    -9505.55371,
-    172.448059,
-    6086.27588,
-    0.927873373,
-    -2.18353513e-09,
-    -0.37289542,
-    -4.01526146e-09,
-    1,
-    -1.58467728e-08,
-    0.37289542,
-    1.62010725e-08,
-    0.927873373
-)
-
+local FaiFaoQuestBone =  CFrame.new(-9692.1904296875, 317.97760009765625, 6363.552734375)
 
 
 spawn(function()
@@ -3130,13 +3116,14 @@ spawn(function()
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.CanCollide = false
-    
+    BringMobs = false
   --v.Humanoid:ChangeState(11)
   --v.Humanoid:ChangeState(14)
     FarmPos = v.HumanoidRootPart.CFrame
     MonFarm = v.Name
     until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
     end
+    BringMobs = true
     end
     else
       if game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 and (CFrame.new(-1990.672607421875, 4532.99951171875, -14973.6748046875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2000 then
@@ -3168,22 +3155,7 @@ spawn(function()
     end
     end
     else
-      local cakepos = CFrame.new(
--2142.66821,
-71.2588654,
--12327.4619,
-0.996939838,
--4.33107843e-08,
-0.078172572,
-4.20252917e-08,
-1,
-1.80894251e-08,
--0.078172572,
--1.47488439e-08,
-0.996939838
-)
-
-
+      local cakepos = CFrame.new(-1612.520751953125, 195.68411254882812, -12288.7685546875)
 
 if BypassTP then
 wait()
@@ -3500,8 +3472,10 @@ end
                                                    FarmPos = v.HumanoidRootPart.CFrame
                                                    MonFarm = v.Name
                                                    v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                                                   BringMobs = false
                                                until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
                                            end
+                                           BringMobs = true
                                        end
                                    end
                                else
