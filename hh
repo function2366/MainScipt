@@ -15,6 +15,7 @@ local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "users-2" }),
 }
 local Options = Fluent.Options
 
@@ -4177,9 +4178,82 @@ spawn(function()
     end
 end)
 --------------------------------------------------------------------------------------------------------------------------------------------
+--Player
+
+local Playerslist = {}
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    table.insert(Playerslist,v.Name)
+end
+
+local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
+    Title = "Select Player",
+    Values = Playerslist,
+    Multi = false,
+    Default = 1,
+})
+
+SelectedPly:SetValue("nil")
+SelectedPly:OnChanged(function(Value)
+    _G.SelectPly = Value
+end)
 
 
 
 
+Tabs.Player:AddButton({
+    Title = "Refresh Player",
+    Description = "Refresh player dropdown",
+    Callback = function()
+        Window:Dialog({
+            Title = "",
+            Content = "",
+            Buttons = {
+                {
+                    Title = "Confirm",
+                    Callback = function()
+                        Playerslist = {}
+        SelectedPly:Clear()
+        for i,v in pairs(game:GetService("Players"):GetChildren()) do  
+            SelectedPly:Add(v.Name)
+        end
+        end
+                },
+                {
+                    Title = "Cancel",
+                    Callback = function()
+                        
+                    end
+                }
+            }
+        })
+    end
+})
+
+        
 
 
+local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Default = false })
+ToggleTeleport:OnChanged(function(Value)
+    _G.TeleportPly = Value
+    end)
+Options.ToggleTeleport:SetValue(false)
+pcall(function()
+    if _G.TeleportPly then
+        repeat TP2(game:GetService("Players")[_G.SelectPly].Character.HumanoidRootPart.CFrame) wait() until _G.TeleportPly == false
+    end
+ 
+end)
+
+
+local ToggleQuanSat = Tabs.Player:AddToggle("ToggleQuanSat", {Title = "Spectate Player", Default = false })
+ToggleQuanSat:OnChanged(function(Value)
+    SpectatePlys = Value
+    end)
+Options.ToggleQuanSat:SetValue(false)
+local plr1 = game:GetService("Players").LocalPlayer.Character.Humanoid
+        local plr2 = game:GetService("Players"):FindFirstChild(_G.SelectPly)
+        repeat wait(.1)
+            game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players"):FindFirstChild(_G.SelectPly).Character.Humanoid
+        until SpectatePlys == false 
+        game:GetService("Workspace").Camera.CameraSubject = game:GetService("Players").LocalPlayer.Character.Humanoid
+        -----------------------------------------------------------------------------------------------------------------------------------------------
