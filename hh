@@ -691,7 +691,7 @@ QuestLv = 1
 NameMon = "Isle Outlaw"
 CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
 CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
-elseif Lv == 2475 or Lv <= 2524 then
+elseif Lv == 2475 or Lv <= 2499 then
 Ms = "Island Boy"
 NameQuest = "TikiQuest1"
 QuestLv = 2
@@ -699,12 +699,21 @@ NameMon = "Island Boy"
 CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
 CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
 elseif Lv >= 2525 then
+Ms = "Sun-kissed Warrior"
+NameQuest = "TikiQuest2"
+QuestLv = 1
+NameMon = "Sun-kissed Warrior"
+CFrameQ = CFrame.new(-16540.73046875, 61.5479736328125, 1051.114501953125)
+CFrameMon = CFrame.new(-16292.669921875, 21.76165199279785, 981.90234375)
+--[[]
+elseif Lv >= 2525 then
 Ms = "Isle Champion"
 NameQuest = "TikiQuest2"
 QuestLv = 2
 NameMon = "Isle Champion"
 CFrameQ = CFrame.new(-16747.970703125, 127.11614227294922, 1012.408447265625)
 CFrameMon = CFrame.new(-16823.248046875, 21.660547256469727, 1024.0660400390625)
+]]
 end
 end
 end
@@ -3448,79 +3457,76 @@ end
     })
 
 
+    local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter", Default = false })
+
+    ToggleElite:OnChanged(function(Value)
+       AutoEliteHunter = Value
+       end)
+       Options.ToggleElite:SetValue(false)
+       spawn(function()
+           while task.wait() do
+               if AutoEliteHunter then
+                   pcall(function()
+                       if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
+                           if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
+                               if game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
+                                   for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                       if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                           if v.Name == "Diablo" or v.Name == "Deandre" or v.Name == "Urban" then
+                                               repeat task.wait()
+                                                   EquipTool(SelectWeapon)
+                                                   AutoHaki()
+                                                   Tween(v.HumanoidRootPart.CFrame * Pos)
+                                                   MonsterPosition = v.HumanoidRootPart.CFrame
+                                                   v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
+                                                   v.Humanoid.JumpPower = 0
+                                                   v.Humanoid.WalkSpeed = 0
+                                                   v.HumanoidRootPart.CanCollide = false
+                                                   --v.Humanoid:ChangeState(14)
+                                                   --v.Humanoid:ChangeState(11)
+                                                   FarmPos = v.HumanoidRootPart.CFrame
+                                                   MonFarm = v.Name
+                                                   v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
+                                               until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
+                                           end
+                                       end
+                                   end
+                               else
+                                   if BypassTP then
+                                   if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
+                                       BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                   elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
+                                       BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                   elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+                                       BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                   end
+                               else
+                                   if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
+                                       Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                   elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
+                                       Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                   elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+                                       Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
+                                   end
+   
+   
+                               end
+                               end
+                           end
+                       else
+                           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
+                       end
+                   end)
+               end
+           end
+       end)
+   
 
 
      Tabs.Main:AddParagraph({
         Title = "Items",
         Content = "Auto get items"
     })
-
-
-
- local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter", Default = false })
-
- ToggleElite:OnChanged(function(Value)
-    AutoEliteHunter = Value
-    end)
-    Options.ToggleElite:SetValue(false)
-    spawn(function()
-        while task.wait() do
-            if AutoEliteHunter then
-                pcall(function()
-                    if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
-                            if game:GetService("Workspace").Enemies:FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
-                                for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                        if v.Name == "Diablo" or v.Name == "Deandre" or v.Name == "Urban" then
-                                            repeat task.wait()
-                                                EquipTool(SelectWeapon)
-												AutoHaki()
-                                                Tween(v.HumanoidRootPart.CFrame * Pos)
-                                                MonsterPosition = v.HumanoidRootPart.CFrame
-                                                v.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame
-                                                v.Humanoid.JumpPower = 0
-                                                v.Humanoid.WalkSpeed = 0
-                                                v.HumanoidRootPart.CanCollide = false
-                                                --v.Humanoid:ChangeState(14)
-                                                --v.Humanoid:ChangeState(11)
-                                                FarmPos = v.HumanoidRootPart.CFrame
-                                                MonFarm = v.Name
-                                                v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
-                                            until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
-                                        end
-                                    end
-                                end
-                            else
-                                if BypassTP then
-                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
-                                    BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
-                                    BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
-                                    BTP(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                end
-                            else
-                                if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") then
-                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Diablo").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") then
-                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Deandre").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
-                                    Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Urban").HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
-                                end
-
-
-                            end
-                            end
-                        end
-                    else
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EliteHunter")
-                    end
-                end)
-            end
-        end
-    end)
-
 
 
     local ToggleHallow = Tabs.Main:AddToggle("ToggleHallow", {Title = "Auto Hallow Scythe [Fully]", Default = false })
