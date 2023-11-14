@@ -693,21 +693,21 @@ NameQuest = "TikiQuest1"
 QuestLv = 1
 NameMon = "Isle Outlaw"
 CFrameQ = CFrame.new(-16549.890625, 55.68635559082031, -179.91360473632812)
-CFrameMon = CFrame.new(-16224.3388671875, 201.7825469970703, -263.2475280761719)
+CFrameMon = CFrame.new(-16162.8193359375, 11.6863374710083, -96.45481872558594)
 elseif Lv == 2475 or Lv <= 2524 or SelectMonster == "Island Boy" or SelectArea == 'Tiki Outpost' then
 Ms = "Island Boy"
 NameQuest = "TikiQuest1"
 QuestLv = 2
 NameMon = "Island Boy"
 CFrameQ = CFrame.new(-16549.890625, 55.68635559082031, -179.91360473632812)
-CFrameMon = CFrame.new(-16810.984375, 201.7825469970703, -254.3675079345703)
+CFrameMon = CFrame.new(-16912.130859375, 11.787443161010742, -133.0850830078125)
 elseif Lv >= 2525 or SelectMonster == "Isle Champion" or SelectArea == 'Tiki Outpost' then
 Ms = "Isle Champion"
 NameQuest = "TikiQuest2"
 QuestLv = 2
 NameMon = "Isle Champion"
 CFrameQ = CFrame.new(-16542.447265625, 55.68632888793945, 1044.41650390625)
-CFrameMon = CFrame.new(-16944.36328125, 72.13899993896484, 1131.5123291015625)
+CFrameMon = CFrame.new(-16734.3984375, 21.68633460998535, 1106.2132568359375)
 end
 end
 end
