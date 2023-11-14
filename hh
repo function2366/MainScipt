@@ -692,22 +692,22 @@ Ms = "Isle Outlaw"
 NameQuest = "TikiQuest1"
 QuestLv = 1
 NameMon = "Isle Outlaw"
-CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
-CFrameMon = CFrame.new(-16442.814453125, 116.13899993896484, -264.4637756347656)
+CFrameQ = CFrame.new(-16549.890625, 55.68635559082031, -179.91360473632812)
+CFrameMon = CFrame.new(-16224.3388671875, 201.7825469970703, -263.2475280761719)
 elseif Lv == 2475 or Lv <= 2524 or SelectMonster == "Island Boy" or SelectArea == 'Tiki Outpost' then
 Ms = "Island Boy"
 NameQuest = "TikiQuest1"
 QuestLv = 2
 NameMon = "Island Boy"
-CFrameQ = CFrame.new(-16547.748046875, 61.13533401489258, -173.41360473632812)
-CFrameMon = CFrame.new(-16901.26171875, 84.06756591796875, -192.88906860351562)
+CFrameQ = CFrame.new(-16549.890625, 55.68635559082031, -179.91360473632812)
+CFrameMon = CFrame.new(-16810.984375, 201.7825469970703, -254.3675079345703)
 elseif Lv >= 2525 or SelectMonster == "Isle Champion" or SelectArea == 'Tiki Outpost' then
 Ms = "Isle Champion"
 NameQuest = "TikiQuest2"
 QuestLv = 2
 NameMon = "Isle Champion"
-CFrameQ = CFrame.new(-16747.970703125, 127.11614227294922, 1012.408447265625)
-CFrameMon = CFrame.new(-16823.248046875, 21.660547256469727, 1024.0660400390625)
+CFrameQ = CFrame.new(-16542.447265625, 55.68632888793945, 1044.41650390625)
+CFrameMon = CFrame.new(-16944.36328125, 72.13899993896484, 1131.5123291015625)
 end
 end
 end
@@ -2261,7 +2261,7 @@ local posZ = 5
       --v.Humanoid:ChangeState(14)
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-          
+
           until not AutoFarmQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
           end
                
@@ -2275,6 +2275,7 @@ local posZ = 5
           end
           end
           end
+          Tween(CFrameMon)
           end)
         end
         end
@@ -2735,7 +2736,7 @@ end
                     pcall(function()
                         CheckLevel()
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do                                                 
-                                if _G.SkillGunZ then
+                                if SkillZ then
                                     local args = {
                                         [1] = PosMonMasteryGun.Position
                                     }
@@ -2743,7 +2744,7 @@ end
                                     game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
                                     game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
                                 end
-                                if _G.SkillGunX then          
+                                if SkillX then          
                                     local args = {
                                         [1] = PosMonMasteryGun.Position
                                     }
@@ -3025,7 +3026,7 @@ ToggleBone:OnChanged(function(Value)
     AutoFarmBone = Value
 end)
 Options.ToggleBone:SetValue(false)
-local FaiFaoQuestBone =  CFrame.new(-9692.1904296875, 317.97760009765625, 6363.552734375)
+local FaiFaoQuestBone =  CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
 
 
 spawn(function()
@@ -3151,7 +3152,7 @@ spawn(function()
     end
     end
     else
-      local cakepos = CFrame.new(-1612.520751953125, 195.68411254882812, -12288.7685546875)
+      local cakepos = CFrame.new(-1618.8956298828125, 195.68600463867188, -12307.3515625)
 
 if BypassTP then
 wait()
@@ -3159,13 +3160,11 @@ if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - cakepos.Posit
 BTP(cakepos)
 
 elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - cakepos.Position).Magnitude < 2500 then
-
 Tween(cakepos)
 end
 else
 Tween(cakepos)
 end
-
     end
     end
     end
@@ -3234,26 +3233,21 @@ end
           repeat task.wait()
           AutoHaki()
           EquipTool(SelectWeapon)
-             
           Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
           v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
           v.HumanoidRootPart.Transparency = 1
           v.Humanoid.JumpPower = 0
           v.Humanoid.WalkSpeed = 0
           v.HumanoidRootPart.CanCollide = false
-      --v.Humanoid:ChangeState(11)
-      --v.Humanoid:ChangeState(14)
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-          
-          
           until not AutoFarmMaterial or not v.Parent or v.Humanoid.Health <= 0
           end
           end
           end
           else
             for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
-          if string.find(v.Name, MMon) then
+          if string.find(v.Name, Mon) then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Position).Magnitude >= 10 then
           Tween(v.CFrame * CFrame.new(posX,posY,posZ))
           end
@@ -3333,7 +3327,6 @@ end
             end)
         end
     end)
-
 
 
    local ToggleTW = Tabs.Main:AddToggle("ToggleTW", {Title = "Auto Press W", Default = false })
