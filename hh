@@ -2249,7 +2249,7 @@ local posZ = 5
       --v.Humanoid:ChangeState(14)
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
- 
+          Click()
           until not AutoFarmQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
           end
                
@@ -2314,7 +2314,7 @@ local posZ = 5
           v.HumanoidRootPart.CanCollide = false
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
- 
+          Click()
           until not AutoFarmNearestMob or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
           end
           end
@@ -3057,6 +3057,7 @@ spawn(function()
                                             v.HumanoidRootPart.CanCollide = false
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
+                                            Click()
                                         until not AutoFarmBone or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                     else
                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
@@ -3105,6 +3106,7 @@ spawn(function()
     MonFarm = v.Name
     until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
     end
+    Click()
     BringMobs = true
     end
     else
@@ -3127,7 +3129,7 @@ spawn(function()
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.CanCollide = false
-    
+    Click()
   --v.Humanoid:ChangeState(11)
   --v.Humanoid:ChangeState(14)
     FarmPos = v.HumanoidRootPart.CFrame
@@ -3232,7 +3234,7 @@ end
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
           
-      
+          Click()
           until not AutoFarmMaterial or not v.Parent or v.Humanoid.Health <= 0
           end
           end
@@ -3400,6 +3402,7 @@ end
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        Click()
                                         Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                     until not  _G.farmpiranya or not v.Parent or v.Humanoid.Health <= 0
                                 end
@@ -3451,6 +3454,7 @@ end
                                                    v.HumanoidRootPart.CanCollide = false
                                                    --v.Humanoid:ChangeState(14)
                                                    --v.Humanoid:ChangeState(11)
+                                                   Click()
                                                    FarmPos = v.HumanoidRootPart.CFrame
                                                    MonFarm = v.Name
                                                    v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
@@ -3517,6 +3521,7 @@ end
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                     Tween(v.HumanoidRootPart.CFrame * Pos)
                                     v.HumanoidRootPart.Transparency = 1
+                                    Click()
                                     sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
 									
 									   
@@ -3596,6 +3601,7 @@ end
                                             v.Humanoid.WalkSpeed = 0
                                             v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                             Tween(v.HumanoidRootPart.CFrame * Pos)
+                                            Click()
                                             sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
                                         until not  _G.Autotushita or not v.Parent or v.Humanoid.Health <= 0
                                     end
@@ -3636,27 +3642,27 @@ end
                             repeat wait(.2)
                                 EquipTool("Holy Torch")
                                 Tween(CFrame.new(-10752.4434, 415.261749, -9367.43848, 1, 0, 0, 0, 1, 0, 0, 0, 1))
-                            until (Vector3.new(-10752.4434, 415.261749, -9367.43848)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            until (CFrame.new(-10752.4434, 415.261749, -9367.43848)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
                             wait(2)
                             repeat wait(.2)
                                 EquipTool("Holy Torch")
                                 Tween(CFrame.new(-11671.6289, 333.78125, -9474.31934, 0.300932229, 0, -0.953645527, 0, 1, 0, 0.953645527, 0, 0.300932229))
-                            until (Vector3.new(-11671.6289, 333.78125, -9474.31934)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            until (CFrame.new(-11671.6289, 333.78125, -9474.31934)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
                             wait(2)
                             repeat wait(.2)
                                 EquipTool("Holy Torch")
                                 Tween(CFrame.new(-12133.1406, 521.507446, -10654.292, 0.80428642, 0, -0.594241858, 0, 1, 0, 0.594241858, 0, 0.80428642))
-                            until (Vector3.new(-12133.1406, 521.507446, -10654.292)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            until (CFrame.new(-12133.1406, 521.507446, -10654.292)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
                             wait(2)
                             repeat wait(.2)
                                 EquipTool("Holy Torch")
                                 Tween(CFrame.new(-13336.127, 484.521179, -6985.31689, 0.853732228, 0, -0.520712316, 0, 1, 0, 0.520712316, 0, 0.853732228))
-                            until (Vector3.new(-13336.127, 484.521179, -6985.31689)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            until (CFrame.new(-13336.127, 484.521179, -6985.31689)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
                             wait(2)
                             EquipTool("Holy Torch")
                             repeat wait(.2)
                                 Tween(CFrame.new(-13487.623, 336.436188, -7924.53857, -0.982848108, 0, 0.184417039, 0, 1, 0, -0.184417039, 0, -0.982848108))
-                            until (Vector3.new(-13487.623, 336.436188, -7924.53857)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
+                            until (CFrame.new(-13487.623, 336.436188, -7924.53857)-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 5
                             wait(2)
                             Com()
                             wait(20)
@@ -3791,6 +3797,26 @@ end
             end)
         end
     end)
+
+	spawn(function()
+        while true do
+        if FastAttack then
+        pcall(function()
+        CameraShakerR:Stop()
+        CombatFramework.activeController.attacking = false
+        CombatFramework.activeController.timeToNextAttack = 0
+        CombatFramework.activeController.increment = 3
+        CombatFramework.activeController.hitboxMagnitude = 100
+        CombatFramework.activeController.blocking = false
+        CombatFramework.activeController.timeToNextBlock = 0
+        CombatFramework.activeController.focusStart = 0
+        CombatFramework.activeController.humanoid.AutoRotate = true
+        end)
+        end
+        task.wait()
+        end
+        end)
+        
 
 
 
