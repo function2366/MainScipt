@@ -3057,7 +3057,7 @@ spawn(function()
                                             v.HumanoidRootPart.CanCollide = false
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
-                                            Click()
+                                            FastAttack()
                                         until not AutoFarmBone or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                     else
                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
@@ -3684,7 +3684,8 @@ end
         FastAttack = vu
     end)
     Options.ToggleFastAttack:SetValue(true)
-
+function FastAttack()
+end
 
 	_G.FastAttackDelay = 0.1
 
