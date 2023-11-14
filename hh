@@ -3676,173 +3676,86 @@ end
     local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
         Fast_Attack = vu
-        _G.Setting_table.Fast_Attack = vu
     end)
 
     Options.ToggleFastAttack:SetValue(true)
 
-    _G.Setting_table.FastModeD = 2.5
+
+    spawn(function()
+        while wait(.1) do
+            if Fast_Attack then
+                pcall(function()
+                    FaiFaoAttack() 
+                end)
+            end
+        
+        end
+    end)
 
 
-    DbFast = true
-    _G.Setting_table.DbFast = true
 
-    coroutine.wrap(function()
-        while task.wait(.1) do
-            local ac = CombatFrameworkR.activeController
-            if ac and ac.equipped then
-                if FastAttack and Fast_Attack and _G.Setting_table.FastMode == "Normal" then
-                    AttackFunction()
-                    if _G.Setting_table.FastModeD == "Normal" then
-                        if tick() - cooldownfastattack > 1 then wait(1) cooldownfastattack = tick() end
-                    elseif _G.Setting_table.FastModeD == "Fast" then
-                        if tick() - cooldownfastattack > 2.5 then wait(1) cooldownfastattack = tick() end
-                    elseif _G.Setting_table.FastModeD == "Extra" then
-                        if tick() - cooldownfastattack > 3.5 then wait() cooldownfastattack = tick() end
-                    end
-                elseif FastAttack and Fast_Attack and _G.Setting_table.FastMode == "ExTra" then
-                    AttackNoCD()
-                    if _G.Setting_table.FastModeD == "Normal" then
-                        if tick() - cooldownfastattack > 1 then wait(1) cooldownfastattack = tick() end
-                    elseif _G.Setting_table.FastModeD == "Fast" then
-                        if tick() - cooldownfastattack > 2.5 then wait(1) cooldownfastattack = tick() end
-                    elseif _G.Setting_table.FastModeD == "Extra" then
-                        if tick() - cooldownfastattack > 3.5 then wait() cooldownfastattack = tick() end
-                    end
+
+
+    local plr = game.Players.LocalPlayer
+    
+    local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
+    local CbFw2 = CbFw[2]
+    
+    function GetCurrentBlade() 
+        local p13 = CbFw2.activeController
+        local ret = p13.blades[1]
+        if not ret then return end
+        while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
+        return ret
+    end
+    function FaiFaoAttack() 
+        local AC = CbFw2.activeController
+        for i = 1, 1 do 
+            local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
+                plr.Character,
+                {plr.Character.HumanoidRootPart},
+                60
+            )
+            local cac = {}
+            local hash = {}
+            for k, v in pairs(bladehit) do
+                if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
+                    table.insert(cac, v.Parent.HumanoidRootPart)
+                    hash[v.Parent] = true
+                end
+            end
+            bladehit = cac
+            if #bladehit > 0 then
+                local u8 = debug.getupvalue(AC.attack, 5)
+                local u9 = debug.getupvalue(AC.attack, 6)
+                local u7 = debug.getupvalue(AC.attack, 4)
+                local u10 = debug.getupvalue(AC.attack, 7)
+                local u12 = (u8 * 798405 + u7 * 727595) % u9
+                local u13 = u7 * 798405
+                (function()
+                    u12 = (u12 * u9 + u13) % 1099511627776
+                    u8 = math.floor(u12 / u9)
+                    u7 = u12 - u8 * u9
+                end)()
+                u10 = u10 + 1
+                debug.setupvalue(AC.attack, 5, u8)
+                debug.setupvalue(AC.attack, 6, u9)
+                debug.setupvalue(AC.attack, 4, u7)
+                debug.setupvalue(AC.attack, 7, u10)
+                pcall(function()
+                    for k, v in pairs(AC.animator.anims.basic) do
+                        v:Play()
+                    end                  
+                end)
+                if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then 
+                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
+                    game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
+                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "") 
                 end
             end
         end
-        end)()
-        
-        coroutine.wrap(function()
-        while task.wait(.1) do
-            if DbFast and _G.Setting_table.DbFast then
-                local ac = CombatFrameworkR.activeController
-                if ac and ac.equipped then
-                    if FastAttack and _G.Setting_table.FastMode == "Normal" then
-                        AttackFunction()
-                        if _G.Setting_table.FastModeD == "Normal" then
-                            if tick() - cooldownfastattack > 1 then wait(1) cooldownfastattack = tick() end
-                        elseif _G.Setting_table.FastModeD == "Fast" then
-                            if tick() - cooldownfastattack > 2.5 then wait(1) cooldownfastattack = tick() end
-                        elseif _G.Setting_table.FastModeD == "Extra" then
-                            if tick() - cooldownfastattack > 3.5 then wait() cooldownfastattack = tick() end
-                        end
-                    elseif FastAttack and _G.Setting_table.FastMode == "ExTra" then
-                        AttackNoCD()
-                        if _G.Setting_table.FastModeD == "Normal" then
-                            if tick() - cooldownfastattack > 1 then wait(1) cooldownfastattack = tick() end
-                        elseif _G.Setting_table.FastModeD == "Fast" then
-                            if tick() - cooldownfastattack > 2.5 then wait(1) cooldownfastattack = tick() end
-                        elseif _G.Setting_table.FastModeD == "Extra" then
-                            if tick() - cooldownfastattack > 3.5 then wait() cooldownfastattack = tick() end
-                        end
-                    end
-                end
-            end
-        end
-        end)()
-        
-        function AttackFunction()
-            local ac = CombatFrameworkR.activeController
-            if ac and ac.equipped then
-                for indexincrement = 1, 1 do
-                    local bladehit = getAllBladeHits(60)
-                    if #bladehit > 0 then
-                        local AcAttack8 = debug.getupvalue(ac.attack, 5)
-                        local AcAttack9 = debug.getupvalue(ac.attack, 6)
-                        local AcAttack7 = debug.getupvalue(ac.attack, 4)
-                        local AcAttack10 = debug.getupvalue(ac.attack, 7)
-                        local NumberAc12 = (AcAttack8 * 798405 + AcAttack7 * 727595) % AcAttack9
-                        local NumberAc13 = AcAttack7 * 798405
-                        (function()
-                            NumberAc12 = (NumberAc12 * AcAttack9 + NumberAc13) % 1099511627776
-                            AcAttack8 = math.floor(NumberAc12 / AcAttack9)
-                            AcAttack7 = NumberAc12 - AcAttack8 * AcAttack9
-                        end)()
-                        AcAttack10 = AcAttack10 + 1
-                        debug.setupvalue(ac.attack, 5, AcAttack8)
-                        debug.setupvalue(ac.attack, 6, AcAttack9)
-                        debug.setupvalue(ac.attack, 4, AcAttack7)
-                        debug.setupvalue(ac.attack, 7, AcAttack10)
-                        for k, v in pairs(ac.animator.anims.basic) do
-                            v:Play(0.01,0.01,0.01)
-                        end                 
-                        if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
-                            game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
-                            game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(NumberAc12 / 1099511627776 * 16777215), AcAttack10)
-                            game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, 2, "") 
-                        end
-                    end
-                end
-            end
-        end
-        
-
-
-
-        local plr = game.Players.LocalPlayer
-        local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
-        local CbFw2 = CbFw[2]
-        
-        function GetCurrentBlade() 
-            local p13 = CbFw2.activeController
-            local ret = p13.blades[1]
-            if not ret then return end
-            while ret.Parent~=game.Players.LocalPlayer.Character do ret=ret.Parent end
-            return ret
-        end
-        
-        function AttackNoCD()
-            if not AutoFarmMasDevilFruit and not AutoFarmMasGun then
-                if not Auto_Raid then
-                    local AC = CbFw2.activeController
-                    for i = 1, 1 do 
-                        local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(
-                            plr.Character,
-                            {plr.Character.HumanoidRootPart},
-                            60
-                        )
-                        local cac = {}
-                        local hash = {}
-                        for k, v in pairs(bladehit) do
-                            if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
-                                table.insert(cac, v.Parent.HumanoidRootPart)
-                                hash[v.Parent] = true
-                            end
-                        end
-                        bladehit = cac
-                        if #bladehit > 0 then
-                            local u8 = debug.getupvalue(AC.attack, 5)
-                            local u9 = debug.getupvalue(AC.attack, 6)
-                            local u7 = debug.getupvalue(AC.attack, 4)
-                            local u10 = debug.getupvalue(AC.attack, 7)
-                            local u12 = (u8 * 798405 + u7 * 727595) % u9
-                            local u13 = u7 * 798405
-                            (function()
-                                u12 = (u12 * u9 + u13) % 1099511627776
-                                u8 = math.floor(u12 / u9)
-                                u7 = u12 - u8 * u9
-                            end)()
-                            u10 = u10 + 1
-                            debug.setupvalue(AC.attack, 5, u8)
-                            debug.setupvalue(AC.attack, 6, u9)
-                            debug.setupvalue(AC.attack, 4, u7)
-                            debug.setupvalue(AC.attack, 7, u10)
-                            pcall(function()
-                                if plr.Character:FindFirstChildOfClass("Tool") and AC.blades and AC.blades[1] then
-                                    AC.animator.anims.basic[1]:Play(0.01,0.01,0.01)
-                                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetCurrentBlade()))
-                                    game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(u12 / 1099511627776 * 16777215), u10)
-                                    game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "")
-                                end
-                            end)
-                        end
-                    end
-                end
-            end
-        end
-
+    end
+ 
 
 
 
