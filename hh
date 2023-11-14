@@ -1721,25 +1721,7 @@ if game.PlaceId == 2753915549 then
     end
 
 
-   --// Tween Island
-	function TP2(P1)
-    local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
-    if Distance >= 1 then
-    Speed = TweenSpeed
-    end
-    game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
-      CFrame = P1
-    }):Play()
-    if _G.CancelTween2 then
-    game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
-      CFrame = P1
-    }):Cancel()
-    end
-    _G.Clip2 = true
-    wait(Distance/Speed)
-    _G.Clip2 = false
-    end
-   
+
 
 
     function TPB(CFgo)
@@ -1779,7 +1761,7 @@ if game.PlaceId == 2753915549 then
         function TP2(P1)
         local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
         if Distance >= 1 then
-        Speed = TweenSpeed
+        Speed = 300
         end
         game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
           CFrame = P1
@@ -1801,7 +1783,7 @@ if game.PlaceId == 2753915549 then
         if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = true end
         pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/300, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
         tween:Play()
-        if Distance <= 300 then
+        if Distance <= 170 then
             tween:Cancel()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
         end
@@ -1812,21 +1794,17 @@ if game.PlaceId == 2753915549 then
     end
     
  
-
---// Select Weapon
+--select weapon
 function EquipTool(ToolSe)
 		if game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe) then
 			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild(ToolSe)
-			wait(.2)
+			wait(0.4)
 			game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
 		end
 	end
 
-
-
-
---// Aimbot Skill Mastery
-
+--Aimbot Skill Mastery
+--[[
 spawn(function()
   local gg = getrawmetatable(game)
   local old = gg.__namecall
@@ -1850,34 +1828,46 @@ spawn(function()
     end
     end
     end
---return args
     return old(...)
     end)
   end)
+]]
 
---// Aimbot Skill Player
-local gg = getrawmetatable(game)
-local old = gg.__namecall
-setreadonly(gg,false)
-gg.__namecall = newcclosure(function(...)
-  local method = getnamecallmethod()
-  local args = {
-    ...
-  }
-  if tostring(method) == "FireServer" then
-  if tostring(args[1]) == "RemoteEvent" then
-  if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
-  if AimbotSkill then
-  args[2] = _G.AimBotSkillPosition
-  return old(unpack(args))
-  end
-  end
-  end
-  end
-  return old(...)
-  end)
 
---// Equip Gun Mastery
+  spawn(function()
+    local gg = getrawmetatable(game)
+    local old = gg.__namecall
+    setreadonly(gg,false)
+    gg.__namecall = newcclosure(function(...)
+        local method = getnamecallmethod()
+        local args = {...}
+        if tostring(method) == "FireServer" then
+            if tostring(args[1]) == "RemoteEvent" then
+                if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
+                    if _G.UseSkill then
+                        args[2] = PositionSkillMasteryDevilFruit
+                        return old(unpack(args))
+                    elseif Skillaimbot then
+                        args[2] = AimBotSkillPosition
+                        return old(unpack(args))
+                    end
+                end
+            end
+        end
+        return old(...)
+    end)
+end)
+
+
+
+
+
+
+
+
+
+
+--Equip Gun
 spawn(function()
   pcall(function()
     while task.wait() do
@@ -1891,6 +1881,7 @@ spawn(function()
     end
     end)
   end)
+
 ----Normal Attack
   function NormalAttack()
 	if not _G.FastAttack then
@@ -1905,35 +1896,6 @@ spawn(function()
 		game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
 	end
 end
-
---// Infinite Energy
-function InfinityEnergy()
-game:GetService('Players').LocalPlayer.Character.Energy.Changed:connect(function()
-  if InfiniteAbility then
-  game:GetService('Players').LocalPlayer.Character.Energy.Value = game:GetService('Players').LocalPlayer.Character.Energy.MaxValue
-  end
-  end)
-end
-
---// Dodge No CD
-function NoCooldown()
-if DodgewithoutCool then
-for i,v in next, getgc() do
-if typeof(v) == "function" then
-if getfenv(v).script == game.Players.LocalPlayer.Character:WaitForChild("Dodge") then
-for i2,v2 in next, getupvalues(v) do
-if tostring(v2) == "0.4" then
-repeat wait(.1)
-setupvalue(v,i2,0)
-until not DodgewithoutCool
-end
-end
-end
-end
-end
-end
-end
-
 
 -- [Body Gyro]
 
@@ -1959,7 +1921,7 @@ end
 
 
 
---// Farming Clip Tween
+--//No CLip Auto Farm
 spawn(function()
   pcall(function()
     game:GetService("RunService").Stepped:Connect(function()
@@ -1976,7 +1938,7 @@ spawn(function()
 
 
 
---// Material Check Function
+--Check Material
 function CheckMaterial(matname)
 for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")) do
 if type(v) == "table" then
@@ -1990,7 +1952,7 @@ end
 return 0
 end
 
----
+-----Click
 
 function Click()
     game:GetService'VirtualUser':CaptureController()
@@ -1998,7 +1960,7 @@ function Click()
 end
 
 
---// Get Weapon Sword
+--Sword Weapon
 function GetWeaponInventory(Weaponname)
 for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")) do
 if type(v) == "table" then
@@ -2012,8 +1974,7 @@ end
 return false
 end
 
---// main farming
----
+---Method Farm
 PosY = 5
 Type = 1
 spawn(function()
@@ -2048,35 +2009,6 @@ spawn(function()
         wait(0.1)
     end
 end)
----
-spawn(function()
-  while wait(.8) do
-  if _G.GrabChested then
-  pcall(function()
-    local player = game.Players.LocalPlayer.Character
-    for i,v in pairs(game.Workspace:GetChildren()) do
-    if string.find(v.Name, 'Chest') then
-    player.HumanoidRootPart.CFrame = v.CFrame
-    wait(.15)
-    end
-    end
-    player.Head:Destroy()
-    for i,v in pairs(game.Workspace:GetDescendants()) do
-    if string.find(v.Name, 'Chest') and v:IsA("TouchTransmitter") then
-    firetouchinterest(player.HumanoidRootPart, v.Parent, 0) -- 0 is touch
-    wait()
-    firetouchinterest(player.HumanoidRootPart, v.Parent, 1) -- 1 is not touch
-    end
-    end
-    if not game.Workspace:FindFirstChild("Chest1") or not game.Workspace:FindFirstChild("Chest2") or not game.Workspace:FindFirstChild("Chest3") then
-    wait(10)
-    Hop()
-    end
-    end)
-  end
-  end
-  end)
-
 
   function AutoHaki()
     if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
@@ -2084,8 +2016,8 @@ spawn(function()
     end
 end
 
-
-
+---Bypass Teleport
+--made Fai Fao Hub
 function BTP(P)
 repeat wait(1)
     game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
@@ -2138,7 +2070,7 @@ end
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
-
+---Close gui
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
@@ -2218,12 +2150,13 @@ end
 coroutine.wrap(YTZCAJC_fake_script)()
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+-- Hehe
 local bringfrec = 270
 local posX = 5
-local posY = 45
+local posY = 30
 local posZ = 5
-local TweenSpeed = 340  
 --------------------------------------------------------------------------------------------------------------------------------------------
+--Create Tabs
     Tabs.Main:AddParagraph({
         Title = "Farming",
         Content = "Auto Farm"
