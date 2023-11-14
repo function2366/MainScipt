@@ -2030,7 +2030,8 @@ function BTP(P)
     until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2500
     end
     
-    function BTP(0.6)
+    function BTP(p)
+        wait(0.6)
         pcall(function()
             if (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2000 and not Auto_Raid and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
                 if NQuest == "FishmanQuest" then
@@ -2058,6 +2059,7 @@ function BTP(P)
                     wait()
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-6508.5581054688, 89.034996032715, -132.83953857422))
                 else
+            
                     Mix_Farm = true
                         repeat wait()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
