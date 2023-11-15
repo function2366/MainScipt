@@ -4154,6 +4154,32 @@ spawn(function()
     Options.ToggleBypassTP:SetValue(false)
 end
 
+
+
+
+local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Bring Mob", Default = true })
+ToggleRemove:OnChanged(function(Value)
+    KobenHeegeen = Value
+    end)
+    Options.ToggleRemove:SetValue(true)
+
+    spawn(function()
+        while wait() do
+            if KobenHeegeen then
+                game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = false
+            else
+                game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = true
+            end
+        end
+        end)
+
+
+
+
+
+
+
+
 Tabs.Setting:AddParagraph({
     Title = "Setting Skill",
     Content = "Skill use for farm mastery"
