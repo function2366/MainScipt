@@ -4071,7 +4071,7 @@ spawn(function()
     
     
     spawn(function()
-        while wait(0.009) do
+        while wait(0.175) do
             if FastAttack then
                 AttackFunction();
             end
