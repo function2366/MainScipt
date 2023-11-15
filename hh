@@ -3942,42 +3942,156 @@ end
 
 
 
-
-coroutine.wrap(function()
-    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
-        for v,v in pairs(getreg()) do
-            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
-                 for v,v in pairs(debug.getupvalues(v)) do
-                    if typeof(v) == "table" then
-                        spawn(function()
-                            game:GetService("RunService").RenderStepped:Connect(function()
-                                if FastAttack then
-                                     pcall(function()
-                                         v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
-                                         v.activeController.attacking = false
-                                         v.activeController.increment = 4
-                                         v.activeController.blocking = false   
-                                         v.activeController.hitboxMagnitude = 150
-                                         v.activeController.humanoid.AutoRotate = true
-                                           v.activeController.focusStart = 0
-                                           v.activeController.currentAttackTrack = 0
-                                         sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
-                                     end)
-                                 end
-                             end)
-                        end)
+spawn(function()
+    while wait() do
+        if FastAttack then
+    pcall(function()
+    if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
+    end
+    end)
+    end
+    end
+    end) 
+    
+    require(game.ReplicatedStorage.Util.CameraShaker):Stop()
+    
+    local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework"));
+    local CombatFrameworkR = getupvalues(CombatFramework)[2];
+    local RigController = require(game:GetService("Players")['LocalPlayer'].PlayerScripts.CombatFramework.RigController);
+    local RigControllerR = getupvalues(RigController)[2];
+    local realbhit = require(game.ReplicatedStorage.CombatFramework.RigLib);
+    local cooldownfastattack = tick();
+    function DisabledDamage()
+        task.spawn(function()
+            while wait() do
+                pcall(function()
+                    if _G.Settings.Configs["Disabled Damage"] then
+                        game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = false;
+                    else
+                        game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = true;
+                    end
+                end);
+            end
+        end);
+    end
+    function CameraShaker()
+        task.spawn(function()
+            local Camera = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker);
+            while wait() do
+                pcall(function()
+                    if _G.Settings.Configs["Camera Shaker"] then
+                        Camera.CameraShakeInstance.CameraShakeState.Inactive = 0;
+                    else
+                        Camera.CameraShakeInstance.CameraShakeState.Inactive = 3;
+                    end
+                end);
+            end
+        end);
+    end
+    function CurrentWeapon()
+        local ac = CombatFrameworkR.activeController;
+        local ret = ac.blades[1];
+        if not ret then
+            return game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name;
+        end
+        pcall(function()
+            while ret.Parent ~= game.Players.LocalPlayer.Character do
+                ret = ret.Parent;
+            end
+        end);
+        if not ret then
+            return game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name;
+        end
+        return ret;
+    end
+    function getAllBladeHitsPlayers(Sizes)
+        local Hits = {};
+        local Client = game.Players.LocalPlayer;
+        local Characters = game:GetService("Workspace").Characters:GetChildren();
+        for i = 1, #Characters do
+            local v = Characters[i];
+            local Human = v:FindFirstChildOfClass("Humanoid");
+            if ((v.Name ~= game.Players.LocalPlayer.Name) and Human and Human.RootPart and (Human.Health > 0) and (Client:DistanceFromCharacter(Human.RootPart.Position) < (Sizes + 5))) then
+                table.insert(Hits, Human.RootPart);
+            end
+        end
+        return Hits;
+    end
+    function getAllBladeHits(Sizes)
+        local Hits = {};
+        local Client = game.Players.LocalPlayer;
+        local Enemies = game:GetService("Workspace").Enemies:GetChildren();
+        for i = 1, #Enemies do
+            local v = Enemies[i];
+            local Human = v:FindFirstChildOfClass("Humanoid");
+            if (Human and Human.RootPart and (Human.Health > 0) and (Client:DistanceFromCharacter(Human.RootPart.Position) < (Sizes + 5))) then
+                table.insert(Hits, Human.RootPart);
+            end
+        end
+        return Hits;
+    end
+    
+    function AttackFunction()
+        local ac = CombatFrameworkR.activeController
+        if ac and ac.equipped then
+            for indexincrement = 1, 1 do
+                local bladehit = getAllBladeHits(60)
+                if #bladehit > 0 then
+                    local AcAttack8 = debug.getupvalue(ac.attack, 5)
+                    local AcAttack9 = debug.getupvalue(ac.attack, 6)
+                    local AcAttack7 = debug.getupvalue(ac.attack, 4)
+                    local AcAttack10 = debug.getupvalue(ac.attack, 7)
+                    local NumberAc12 = (AcAttack8 * 798405 + AcAttack7 * 727595) % AcAttack9
+                    local NumberAc13 = AcAttack7 * 798405
+                    (function()
+                        NumberAc12 = (NumberAc12 * AcAttack9 + NumberAc13) % 1099511627776
+                        AcAttack8 = math.floor(NumberAc12 / AcAttack9)
+                        AcAttack7 = NumberAc12 - AcAttack8 * AcAttack9
+                    end)()
+                    AcAttack10 = AcAttack10 + 1 
+                    debug.setupvalue(ac.attack, 5, AcAttack8)
+                    debug.setupvalue(ac.attack, 6, AcAttack9)
+                    debug.setupvalue(ac.attack, 4, AcAttack7)
+                    debug.setupvalue(ac.attack, 7, AcAttack10)
+                    for k, v in pairs(ac.animator.anims.basic) do
+                        v:Play()
+                    end                 
+                    if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
+                        game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
+                        game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(NumberAc12 / 1099511627776 * 16777215), AcAttack10)
+                        game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, indexincrement, "")
                     end
                 end
             end
         end
-    end)();
-    spawn(function()
-    game.RunService.RenderStepped:Connect(function()
-    if FastAttack then
-        Click()
     end
-    end)
-    end)
+    
+    
+    
+    
+    spawn(function()
+        while wait(0.009) do
+            if FastAttack then
+                AttackFunction();
+            end
+        end
+    end);
+    
+        local DamageModule = require(game:GetService("ReplicatedStorage").Effect.Container.Misc.Damage)
+        local old = DamageModule.Run
+        getgenv().FakeDamage = function(Damage)
+            DamageModule.Run = function(...)
+                args = {...}
+                if Damage then
+                    args[1]['Value'] = Damage
+                end
+                return old(unpack(args))
+            end
+        end
+        
+    
+  
 
 
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
