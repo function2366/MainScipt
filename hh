@@ -3691,8 +3691,9 @@ end
         FastAttack = vu
     end)
     Options.ToggleFastAttack:SetValue(true)
-    local plr = game.Players.LocalPlayer
 
+--[[
+    local plr = game.Players.LocalPlayer
     local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
     local CbFw2 = CbFw[2]
     
@@ -3935,6 +3936,48 @@ end
             end
         end
     end
+]]
+
+
+
+
+
+
+coroutine.wrap(function()
+    local StopCamera = require(game.ReplicatedStorage.Util.CameraShaker)StopCamera:Stop()
+        for v,v in pairs(getreg()) do
+            if typeof(v) == "function" and getfenv(v).script == game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework then
+                 for v,v in pairs(debug.getupvalues(v)) do
+                    if typeof(v) == "table" then
+                        spawn(function()
+                            game:GetService("RunService").RenderStepped:Connect(function()
+                                if FastAttack then
+                                     pcall(function()
+                                         v.activeController.timeToNextAttack = -(math.huge^math.huge^math.huge)
+                                         v.activeController.attacking = false
+                                         v.activeController.increment = 4
+                                         v.activeController.blocking = false   
+                                         v.activeController.hitboxMagnitude = 150
+                                         v.activeController.humanoid.AutoRotate = true
+                                           v.activeController.focusStart = 0
+                                           v.activeController.currentAttackTrack = 0
+                                         sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRaxNerous", math.huge)
+                                     end)
+                                 end
+                             end)
+                        end)
+                    end
+                end
+            end
+        end
+    end)();
+    spawn(function()
+    game.RunService.RenderStepped:Connect(function()
+    if FastAttack then
+        Click()
+    end
+    end)
+    end)
 
 
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
@@ -4202,7 +4245,3 @@ Tabs.Teleport:AddParagraph({
     Title = "World",
     Content = "Sea1 & Sea2 & Sea3"
 })
-
-
-
-
