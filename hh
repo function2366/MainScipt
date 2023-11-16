@@ -8,7 +8,7 @@ local Window = Fluent:CreateWindow({
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Darker",
+    Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 local Tabs = {
@@ -1781,9 +1781,7 @@ local posZ = 0
         KillPercent = Value
     end)
 
-    SliderHealt:SetValue(20)
-
-
+    SliderHealt:SetValue(40)
     
 	spawn(function()
         while task.wait(.1) do
