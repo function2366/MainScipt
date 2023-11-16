@@ -1193,20 +1193,7 @@ spawn(function()
     end)
   end)
 
-----Normal Attack
-  function NormalAttack()
-	if not _G.FastAttack then
-		local Module = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework)
-		local CombatFramework = debug.getupvalues(Module)[2]
-		local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
-		CamShake:Stop()
-		CombatFramework.activeController.attacking = false
-		CombatFramework.activeController.timeToNextAttack = 0
-		CombatFramework.activeController.hitboxMagnitude = 180
-		game:GetService'VirtualUser':CaptureController()
-		game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-	end
-end
+
 
 -- [Body Gyro]
 
@@ -1829,7 +1816,7 @@ local posZ = 5
             UseSkillGun = false
             AutoHaki()
           EquipTool(SelectWeapon)
-              NormalAttack()
+             Click()
           Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
           v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
           v.HumanoidRootPart.Transparency = 1
@@ -1838,15 +1825,16 @@ local posZ = 5
           v.HumanoidRootPart.CanCollide = false
       --v.Humanoid:ChangeState(11)
       --v.Humanoid:ChangeState(14)
+         Click()
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-          FastAttack = false
+         
           end
           until not AutoFarmMasGun or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or not TypeMastery == 'Queat'
           UseSkillGun = false
           end
           end
-          FastAttack = true
+         
           end
           UseSkillGun = false
           Tween(CFrameQ)
@@ -1922,15 +1910,16 @@ local posZ = 5
           v.HumanoidRootPart.CanCollide = false
       --v.Humanoid:ChangeState(11)
       --v.Humanoid:ChangeState(14)
+      Click()
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-           NormalAttack()
-          FastAttack = false
+          Click()
+         
           end
           until not AutoFarmMasGun or not MasteryType == 'Near Mobs' or not v.Parent or v.Humanoid.Health <= 0 or not TypeMastery == 'Near Mobs'
           UseSkillGun = false
           end
-          FastAttack = true
+         
           end
           end
           end)
@@ -2138,7 +2127,7 @@ pcall(function()
     _G.UseSkill = false
 AutoHaki()
   EquipTool(SelectWeapon)
-      NormalAttack()
+     Click()
   Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
   v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
   v.HumanoidRootPart.Transparency = 1
@@ -2147,14 +2136,15 @@ AutoHaki()
   v.HumanoidRootPart.CanCollide = false
 --v.Humanoid:ChangeState(11)
 --v.Humanoid:ChangeState(14)
+  Click()
   FarmPos = v.HumanoidRootPart.CFrame
   MonFarm = v.Name
-  NormalAttack()
-  FastAttack = false
+
+ 
   end
   until not AutoFarmMasDevilFruit or not v.Parent or v.Humanoid.Health == 0 or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or not TypeMastery == 'Level'
   _G.UseSkill = false
-  FastAttack = true
+ 
   end
   end
   end
@@ -2228,13 +2218,13 @@ pcall(function()
 --v.Humanoid:ChangeState(14)
   FarmPos = v.HumanoidRootPart.CFrame
   MonFarm = v.Name
-   NormalAttack()
-  FastAttack = false
+  Click()
+ 
   end
   until not AutoFarmMasDevilFruit or not MasteryType == 'Nearest' or not v.Parent or v.Humanoid.Health == 0 or not TypeMastery == 'Nearest'
   _G.UseSkill = false
   end
-  FastAttack = true
+ 
   end
   end
   end)
