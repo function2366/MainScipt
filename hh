@@ -4675,6 +4675,7 @@ ToggleCollect:OnChanged(function(Value)
     _G.Tweenfruit = Value
 end)
 Options.ToggleCollect:SetValue(false)
+
 spawn(function()
     while wait(.1) do
         if _G.Tweenfruit then
@@ -4726,7 +4727,7 @@ end)
 Options.ToggleEspIsland:SetValue(false)
 
 
-local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "Esp Island", Default = false })
+local ToggleEspFlower = Tabs.Fruit:AddToggle("ToggleEspFlower", {Title = "Esp Flower", Default = false })
 
 ToggleEspFlower:OnChanged(function(Value)
     FlowerESP = Value
