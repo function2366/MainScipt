@@ -1550,8 +1550,6 @@ local posZ = 0
           v.Humanoid.JumpPower = 0
           v.Humanoid.WalkSpeed = 0
           v.HumanoidRootPart.CanCollide = false
-      --v.Humanoid:ChangeState(11)
-      --v.Humanoid:ChangeState(14)
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
           Click()
@@ -1574,7 +1572,7 @@ local posZ = 0
         end
         end)
 
-    
+
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
         game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
     end
