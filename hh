@@ -3467,7 +3467,7 @@ end)
 
 
 
-local ToggleIsland = Tabs.Main:AddToggle("ToggleIsland", {Title = "Teleport To Island", Default = false })
+local ToggleIsland = Tabs.Teleport:AddToggle("ToggleIsland", {Title = "Teleport To Island", Default = false })
 ToggleIsland:OnChanged(function(Value)
     _G.TeleportIsland = Value
     if _G.TeleportIsland == true then
@@ -3572,4 +3572,6 @@ ToggleIsland:OnChanged(function(Value)
 end)
 Options.ToggleIsland:SetValue(false)
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+--Fruit
 
