@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Fai Fao Hub",
-    SubTitle = "by DauCoGhe  [  T.r..P.h..N.g  ]",
+    SubTitle = "by DauCoGhe  [  T.P.N-.-9.A.9  ]",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
