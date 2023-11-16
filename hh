@@ -4,7 +4,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Fai Fao Hub",
-    SubTitle = "by DauCoGhe  [  T`P.NG..  ]",
+    SubTitle = "by DauCoGhe  [  T.r..P.h..N.g  ]",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -3692,7 +3692,7 @@ end
     end)
     Options.ToggleFastAttack:SetValue(true)
 
---[[
+--1
     local plr = game.Players.LocalPlayer
     local CbFw = debug.getupvalues(require(plr.PlayerScripts.CombatFramework))
     local CbFw2 = CbFw[2]
@@ -3936,162 +3936,134 @@ end
             end
         end
     end
-]]
 
 
+--2
 
+_G.FastAttackDelay = 0.15
 
-
+local CameraShaker = require(game.ReplicatedStorage.Util.CameraShaker)
+CombatFrameworkR = require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework)
+y = debug.getupvalues(CombatFrameworkR)[2]
 spawn(function()
-    while wait() do
-        if FastAttack then
-    pcall(function()
-    if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-    end
-    end)
-    end
-    end
-    end) 
-    
-    require(game.ReplicatedStorage.Util.CameraShaker):Stop()
-    
-    local CombatFramework = require(game:GetService("Players").LocalPlayer.PlayerScripts:WaitForChild("CombatFramework"));
-    local CombatFrameworkR = getupvalues(CombatFramework)[2];
-    local RigController = require(game:GetService("Players")['LocalPlayer'].PlayerScripts.CombatFramework.RigController);
-    local RigControllerR = getupvalues(RigController)[2];
-    local realbhit = require(game.ReplicatedStorage.CombatFramework.RigLib);
-    local cooldownfastattack = tick();
-    function DisabledDamage()
-        task.spawn(function()
-            while wait() do
-                pcall(function()
-                    if _G.Settings.Configs["Disabled Damage"] then
-                        game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = false;
-                    else
-                        game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = true;
-                    end
-                end);
-            end
-        end);
-    end
-    function CameraShaker()
-        task.spawn(function()
-            local Camera = require(game.Players.LocalPlayer.PlayerScripts.CombatFramework.CameraShaker);
-            while wait() do
-                pcall(function()
-                    if _G.Settings.Configs["Camera Shaker"] then
-                        Camera.CameraShakeInstance.CameraShakeState.Inactive = 0;
-                    else
-                        Camera.CameraShakeInstance.CameraShakeState.Inactive = 3;
-                    end
-                end);
-            end
-        end);
-    end
-    function CurrentWeapon()
-        local ac = CombatFrameworkR.activeController;
-        local ret = ac.blades[1];
-        if not ret then
-            return game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name;
+game:GetService("RunService").RenderStepped:Connect(function()
+    if FastAttack then
+        if typeof(y) == "table" then
+            pcall(function()
+                CameraShaker:Stop()
+                y.activeController.timeToNextAttack = (math.huge^math.huge^math.huge)
+                y.activeController.timeToNextAttack = 0
+                y.activeController.hitboxMagnitude = 60
+                y.activeController.active = false
+                y.activeController.timeToNextBlock = 0
+                y.activeController.focusStart = 1655503339.0980349
+                y.activeController.increment = 1
+                y.activeController.blocking = false
+                y.activeController.attacking = false
+                y.activeController.humanoid.AutoRotate = true
+            end)
         end
+    end
+end)
+end)
+spawn(function()
+game:GetService("RunService").RenderStepped:Connect(function()
+    if FastAttack == true then
+        game.Players.LocalPlayer.Character.Stun.Value = 0
+        game.Players.LocalPlayer.Character.Busy.Value = false        
+    end
+end)
+end)
+
+
+
+local Client = game.Players.LocalPlayer
+local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
+local STOPRL = require(game:GetService("ReplicatedStorage").CombatFramework.RigLib)
+spawn(function()
+    while task.wait() do
         pcall(function()
-            while ret.Parent ~= game.Players.LocalPlayer.Character do
-                ret = ret.Parent;
-            end
-        end);
-        if not ret then
-            return game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Name;
-        end
-        return ret;
-    end
-    function getAllBladeHitsPlayers(Sizes)
-        local Hits = {};
-        local Client = game.Players.LocalPlayer;
-        local Characters = game:GetService("Workspace").Characters:GetChildren();
-        for i = 1, #Characters do
-            local v = Characters[i];
-            local Human = v:FindFirstChildOfClass("Humanoid");
-            if ((v.Name ~= game.Players.LocalPlayer.Name) and Human and Human.RootPart and (Human.Health > 0) and (Client:DistanceFromCharacter(Human.RootPart.Position) < (Sizes + 5))) then
-                table.insert(Hits, Human.RootPart);
-            end
-        end
-        return Hits;
-    end
-    function getAllBladeHits(Sizes)
-        local Hits = {};
-        local Client = game.Players.LocalPlayer;
-        local Enemies = game:GetService("Workspace").Enemies:GetChildren();
-        for i = 1, #Enemies do
-            local v = Enemies[i];
-            local Human = v:FindFirstChildOfClass("Humanoid");
-            if (Human and Human.RootPart and (Human.Health > 0) and (Client:DistanceFromCharacter(Human.RootPart.Position) < (Sizes + 5))) then
-                table.insert(Hits, Human.RootPart);
-            end
-        end
-        return Hits;
-    end
-    
-    function AttackFunction()
-        local ac = CombatFrameworkR.activeController
-        if ac and ac.equipped then
-            for indexincrement = 1, 1 do
-                local bladehit = getAllBladeHits(60)
-                if #bladehit > 0 then
-                    local AcAttack8 = debug.getupvalue(ac.attack, 5)
-                    local AcAttack9 = debug.getupvalue(ac.attack, 6)
-                    local AcAttack7 = debug.getupvalue(ac.attack, 4)
-                    local AcAttack10 = debug.getupvalue(ac.attack, 7)
-                    local NumberAc12 = (AcAttack8 * 798405 + AcAttack7 * 727595) % AcAttack9
-                    local NumberAc13 = AcAttack7 * 798405
-                    (function()
-                        NumberAc12 = (NumberAc12 * AcAttack9 + NumberAc13) % 1099511627776
-                        AcAttack8 = math.floor(NumberAc12 / AcAttack9)
-                        AcAttack7 = NumberAc12 - AcAttack8 * AcAttack9
-                    end)()
-                    AcAttack10 = AcAttack10 + 1 
-                    debug.setupvalue(ac.attack, 5, AcAttack8)
-                    debug.setupvalue(ac.attack, 6, AcAttack9)
-                    debug.setupvalue(ac.attack, 4, AcAttack7)
-                    debug.setupvalue(ac.attack, 7, AcAttack10)
-                    for k, v in pairs(ac.animator.anims.basic) do
-                        v:Play()
-                    end                 
-                    if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") and ac.blades and ac.blades[1] then 
-                        game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(CurrentWeapon()))
-                        game.ReplicatedStorage.Remotes.Validator:FireServer(math.floor(NumberAc12 / 1099511627776 * 16777215), AcAttack10)
-                        game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, indexincrement, "")
+            if not shared.orl then shared.orl = STOPRL.wrapAttackAnimationAsync end
+            if not shared.cpc then shared.cpc = STOP.play end
+                STOPRL.wrapAttackAnimationAsync = function(a,b,c,d,func)
+                local Hits = STOPRL.getBladeHits(b,c,d)
+                if Hits then
+                    if _G.FastAttack then
+                        STOP.play = function() end
+                        a:Play(0.01,0.01,0.01)
+                        func(Hits)
+                        STOP.play = shared.cpc
+                        wait(a.length * 0.5)
+                        a:Stop()
+                    else
+                        a:Play()
                     end
                 end
             end
+        end)
+    end
+end)
+
+function GetBladeHit()
+local CombatFrameworkLib = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))
+local CmrFwLib = CombatFrameworkLib[2]
+local p13 = CmrFwLib.activeController
+local weapon = p13.blades[1]
+if not weapon then 
+    return weapon
+end
+while weapon.Parent ~= game.Players.LocalPlayer.Character do
+    weapon = weapon.Parent 
+end
+return weapon
+end
+function AttackHit()
+local CombatFrameworkLib = debug.getupvalues(require(game:GetService("Players").LocalPlayer.PlayerScripts.CombatFramework))
+local CmrFwLib = CombatFrameworkLib[2]
+local plr = game.Players.LocalPlayer
+for i = 1, 1 do
+    local bladehit = require(game.ReplicatedStorage.CombatFramework.RigLib).getBladeHits(plr.Character,{plr.Character.HumanoidRootPart},60)
+    local cac = {}
+    local hash = {}
+    for k, v in pairs(bladehit) do
+        if v.Parent:FindFirstChild("HumanoidRootPart") and not hash[v.Parent] then
+            table.insert(cac, v.Parent.HumanoidRootPart)
+            hash[v.Parent] = true
         end
     end
-    
-    
-    
-    
-    spawn(function()
-        while wait(0.01) do
-            if FastAttack then
-                AttackFunction();
-            end
-        end
-    end);
-    
-        local DamageModule = require(game:GetService("ReplicatedStorage").Effect.Container.Misc.Damage)
-        local old = DamageModule.Run
-        getgenv().FakeDamage = function(Damage)
-            DamageModule.Run = function(...)
-                args = {...}
-                if Damage then
-                    args[1]['Value'] = Damage
-                end
-                return old(unpack(args))
-            end
-        end
-        
-    
-  
+    bladehit = cac
+    if #bladehit > 0 then
+        pcall(function()
+            CmrFwLib.activeController.timeToNextAttack = 1
+            CmrFwLib.activeController.attacking = false
+            CmrFwLib.activeController.blocking = false
+            CmrFwLib.activeController.timeToNextBlock = 0
+            CmrFwLib.activeController.increment = 3
+            CmrFwLib.activeController.hitboxMagnitude = 60
+            CmrFwLib.activeController.focusStart = 0
+            game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("weaponChange",tostring(GetBladeHit()))
+            game:GetService("ReplicatedStorage").RigControllerEvent:FireServer("hit", bladehit, i, "")
+        end)
+    end
+end
+end
+spawn(function()
+while wait(0.01) do
+    if FastAttack then
+        pcall(function()
+            repeat task.wait(_G.FaiFaoDelay)
+                AttackHit()
+            until not FastAttack
+        end)
+    end
+end
+end)
+
+local CamShake = require(game.ReplicatedStorage.Util.CameraShaker)
+CamShake:Stop()
+
+
+
 
 
     local ToggleBringMob = Tabs.Setting:AddToggle("ToggleBringMob", {Title = "Bring Mob", Default = true })
@@ -4159,13 +4131,13 @@ end
 
 local ToggleRemove = Tabs.Setting:AddToggle("ToggleRemove", {Title = "Remove Dame Text", Default = true })
 ToggleRemove:OnChanged(function(Value)
-    KobenHeegeen = Value
+    FaiFaoRemovetext = Value
     end)
     Options.ToggleRemove:SetValue(true)
 
     spawn(function()
         while wait() do
-            if KobenHeegeen then
+            if FaiFaoRemovetext then
                 game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = false
             else
                 game:GetService("ReplicatedStorage").Assets.GUI.DamageCounter.Enabled = true
@@ -4177,46 +4149,43 @@ ToggleRemove:OnChanged(function(Value)
 
 
 
-
-
-
 Tabs.Setting:AddParagraph({
     Title = "Setting Skill",
     Content = "Skill use for farm mastery"
 })
 
-local ToggleZ = Tabs.Setting:AddToggle("ToggleZ", {Title = "Skill Z", Default = false })
+local ToggleZ = Tabs.Setting:AddToggle("ToggleZ", {Title = "Skill Z", Default = true })
 ToggleZ:OnChanged(function(Value)
     SkillZ = Value
 end)
-Options.ToggleZ:SetValue(false)
+Options.ToggleZ:SetValue(true)
 
-local ToggleX = Tabs.Setting:AddToggle("ToggleX", {Title = "Skill X", Default = false })
+local ToggleX = Tabs.Setting:AddToggle("ToggleX", {Title = "Skill X", Default = true })
 ToggleX:OnChanged(function(Value)
     SkillX = Value
 end)
-Options.ToggleX:SetValue(false)
+Options.ToggleX:SetValue(true)
 
 
-local ToggleC = Tabs.Setting:AddToggle("ToggleC", {Title = "Skill C", Default = false })
+local ToggleC = Tabs.Setting:AddToggle("ToggleC", {Title = "Skill C", Default = true })
 ToggleC:OnChanged(function(Value)
     SkillC = Value
 end)
-Options.ToggleC:SetValue(false)
+Options.ToggleC:SetValue(true)
 
 
-local ToggleV = Tabs.Setting:AddToggle("ToggleV", {Title = "Skill V", Default = false })
+local ToggleV = Tabs.Setting:AddToggle("ToggleV", {Title = "Skill V", Default = true })
 ToggleV:OnChanged(function(Value)
     SkillV = Value
 end)
-Options.ToggleV:SetValue(false)
+Options.ToggleV:SetValue(true)
 
 
-local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Skill F", Default = false })
+local ToggleF = Tabs.Setting:AddToggle("ToggleF", {Title = "Skill F", Default = true })
 ToggleF:OnChanged(function(Value)
    SkillF = Value
     end)
-Options.ToggleF:SetValue(false)
+Options.ToggleF:SetValue(true)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Stats
