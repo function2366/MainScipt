@@ -1531,7 +1531,7 @@ local posZ = 5
       --v.Humanoid:ChangeState(14)
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-
+          Click()
           until not AutoFarmQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
           end
                
@@ -1597,7 +1597,7 @@ local posZ = 5
           v.HumanoidRootPart.CanCollide = false
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-          
+          Click()
           until not AutoFarmNearestMob or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
           end
           end
@@ -1824,7 +1824,7 @@ local posZ = 5
           FastAttack = true
           end
           UseSkillGun = false
-          Tween(CFrameMon)
+          Tween(CFrameQ)
           end
           end)
         elseif AutoFarmMasGun and TypeMastery == 'No Quest' then
@@ -2147,7 +2147,7 @@ AutoHaki()
   end
   end
   _G.UseSkill = false
-  Tween(CFrameMon)
+  Tween(Q)
   end
   end)
 elseif AutoFarmMasDevilFruit and TypeMastery == 'No Quest' then
@@ -2183,9 +2183,7 @@ pcall(function()
 --v.Humanoid:ChangeState(14)
   FarmPos = v.HumanoidRootPart.CFrame
   MonFarm = v.Name
-  
   end
-
   until not AutoFarmMasDevilFruit or not v.Parent or v.Humanoid.Health == 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or not TypeMastery == 'No Quest'
   _G.UseSkill = false
   end
@@ -2340,7 +2338,7 @@ spawn(function()
                                             v.HumanoidRootPart.CanCollide = false
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
-                                            FastAttack()
+                                            Click()
                                         until not AutoFarmBone or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                     else
                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
@@ -2389,7 +2387,7 @@ spawn(function()
     MonFarm = v.Name
     until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
     end
-    
+    Click()
     BringMobs = true
     end
     else
@@ -2412,7 +2410,7 @@ spawn(function()
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.CanCollide = false
-    
+    Click()
   --v.Humanoid:ChangeState(11)
   --v.Humanoid:ChangeState(14)
     FarmPos = v.HumanoidRootPart.CFrame
@@ -2514,6 +2512,7 @@ end
           until not AutoFarmMaterial or not v.Parent or v.Humanoid.Health <= 0
           end
           end
+          Click()
           end
           else
             for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
@@ -2637,6 +2636,7 @@ end
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        Click()
                                         Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                     until not  _G.AutoTerrorshark or not v.Parent or v.Humanoid.Health <= 0
                                 end
@@ -2677,7 +2677,7 @@ end
                                         v.HumanoidRootPart.CanCollide = false
                                         v.Humanoid.WalkSpeed = 0
                                         v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        
+                                        Click()
                                         Tween(v.HumanoidRootPart.CFrame * CFrame.new(posX,posY,posZ))
                                     until not  _G.farmpiranya or not v.Parent or v.Humanoid.Health <= 0
                                 end
@@ -2729,7 +2729,7 @@ end
                                                    v.HumanoidRootPart.CanCollide = false
                                                    --v.Humanoid:ChangeState(14)
                                                    --v.Humanoid:ChangeState(11)
-                                                   
+                                                   Click()
                                                    FarmPos = v.HumanoidRootPart.CFrame
                                                    MonFarm = v.Name
                                                    v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
@@ -2798,7 +2798,7 @@ end
                                     v.HumanoidRootPart.Transparency = 1
                                     
                                     sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-									
+									Click()
 									   
                                 until v.Humanoid.Health <= 0 or AutoHallowSycthe == false
                             end
@@ -2876,7 +2876,7 @@ end
                                             v.Humanoid.WalkSpeed = 0
                                             v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                             Tween(v.HumanoidRootPart.CFrame * Pos)
-                                            
+                                            Click()
                                             sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
                                         until not  _G.Autotushita or not v.Parent or v.Humanoid.Health <= 0
                                     end
@@ -2954,7 +2954,7 @@ end
         Content = "Setting Farm"
     })
 
-    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Auto Click [ Fast Attack ]", Default = true })
+    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
         FastAttack = vu
     end)
@@ -3075,7 +3075,6 @@ while wait(0.01) do
         pcall(function()
             repeat task.wait(_G.FaiFaoDelay)
                 AttackHit()
-                Click()
             until not FastAttack
         end)
     end
