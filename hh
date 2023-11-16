@@ -2954,16 +2954,13 @@ end
         Content = "Setting Farm"
     })
 
-    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Fast Attack", Default = true })
+    local ToggleFastAttack = Tabs.Setting:AddToggle("ToggleFastAttack", {Title = "Auto Click [ Fast Attack ]", Default = true })
     ToggleFastAttack:OnChanged(function(vu)
         FastAttack = vu
     end)
     Options.ToggleFastAttack:SetValue(true)
 
---1
-  
 
---2
 
 _G.FaiFaoDelay = 0.15
 
