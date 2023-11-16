@@ -3319,6 +3319,19 @@ end)
 
     
 
+
+Tabs.Main:AddButton({
+    Title = "Refresh Dropdown",
+    Description = "Refresh player list",
+    Callback = function()
+        Playerslist = {}
+        SelectedPly:Clear()
+        for i,v in pairs(game:GetService("Players"):GetChildren()) do  
+            SelectedPly:Add(v.Name)
+        end
+    end          
+})
+
 local ToggleTeleport = Tabs.Player:AddToggle("ToggleTeleport", {Title = "Teleport To Player", Default = false })
 ToggleTeleport:OnChanged(function(Value)
     _G.TeleportPly = Value
