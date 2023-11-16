@@ -3543,7 +3543,7 @@ ToggleIsland:OnChanged(function(Value)
             elseif _G.SelectIsland == "Great Tree" then
                 Tween(CFrame.new(2681.2736816406, 1682.8092041016, -7190.9853515625))
             elseif _G.SelectIsland == "Castle On The Sea" then
-                Tween(CFrame.new(-5074.45556640625, 314.5155334472656, -2991.054443359375))
+                BTPZ(CFrame.new(-5075.50927734375, 314.5155029296875, -3150.0224609375))
             elseif _G.SelectIsland == "MiniSky" then
                 Tween(CFrame.new(-260.65557861328, 49325.8046875, -35253.5703125))
             elseif _G.SelectIsland == "Port Town" then
@@ -3571,6 +3571,12 @@ ToggleIsland:OnChanged(function(Value)
     end
 end)
 Options.ToggleIsland:SetValue(false)
+
+function BTPZ(Point)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Point
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Point
+        end
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Fruit
