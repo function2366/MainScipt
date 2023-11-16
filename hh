@@ -1105,6 +1105,42 @@ end
         end
     end
     
+
+--buy boat
+    function TPB(CFgo)
+        local tween_s = game:service"TweenService"
+        local info = TweenInfo.new((game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame.Position - CFgo.Position).Magnitude/300, Enum.EasingStyle.Linear)
+        tween = tween_s:Create(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat, info, {CFrame = CFgo})
+        tween:Play()
+    
+        local tweenfunc = {}
+    
+        function tweenfunc:Stop()
+            tween:Cancel()
+        end
+    
+        return tweenfunc
+    end
+    
+    function TPP(CFgo)
+        if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Health <= 0 or not game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") then tween:Cancel() repeat wait() until game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid") and game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health > 0 wait(7) return end
+        local tween_s = game:service"TweenService"
+        local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - CFgo.Position).Magnitude/325, Enum.EasingStyle.Linear)
+        tween = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = CFgo})
+        tween:Play()
+    
+        local tweenfunc = {}
+    
+        function tweenfunc:Stop()
+            tween:Cancel()
+        end
+    
+        return tweenfunc
+    end
+
+
+
+
  
 --select weapon
 function EquipTool(ToolSe)
@@ -1509,6 +1545,7 @@ local posZ = 5
           Tween(CFrameQ)
           end
     else
+        wait(0.7)
             Tween(CFrameQ)
             end
           
@@ -1551,20 +1588,7 @@ local posZ = 5
         end
         end
         end)
-    
-    -- remove lag
-    
-    task.spawn(function()
-        while wait() do
-            for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"]:GetChildren()) do
-                pcall(function()
-                    if v.Name == ("CurvedRing") or v.Name == ("SlashHit") or v.Name == ("SwordSlash") or v.Name == ("SlashTail") or v.Name == ("Sounds") then
-                        v:Destroy()
-                    end
-                end)
-            end
-        end
-    end)
+
     
     if game:GetService("ReplicatedStorage").Effect.Container:FindFirstChild("Death") then
         game:GetService("ReplicatedStorage").Effect.Container.Death:Destroy()
@@ -2304,6 +2328,7 @@ spawn(function()
                        Tween(FaiFaoQuestBone)
                        end
                  else
+                    wait(0.7)
                          Tween(FaiFaoQuestBone)
                          end
                 if (FaiFaoQuestBone.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then    
@@ -2535,7 +2560,7 @@ end
                 if _G.DriveMytic then
                     if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
-                            buyb = Tween(CFrame.new(-16204.966796875, 13.275421142578125, 472.41162109375))
+                            buyb = TPP(CFrame.new(-16204.966796875, 13.275421142578125, 472.41162109375))
                             wait(2)
                                 local args = {
                                     [1] = "BuyBoat",
@@ -2548,17 +2573,17 @@ end
                             end
                         elseif game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                             if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
-                                Tween(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                TPP(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
                             else
                                 for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
                                     if v.Name == "PirateGrandBrigade" then
                                         repeat wait()
                                             if (CFrame.new(-324.30484, 15.5859451, 5218.35742, 0.965929627, 0, -0.258804798, 0, 1, 0, 0.258804798, 0, 0.965929627).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
-                                                Tween(CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375))
+                                                TPB(CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375))
                                             elseif (CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
-                                                Tween(CFrame.new(29236.712890625, 17.74854850769043, 19706.36328125))
+                                                TPB(CFrame.new(29236.712890625, 17.74854850769043, 19706.36328125))
                                             elseif (CFrame.new(29236.712890625, 17.74854850769043, 19706.36328125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
-                                                Tween(CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375))
+                                                TPB(CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375))
                                             end 
                                         until game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or _G.DriveMytic == false
                                     end
@@ -2566,9 +2591,9 @@ end
                             end
                         end
                     elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
-                        Tween(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
+                        TPB(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
                         game:GetService("Workspace").Boats.PirateGrandBrigade:Destroy()
-                        Tween(game:GetService("Workspace").Map.MysticIsland.Center.CFrame * CFrame.new(0,300,0))
+                        TPP(game:GetService("Workspace").Map.MysticIsland.Center.CFrame * CFrame.new(0,300,0))
                         repeat wait(1)
                             game.StarterGui:SetCore("SendNotification", {
                                 Title = "Notify"; -- the title (ofc)
@@ -2579,7 +2604,7 @@ end
                         until not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or _G.DriveMytic == false
                     end
                 else
-                    Tween(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
+                    TPB(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
                 end
             end)
         end
