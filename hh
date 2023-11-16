@@ -3798,11 +3798,6 @@ DropdownRaid:OnChanged(function(Value)
     SelectChip = Value
 end)
 
-
-
-
-
-
 local ToggleBuy = Tabs.Raid:AddToggle("ToggleBuy", {Title = "Buy Chip", Default = false })
 ToggleBuy:OnChanged(function(Value)
     _G.Auto_Buy_Chips_Dungeon = Value
@@ -3825,7 +3820,7 @@ end)
 
 
     local ToggleStart = Tabs.Raid:AddToggle("ToggleStart", {Title = "Start Raid", Default = false })
-ToggleBuy:OnChanged(function(Value)
+    ToggleStart:OnChanged(function(Value)
     _G.Auto_StartRaid = Value
 end)
 Options.ToggleStart:SetValue(false)
