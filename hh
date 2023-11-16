@@ -3301,7 +3301,7 @@ for i,v in pairs(game:GetService("Players"):GetChildren()) do
 end
 
 local SelectedPly = Tabs.Player:AddDropdown("SelectedPly", {
-    Title = "Select Player",
+    Title = "Dropdown",
     Values = Playerslist,
     Multi = false,
     Default = 1,
@@ -3630,6 +3630,7 @@ ToggleStore:OnChanged(function(Value)
     _G.AutoStoreFruit = Value
 end)
 Options.ToggleStore:SetValue(false)
+
 spawn(function()
     while task.wait() do
         if _G.AutoStoreFruit then
@@ -3764,6 +3765,191 @@ end)
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Raid
 
+_G.SelectChip = selectraids or ""
+Raidslist = {}
+RaidsModule = require(game.ReplicatedStorage.Raids)
+for i,v in pairs(RaidsModule.raids) do
+    table.insert(Raidslist,v)
+end
+for i,v in pairs(RaidsModule.advancedRaids) do
+    table.insert(Raidslist,v)
+end
 
 
 
+local DropdownRaid = Tabs.Raid:AddDropdown("DropdownRaid", {
+    Title = "Dropdown",
+    Values = Raidslist,
+    Multi = false,
+    Default = 1,
+})
+DropdownRaid:SetValue("...")
+DropdownRaid:OnChanged(function(Value)
+    _G.SelectChip = Value
+end)
+
+local ToggleSelectChip = Tabs.Raid:AddToggle("ToggleSelectChip", {Title = "Select Chip", Default = false })
+
+ToggleSelectChip:OnChanged(function(Value)
+    _G.AutoSelectDungeon = Value
+end)
+Options.ToggleSelectChip:SetValue(false)
+
+spawn(function()
+    while wait() do
+        if _G.AutoSelectDungeon then
+            pcall(function()
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Flame-Flame") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Flame-Flame") then
+                    _G.SelectChip = "Flame"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Ice-Ice") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Ice-Ice") then
+                    _G.SelectChip = "Ice"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Quake-Quake") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Quake-Quake") then
+                    _G.SelectChip = "Quake"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Light-Light") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Light-Light") then
+                    _G.SelectChip = "Light"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dark-Dark") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dark-Dark") then
+                    _G.SelectChip = "Dark"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("String-String") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("String-String") then
+                    _G.SelectChip = "String"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Rumble-Rumble") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Rumble-Rumble") then
+                    _G.SelectChip = "Rumble"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Magma-Magma") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Magma-Magma") then
+                    _G.SelectChip = "Magma"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Human-Human: Buddha Fruit") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Human-Human: Buddha Fruit") then
+                    _G.SelectChip = "Human: Buddha"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Sand-Sand") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Sand-Sand") then
+                    _G.SelectChip = "Sand"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Bird-Bird: Phoenix") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Bird-Bird: Phoenix") then
+                    _G.SelectChip = "Bird: Phoenix"
+                elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("Dough") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Dough") then
+                    _G.SelectChip = "Dough"
+                else
+                    _G.SelectChip = "Flame"
+                end
+            end)
+        end
+    end
+end)
+
+
+local ToggleBuyChip = Tabs.Raid:AddToggle("ToggleBuyChip", {Title = "Buy Chip", Default = false })
+
+ToggleBuyChip:OnChanged(function(Value)
+    _G.AutoBuyChip = Value
+end)
+Options.ToggleBuyChip:SetValue(false)
+spawn(function()
+    pcall(function()
+        while wait() do
+            if _G.AutoBuyChip then
+                if not game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") or not game:GetService("Players").LocalPlayer.Character:FindFirstChild("Special Microchip") then
+                    if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("RaidsNpc", "Select", _G.SelectChip)
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+
+
+local ToggleJoinRaid = Tabs.Raid:AddToggle("ToggleJoinRaid", {Title = "Start Raid", Default = false })
+ToggleJoinRaid:OnChanged(function(Value)
+    _G.Auto_StartRaid = Value
+end)
+Options.ToggleJoinRaid:SetValue(false)
+spawn(function()
+    while wait(.1) do
+        pcall(function()
+            if _G.Auto_StartRaid then
+                if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == false then
+                    if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Special Microchip") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Special Microchip") then
+                        if World2 then
+                            fireclickdetector(game:GetService("Workspace").Map.CircleIsland.RaidSummon2.Button.Main.ClickDetector)
+                        elseif World3 then
+                            fireclickdetector(game:GetService("Workspace").Map["Boat Castle"].RaidSummon2.Button.Main.ClickDetector)
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
+
+
+local ToggleKillAura = Tabs.Raid:AddToggle("ToggleKillAura", {Title = "Kill Aura", Default = false })
+ToggleKillAura:OnChanged(function(Value)
+    _G.Kill_Aura  = Value
+end)
+Options.ToggleKillAura:SetValue(false)
+
+spawn(function()
+    pcall(function() 
+        while wait() do
+            if _G.Kill_Aura then
+                if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetDescendants()) do
+                        if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                            pcall(function()
+                                repeat wait()
+                                    sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
+                                    v.Humanoid.Health = 0
+                                    v.HumanoidRootPart.CanCollide = false
+                                until not _G.Kill_Aura or not v.Parent or v.Humanoid.Health <= 0
+                            end)
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end)
+
+
+
+
+
+local ToggleNextIsland = Tabs.Raid:AddToggle("ToggleNextIsland", {Title = "Next Island", Default = false })
+ToggleNextIsland:OnChanged(function(Value)
+    AutoNextIsland = Value
+end)
+Options.ToggleNextIsland:SetValue(false)
+spawn(function()
+    while task.wait() do
+        if AutoNextIsland then
+            pcall(function()
+                if game:GetService("Players")["LocalPlayer"].PlayerGui.Main.Timer.Visible == true then
+                    if game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 5").CFrame * CFrame.new(0,70,100))
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 4").CFrame * CFrame.new(0,70,100))
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 3").CFrame * CFrame.new(0,70,100))
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 2").CFrame * CFrame.new(0,70,100))
+                    elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1") then
+                        Tween(game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Island 1").CFrame * CFrame.new(0,70,100))
+                    end
+                end
+            end)
+        end
+    end
+end)
+
+
+
+local ToggleAwake = Tabs.Raid:AddToggle("ToggleAwake", {Title = "Auto Awake", Default = false })
+ToggleAwake:OnChanged(function(Value)
+    AutoAwakenAbilities = Value
+end)
+Options.ToggleAwake:SetValue(false)
+spawn(function()
+    while task.wait() do
+        if AutoAwakenAbilities then
+            pcall(function()
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Awakener","Awaken")
+            end)
+        end
+    end
+end)
