@@ -1446,13 +1446,11 @@ local function YTZCAJC_fake_script()
 	end)
 end
 coroutine.wrap(YTZCAJC_fake_script)()
-
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- Hehe
-local bringfrec = 270
-local posX = 5
+local posX = 0
 local posY = 30
-local posZ = 5
+local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
     Tabs.Main:AddParagraph({
@@ -1462,7 +1460,7 @@ local posZ = 5
 
     local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
         Title = "Select Weapon",
-        Values = {'Melee','Sword','Fruit'},
+        Values = {'Melee','Sword','Blox Fruit'},
         Multi = false,
         Default = 1,
     })
@@ -1489,7 +1487,7 @@ local posZ = 5
                             end
                         end
                     end
-                elseif ChooseWeapon == "Fruit" then
+                elseif ChooseWeapon == " Blox Fruit" then
                     for i ,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                         if v.ToolTip == "Blox Fruit" then
                             if game.Players.LocalPlayer.Backpack:FindFirstChild(tostring(v.Name)) then
