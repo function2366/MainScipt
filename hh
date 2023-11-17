@@ -2233,7 +2233,7 @@ end
 --made Fai Fao Hub
 
 function BTP(P)
-    repeat wait(0.6)
+    repeat wait(1)
         game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
         task.wait()
@@ -2242,9 +2242,9 @@ function BTP(P)
     end
     
     function BTP(p)
-        wait(0.6)
+        wait(1)
         pcall(function()
-            if (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2000 and not Auto_Raid and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
+            if (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude >= 2500 and not Auto_Raid and game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
                 if NQuest == "FishmanQuest" then
                     Tween(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
                     wait()
@@ -2273,11 +2273,10 @@ function BTP(P)
             
                         repeat wait()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
-                        wait(0,7)
+                        wait(1)
                         game.Players.LocalPlayer.Character.Head:Destroy()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
                     until (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2500 and game.Players.LocalPlayer.Character.Humanoid.Health > 0
-                    wait()
                 end
             end
         end)
