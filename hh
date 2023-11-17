@@ -2273,7 +2273,7 @@ function BTP(P)
             
                         repeat wait()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
-                        wait(0.7)
+                        wait(1)
                         game.Players.LocalPlayer.Character.Head:Destroy()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
                     until (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2500 and game.Players.LocalPlayer.Character.Humanoid.Health > 0
@@ -2440,9 +2440,9 @@ local posZ = 0
           if BypassTP then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
           BTP(CFrameQ)
-          wait(0.2)
+    
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
-          wait(0.4)
+
           Tween(CFrameQ)
           end
     else
@@ -2706,9 +2706,7 @@ local posZ = 0
           CheckLevel(SelectMonster)
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
-         
             Tween(CFrameQ)
-         
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
           end
@@ -2755,7 +2753,6 @@ local posZ = 0
           if BypassTP then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude > 2000 then
           BTP(CFrameMon)
-          wait(3)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude < 2000 then
           Tween(CFrameMon)
           end
@@ -2876,7 +2873,7 @@ local posZ = 0
       --v.Humanoid:ChangeState(14)
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
-          
+        
           end
           until not AutoFarmMasGun or not TypeMastery == 'Boss' or not v.Parent or v.Humanoid.Health <= 0 or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
           end
@@ -3068,7 +3065,6 @@ pcall(function()
   if BypassTP then
   if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude > 2000 then
   BTP(CFrameMon)
-  wait(3)
   elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameMon.Position).Magnitude < 2000 then
   Tween(CFrameMon)
   end
@@ -3222,13 +3218,13 @@ spawn(function()
                         wait()
                        if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - FaiFaoQuestBone.Position).Magnitude > 2500 then
                        BTP(FaiFaoQuestBone)
-                       wait(0.2)
+              
                        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - FaiFaoQuestBone.Position).Magnitude < 2500 then
-                       wait(0.4)
+               
                        Tween(FaiFaoQuestBone)
                        end
                  else
-                    wait(0.7)
+          
                          Tween(FaiFaoQuestBone)
                          end
                 if (FaiFaoQuestBone.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 3 then    
@@ -3323,9 +3319,7 @@ spawn(function()
     v.Humanoid.JumpPower = 0
     v.Humanoid.WalkSpeed = 0
     v.HumanoidRootPart.CanCollide = false
-    Click()
-  --v.Humanoid:ChangeState(11)
-  --v.Humanoid:ChangeState(14)
+     Click()
     FarmPos = v.HumanoidRootPart.CFrame
     MonFarm = v.Name
     until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
@@ -3339,7 +3333,6 @@ if BypassTP then
 wait()
 if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - cakepos.Position).Magnitude > 2500 then
 BTP(cakepos)
-
 elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - cakepos.Position).Magnitude < 2500 then
 Tween(cakepos)
 end
@@ -3400,7 +3393,6 @@ end
           if BypassTP then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude > 3500 then
           BTP(MPos)
-          wait(0.2)
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - MPos.Position).Magnitude < 3500 then
           Tween(MPos)
           end
@@ -3709,7 +3701,6 @@ end
                                     v.HumanoidRootPart.Size = Vector3.new(50,50,50)
                                     Tween(v.HumanoidRootPart.CFrame * Pos)
                                     v.HumanoidRootPart.Transparency = 1
-                                    
                                     sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
 									Click()
 									   
@@ -3723,9 +3714,6 @@ end
                         if game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper") then
                             Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
                         else
-                            if AutoHallowSycthe1 then
-                                Hop()
-                            end
                         end
                     end
                 end)
@@ -3876,7 +3864,7 @@ end
 
 
 
-_G.FastAttackDelay = 0.1
+_G.FastAttackDelay = 0.13
 
     local Client = game.Players.LocalPlayer
     local STOP = require(Client.PlayerScripts.CombatFramework.Particle)
