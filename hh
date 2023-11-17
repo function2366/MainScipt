@@ -2273,7 +2273,7 @@ function BTP(P)
             
                         repeat wait()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
-                        wait(1)
+                        wait(0.7)
                         game.Players.LocalPlayer.Character.Head:Destroy()
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p
                     until (p.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2500 and game.Players.LocalPlayer.Character.Humanoid.Health > 0
@@ -3422,10 +3422,10 @@ end
           v.HumanoidRootPart.CanCollide = false
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
+          Click()
           until not AutoFarmMaterial or not v.Parent or v.Humanoid.Health <= 0
           end
           end
-          Click()
           end
           else
             for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].EnemySpawns:GetChildren()) do
