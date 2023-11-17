@@ -2400,16 +2400,12 @@ local posZ = 0
           if BypassTP then
           if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude > 2500 then
           BTP(CFrameQ)
-    
           elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CFrameQ.Position).Magnitude < 2500 then
-
           Tween(CFrameQ)
           end
     else
-        wait(0.7)
             Tween(CFrameQ)
             end
-          
           if (CFrameQ.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5 then
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest",NameQuest,QuestLv)
           end
@@ -2456,7 +2452,6 @@ local posZ = 0
         game:GetService("ReplicatedStorage").Effect.Container.Respawn:Destroy()
     end
 
-
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Near Mob", Default = false })
     ToggleMobAura:OnChanged(function(Value)
         AutoFarmNearestMob = Value
@@ -2492,29 +2487,11 @@ local posZ = 0
         end
       end)
 
-
       Tabs.Main:AddButton({
         Title = "Redeem All Code",
         Description = "Redeem all code x2 exp",
         Callback = function()
-            Window:Dialog({
-                Title = "",
-                Content = "",
-                Buttons = {
-                    {
-                        Title = "Confirm",
-                        Callback = function()
-                            UseCode()
-                        end
-                    },
-                    {
-                        Title = "Cancel",
-                        Callback = function()
-                            
-                        end
-                    }
-                }
-            })
+            UseCode()
         end
     })
 
@@ -2543,24 +2520,7 @@ local posZ = 0
         Title = "Fps Booster",
         Description = "Boost your fps",
         Callback = function()
-            Window:Dialog({
-                Title = "",
-                Content = "",
-                Buttons = {
-                    {
-                        Title = "Confirm",
-                        Callback = function()
-                            FPSBooster()
-                        end
-                    },
-                    {
-                        Title = "Cancel",
-                        Callback = function()
-                            
-                        end
-                    }
-                }
-            })
+            FPSBooster()
         end
     })
 
