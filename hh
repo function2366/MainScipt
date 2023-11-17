@@ -2109,7 +2109,7 @@ spawn(function()
    spawn(function()
 			while task.wait() do
 				pcall(function()
-					if _G.TeleportIsland or _G.AutoQuestRace or Auto_Law or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+					if _G.TeleportIsland or AutoFarmAcient or _G.AutoQuestRace or Auto_Law or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
 						if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 							local Noclip = Instance.new("BodyVelocity")
 							Noclip.Name = "BodyClip"
@@ -2131,7 +2131,7 @@ spawn(function()
 spawn(function()
   pcall(function()
     game:GetService("RunService").Stepped:Connect(function()
-      if _G.TeleportIsland or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+      if _G.TeleportIsland or AutoFarmAcient or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.Auto_Seabest or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
       for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
       if v:IsA("BasePart") then
       v.CanCollide = false
@@ -2232,7 +2232,6 @@ end
 
 ---Bypass Teleport
 --made Fai Fao Hub
-
 function BTP(P)
     repeat wait(0.7)
         game.Players.LocalPlayer.Character.Humanoid:ChangeState(15)
@@ -2243,7 +2242,7 @@ function BTP(P)
     end
     
 
-----------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 ---Close gui
 local ScreenGui = Instance.new("ScreenGui")
@@ -3597,6 +3596,20 @@ end
    
 
 
+       Tabs.Main:AddParagraph({
+        Title = "Sea Beast",
+        Content = "Auto Kill Sea Beast"
+    })
+
+
+local ToggleSeaBeAst = Tabs.Main:AddToggle("ToggleSeaBeAst", {Title = "Auto Sea Beast", Default = false })
+
+ToggleSeaBeAst:OnChanged(function(Value)
+    _G.Auto_Seabest = Value
+    end)
+    Options.ToggleSeaBeAst:SetValue(false)
+
+
      Tabs.Main:AddParagraph({
         Title = "Items",
         Content = "Auto get items"
@@ -3624,7 +3637,6 @@ end
                                     v.HumanoidRootPart.Transparency = 1
                                     sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
 									Click()
-									   
                                 until v.Humanoid.Health <= 0 or AutoHallowSycthe == false
                             end
                         end
@@ -5363,5 +5375,98 @@ spawn(function()
 			end
         end
     end)
+end)
+
+
+
+
+Tabs.Race:AddParagraph({
+    Title = "Misc Race",
+    Content = "Auto Farm Acient Quest"
+})
+
+
+
+local ToggleAutoAcientQuest = Tabs.Race:AddToggle("ToggleAutoAcientQuest", {Title = "Auto Acient Quest", Default = false })
+ToggleAutoAcientQuest:OnChanged(function(Value)
+    AutoFarmAcient = Value
+end)
+Options.ToggleAutoAcientQuest:SetValue(false)
+
+
+
+spawn(function()
+    pcall(function()
+        while wait() do
+            if AutoFarmAcient then
+                if game.Players.LocalPlayer.Character.RaceTransformed.Value == true then
+                    AutoFarmAcient = false
+                    Tween(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
+                end
+            end
+        end
+    end)
+end)
+spawn(function()
+    while wait() do 
+        if AutoFarmAcient then
+            pcall(function()
+                if game:GetService("Workspace").Enemies:FindFirstChild("Cocoa Warrior") or game:GetService("Workspace").Enemies:FindFirstChild("Chocolate Bar Battler") or game:GetService("Workspace").Enemies:FindFirstChild("Sweet Thief") or game:GetService("Workspace").Enemies:FindFirstChild("Candy Rebel") then
+                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                        if v.Name == "Cocoa Warrior" or v.Name == "Chocolate Bar Battler" or v.Name == "Sweet Thief" or v.Name == "Candy Rebel" then
+                           if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                               repeat task.wait()
+                                    AutoHaki()
+                                    EquipTool(_G.SelectWeapon)
+                                    v.HumanoidRootPart.CanCollide = false
+                                    v.Humanoid.WalkSpeed = 0
+                                    v.Head.CanCollide = false 
+                                    FarmPos = v.HumanoidRootPart.CFrame
+                                    Tween(v.HumanoidRootPart.CFrame * Pos)
+                                    Click()
+                                until not AutoFarmAcient or not v.Parent or v.Humanoid.Health <= 0
+                            end
+                        end
+                    end
+                else
+           
+                    Tween(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
+                    for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
+                        if v.Name == "Cocoa Warrior" then
+                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        elseif v.Name == "Chocolate Bar Battler" then
+                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        elseif v.Name == "Sweet Thief" then
+                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        elseif v.Name == "Candy Rebel" then
+                            Tween(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+spawn(function()
+    pcall(function()
+        while wait() do
+            if AutoFarmAcient then
+                if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
+                    AutoFarmAcient = true
+                end
+            end
+        end
+    end)
+end)
+spawn(function()
+while wait() do
+    pcall(function()
+        if AutoFarmAcient then
+            game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+            wait(0.1)
+            game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+        end
+    end)
+end
 end)
 
