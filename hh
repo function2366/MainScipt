@@ -5076,7 +5076,7 @@ Tabs.Raid:AddParagraph({
 })
 
 
-local ToggleLaw = Tabs.Main:AddToggle("ToggleLaw", {Title = "Auto Law", Default = false })
+local ToggleLaw = Tabs.Raid:AddToggle("ToggleLaw", {Title = "Auto Law", Default = false })
 
 ToggleLaw:OnChanged(function(Value)
     Auto_Law = Value
