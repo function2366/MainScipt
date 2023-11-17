@@ -2376,7 +2376,7 @@ local posZ = 0
     })
 
     local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
-        Title = "Dopdown",
+        Title = "Dropdown",
         Values = {'Melee','Sword','Blox Fruit'},
         Multi = false,
         Default = 1,
@@ -3374,7 +3374,7 @@ end
         end
 
     local DropdownMaterial = Tabs.Main:AddDropdown("DropdownMaterial", {
-        Title = "Select Material",
+        Title = "Dropdown",
         Values = MaterialList,
         Multi = false,
         Default = 1,
