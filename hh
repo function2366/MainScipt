@@ -3713,7 +3713,7 @@ ToggleSeaBeAst:OnChanged(function(Value)
                             if not game:GetService("Workspace").Boats:FindFirstChild("PirateBasic") then
                                 if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                                     buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
-                                    if (CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                                    if (CFrame.new(-4484.35546875, 10.883355140686035, -2747.9287109375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                         if buyb then buyb:Stop() end
                                         local args = {
                                             [1] = "BuyBoat",
@@ -3780,12 +3780,22 @@ ToggleSeaBeAst:OnChanged(function(Value)
 
 
 
-
-local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Sea Beast", Default = false })
+local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Press W", Default = false })
 ToggleAutoW:OnChanged(function(Value)
     _G.AutoW = Value
     end)
  Options.ToggleAutoW:SetValue(false)
+ spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.AutoW then
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
+            end
+        end)
+    end
+    end)
+
+
 
 
  Tabs.Main:AddParagraph({
@@ -3796,11 +3806,11 @@ ToggleAutoW:OnChanged(function(Value)
 
 
 local ToggleMirage = Tabs.Main:AddToggle("ToggleMirage", {Title = "Auto Mirage Island", Default = false })
-ToggleAutoW:OnChanged(function(Value)
+ToggleMirage:OnChanged(function(Value)
    _G.AutoMirage = Value
     end)
- Options.ToggleMirage:SetValue(false)
 
+ Options.ToggleMirage:SetValue(false)
  spawn(function()
     while wait() do
         pcall(function()
@@ -3808,7 +3818,7 @@ ToggleAutoW:OnChanged(function(Value)
                 if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                     if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                         buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
-                        if (CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                        if (CFrame.new(-4484.35546875, 10.883355140686035, -2747.9287109375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                             if buyb then buyb:Stop() end
                             local args = {
                                 [1] = "BuyBoat",
@@ -3866,7 +3876,15 @@ end)
     _G.AutoW = Value
      end)
   Options.AutoW:SetValue(false)
-
+  spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.AutoW then
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"W",false,game)
+            end
+        end)
+    end
+    end)
 
 
 
