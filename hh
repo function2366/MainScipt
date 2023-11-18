@@ -19,7 +19,8 @@ local Tabs = {
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "Dungeon", Icon = "swords" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "gantt-chart" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
 }
 local Options = Fluent.Options
 
@@ -5613,3 +5614,12 @@ while wait() do
     end)
 end
 end)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+--shop
+
+
+
+
+
+
