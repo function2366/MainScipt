@@ -3816,7 +3816,7 @@ ToggleMirage:OnChanged(function(Value)
         pcall(function()
             if _G.AutoMirage then
                 if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
-                    if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
+                    if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                         buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
                         if (CFrame.new(-4485.486328125, 10.883736610412598, -2747.4326171875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                             if buyb then buyb:Stop() end
@@ -3827,12 +3827,12 @@ ToggleMirage:OnChanged(function(Value)
 
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
                         end
-                    elseif game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
+                    elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                         if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
-                            TPP(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                            TPP(game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
                         else
                             for i,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
-                                if v.Name == "PirateGrandBrigade" then
+                                if v.Name == "PirateBrigade" then
                                     repeat wait()
                                         if (CFrame.new(-324.30484, 15.5859451, 5218.35742, 0.965929627, 0, -0.258804798, 0, 1, 0, 0.258804798, 0, 0.965929627).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                             TPB(CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375))
@@ -3847,8 +3847,8 @@ ToggleMirage:OnChanged(function(Value)
                         end
                     end
                 elseif game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
-                    TPB(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
-                    game:GetService("Workspace").Boats.PirateGrandBrigade:Destroy()
+                    TPB(game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame) 
+                    game:GetService("Workspace").Boats.PirateBrigade:Destroy()
                     TPP(game:GetService("Workspace").Map.MysticIsland.Center.CFrame * CFrame.new(0,300,0))
                     repeat wait(1)
                         game.StarterGui:SetCore("SendNotification", {
@@ -3860,7 +3860,7 @@ ToggleMirage:OnChanged(function(Value)
                     until not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or _G.AutoMirage == false
                 end
             else
-                TPB(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
+                TPB(game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame) 
             end
         end)
     end
