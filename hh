@@ -3815,16 +3815,21 @@ ToggleMirage:OnChanged(function(Value)
 
 
 if _G.dao then
+local args = {
+    [1] = "requestEntrance",
+    [2] = Vector3.new(-12463.6025390625, 378.3270568847656, -7566.0830078125)
+}
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-wait(0.5)
-  BTPZ(CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396))
+wait(1)
+BTPZ(CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396))
+
 local args = {
     [1] = "BuyBoat",
     [2] = "PirateBrigade"
 }
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
-function two(gotoCFrame)
+function two(gotoCFrame) --- Tween
       pcall(function()
           game.Players.LocalPlayer.Character.Humanoid.Sit = false
           game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
@@ -3855,13 +3860,13 @@ for _,v in next, workspace.Boats.PirateBrigade:GetDescendants() do
     if v.Name:find("VehicleSeat") then
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
      if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
-                           Tween(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+                           topos(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
    
     end
     end
 end
 end
-end)
+end) 
 
  Options.ToggleMirage:SetValue(false)
 
