@@ -3395,7 +3395,7 @@ end
         end
         end
       end)
-
+if Third_Sea then
 
       Tabs.Main:AddParagraph({
         Title = "Rough Sea",
@@ -3415,16 +3415,15 @@ end
                 if _G.DriveMytic then
                     if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
-                            buyb = TPP(CFrame.new(-16204.966796875, 13.275421142578125, 472.41162109375))
-                            wait(1)
+                            buyb = TPP(CFrame.new())
+                            if (CFrame.new().Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                                if buyb then buyb:Stop() end
                                 local args = {
                                     [1] = "BuyBoat",
-                                    [2] = "PirateGrandBrigade",
+                                    [2] = "PirateGrandBrigade"
                                 }
-                                
+    
                                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                                wait(1)
-                                if (CFrame.new(-16133.9580078125, 31.885669708251953, 432.83660888671875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 0.1 then
                             end
                         elseif game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                             if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
@@ -3564,6 +3563,7 @@ end
      end)
 
 
+
      Tabs.Main:AddParagraph({
         Title = "Elite Hunter",
         Content = "Auto find and kill boss elite"
@@ -3637,7 +3637,9 @@ end
            end
        end)
    
+    end
 
+if Third_Sea then
 
        Tabs.Main:AddParagraph({
         Title = "Sea Beast",
@@ -3651,7 +3653,6 @@ ToggleSeaBeAst:OnChanged(function(Value)
     _G.Auto_Seabest = Value
     end)
     Options.ToggleSeaBeAst:SetValue(false)
-
     local gg = getrawmetatable(game)
     local old = gg.__namecall
     setreadonly(gg,false)
@@ -3713,8 +3714,8 @@ ToggleSeaBeAst:OnChanged(function(Value)
                         if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then 
                             if not game:GetService("Workspace").Boats:FindFirstChild("PirateBasic") then
                                 if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
-                                    buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
-                                    if (CFrame.new(-4484.35546875, 10.883355140686035, -2747.9287109375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                                    buyb = TPP(CFrame.new(-4569.759765625, 16.420740127563477, -2786.94189453125))
+                                    if (CFrame.new(-4485.486328125, 10.883736610412598, -2747.4326171875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                         if buyb then buyb:Stop() end
                                         local args = {
                                             [1] = "BuyBoat",
@@ -3779,8 +3780,6 @@ ToggleSeaBeAst:OnChanged(function(Value)
         end
     end)
 
-
-
 local ToggleAutoW = Tabs.Main:AddToggle("ToggleAutoW", {Title = "Auto Press W", Default = false })
 ToggleAutoW:OnChanged(function(Value)
     _G.AutoW = Value
@@ -3819,7 +3818,7 @@ ToggleMirage:OnChanged(function(Value)
                 if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                     if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                         buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
-                        if (CFrame.new(-4484.35546875, 10.883355140686035, -2747.9287109375).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                        if (CFrame.new(-4485.486328125, 10.883736610412598, -2747.4326171875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                             if buyb then buyb:Stop() end
                             local args = {
                                 [1] = "BuyBoat",
@@ -3869,9 +3868,6 @@ end)
 
 
 
-
-
-
  local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Press W", Default = false })
  AutoW:OnChanged(function(Value)
     _G.AutoW = Value
@@ -3886,7 +3882,7 @@ end)
         end)
     end
     end)
-
+end
 
 
      Tabs.Main:AddParagraph({
