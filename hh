@@ -5521,7 +5521,6 @@ end)
 Options.ToggleAutoAcientQuest:SetValue(false)
 
 
-
 spawn(function()
     pcall(function()
         while wait() do
@@ -5544,7 +5543,7 @@ spawn(function()
                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
                                repeat task.wait()
                                     AutoHaki()
-                                    EquipTool(_G.SelectWeapon)
+                                    EquipTool(SelectWeapon)
                                     v.HumanoidRootPart.CanCollide = false
                                     v.Humanoid.WalkSpeed = 0
                                     v.Head.CanCollide = false 
