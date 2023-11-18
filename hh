@@ -4192,49 +4192,48 @@ CamShake:Stop()
         BringMobs = Value
     end)
     Options.ToggleBringMob:SetValue(true)
-    spawn(function()
+    task.spawn(function()
         while task.wait() do
-            pcall(function()
-                if BringMobs then
-                    if AutoFarm then
-                        if game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == true then
-                            for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                if v.Name == Ms and (v.HumanoidRootPart.Position-FarmPos.Position).Magnitude <= 200 then
-                                    if v.Humanoid:FindFirstChild("Animator") then
-                                        v.Humanoid.Animator:Destroy()
-                                    end
-                                    v.Humanoid:ChangeState(11)
-                                    v.Humanoid.JumpPower = 0
-                                    v.Humanoid.WalkSpeed = 0
-                                    v.HumanoidRootPart.CanCollide = false
-                                    v.HumanoidRootPart.Size = Vector3.new(5,5,5)
-                                    v.HumanoidRootPart.CFrame = FarmPos
-                                    sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  math.huge)
-                                    Attack = true
-                                end
-                            end
-                        end
-                    else
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if (v.HumanoidRootPart.Position-FarmPos.Position).Magnitude <= 200 then
-                                if v.Humanoid:FindFirstChild("Animator") then
-                                    v.Humanoid.Animator:Destroy()
-                                end
-                                v.Humanoid:ChangeState(11)
-                                v.Humanoid.JumpPower = 0
-                                v.Humanoid.WalkSpeed = 0
-                                v.HumanoidRootPart.CanCollide = false
-                                v.HumanoidRootPart.Size = Vector3.new(5,5,5)
-                                v.HumanoidRootPart.CFrame = FarmPos
-                                sethiddenproperty(game.Players.LocalPlayer, "MaximumSimulationRadius",  math.huge)
-                                sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius",  9e20)
-                            end
-                        end
-                    end
-                end
-            end)
+        if BringMobs then
+        pcall(function()
+          for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
+          if not string.find(v.Name,"Boss") and v.Name == MonFarm and (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
+          if InMyNetWork(v.HumanoidRootPart) then
+            if InMyNetWork(v.HumanoidRootPart) then
+          v.HumanoidRootPart.CFrame = FarmPos
+          v.HumanoidRootPart.CanCollide = false
+          v.HumanoidRootPart.Size = Vector3.new(1,1,1)
+          end
         end
-    end)
+          end
+          end
+          end)
+        end
+
+    end
+        end)
+      
+      task.spawn(function()
+        while true do wait()
+        if setscriptable then
+        setscriptable(game.Players.LocalPlayer,"SimulationRadius",true)
+        end
+        if sethiddenproperty then
+        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+        end
+        end
+        end)
+      
+      function InMyNetWork(object)
+      if isnetworkowner then
+      return isnetworkowner(object)
+      else
+        if (object.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 350 then
+      return true
+      end
+      return false
+      end
+      end
 
 
 
