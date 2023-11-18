@@ -3804,7 +3804,7 @@ ToggleAutoW:OnChanged(function(Value)
  spawn(function()
     while wait() do
         pcall(function()
-            if_G.AutoMirage then
+            if _G.AutoMirage then
                 if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                     if not game:GetService("Workspace").Boats:FindFirstChild("PirateGrandBrigade") then
                         buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
@@ -3831,7 +3831,7 @@ ToggleAutoW:OnChanged(function(Value)
                                         elseif (CFrame.new(29236.712890625, 17.74854850769043, 19706.36328125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                             TPB(CFrame.new(260.3658142089844, 17.747055053710938, 3543.2646484375))
                                         end 
-                                    until game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or_G.AutoMirage == false
+                                    until game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or _G.AutoMirage == false
                                 end
                             end
                         end
@@ -3847,7 +3847,7 @@ ToggleAutoW:OnChanged(function(Value)
                             Icon = ""; -- the image if u want. 
                             Duration = 3; -- how long the notification should in secounds
                         })
-                    until not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or_G.AutoMirage == false
+                    until not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") or _G.AutoMirage == false
                 end
             else
                 TPB(game:GetService("Workspace").Boats.PirateGrandBrigade.VehicleSeat.CFrame) 
@@ -3861,7 +3861,7 @@ end)
 
 
 
- local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Mirage Island", Default = false })
+ local AutoW = Tabs.Main:AddToggle("AutoW", {Title = "Auto Press W", Default = false })
  AutoW:OnChanged(function(Value)
     _G.AutoW = Value
      end)
@@ -5596,4 +5596,3 @@ while wait() do
     end)
 end
 end)
-end
