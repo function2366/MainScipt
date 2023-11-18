@@ -3550,6 +3550,7 @@ spawn(function()
     if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
     if (v.Name == "Cookie Crafter" or v.Name == "Cake Guard" or v.Name == "Baking Staff" or v.Name == "Head Baker") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
     repeat task.wait()
+    AutoHaki()
     EquipTool(SelectWeapon)
     Tween(v.HumanoidRootPart.CFrame * Pos)
     v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
@@ -5812,17 +5813,6 @@ Options.ToggleAutoAcientQuest:SetValue(false)
 
 local AcientCframe = CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875)
 
-spawn(function()
-    pcall(function()
-        while wait() do
-            if AutoFarmAcient then
-                if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
-                    AutoFarmAcient = false
-                end
-            end
-        end
-    end)
-end)
 
 spawn(function()
     while wait() do 
@@ -5835,6 +5825,7 @@ spawn(function()
                                repeat task.wait()
                                     AutoHaki()
                                     EquipTool(SelectWeapon)
+                                    BringAcient = true
                                     v.HumanoidRootPart.CanCollide = false
                                     v.Humanoid.WalkSpeed = 0
                                     v.Head.CanCollide = false 
@@ -5842,6 +5833,7 @@ spawn(function()
                                     Tween(v.HumanoidRootPart.CFrame * Pos)
                                     Click()
                                 until not AutoFarmAcient or not v.Parent or v.Humanoid.Health <= 0
+                                BringAcient = false
                             end
                         end
                     end
