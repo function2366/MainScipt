@@ -4238,14 +4238,12 @@ CamShake:Stop()
 
 
 
-
     local ToggleBypassTP = Tabs.Setting:AddToggle("ToggleBypassTP", {Title = "Bypass Tp", Default = false })
     ToggleBypassTP:OnChanged(function(Value)
         BypassTP = Value
     end)
     Options.ToggleBypassTP:SetValue(false)
 end
-
 
 
 
@@ -4264,8 +4262,6 @@ ToggleRemove:OnChanged(function(Value)
             end
         end
         end)
-
-
 
 
 
@@ -5561,13 +5557,19 @@ end)
 Options.ToggleAutoAcientQuest:SetValue(false)
 
 
+local AcientCframe = CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875)
+
 spawn(function()
     pcall(function()
         while wait() do
             if AutoFarmAcient then
                 if game.Players.LocalPlayer.Character.RaceTransformed.Value == true then
                     AutoFarmAcient = false
-                    Tween(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
+                    if BypassTP then
+                        BTP(AcientCframe)
+                    else
+                        Tween(AcientCframe)
+                    end
                 end
             end
         end
@@ -5638,6 +5640,15 @@ end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
+
+
+
+
+
+
+
+
+
 
 
 
