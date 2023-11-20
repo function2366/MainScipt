@@ -5301,21 +5301,22 @@ ToggleKillAura:OnChanged(function(Value)
     KillAura = Value
 end)
 Options.ToggleKillAura:SetValue(false)
-
 spawn(function()
-  while wait() do
-        if KillAura then
-            pcall(function()
-                for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
-                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                        repeat task.wait()
-                            sethiddenproperty(game:GetService('Players').LocalPlayer,"SimulationRadius",math.huge)
+    while wait() do
+        if Killaura then
+            for i,v in pairs(game.Workspace.Enemies:GetDescendants()) do
+                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                    pcall(function()
+                        repeat wait(.1)
+                            sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", math.huge)
                             v.Humanoid.Health = 0
                             v.HumanoidRootPart.CanCollide = false
-                        until not AutoDungeon or not v.Parent or v.Humanoid.Health <= 0
-                    end
+                            v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                            v.HumanoidRootPart.Transparency = 0.8
+                        until not Killaura or not v.Parent or v.Humanoid.Health <= 0
+                    end)
                 end
-            end)
+            end
         end
     end
 end)
@@ -5886,18 +5887,3 @@ end)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --shop
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
