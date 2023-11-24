@@ -3406,16 +3406,16 @@ spawn(function()
                 if not game:GetService("Workspace")["_WorldOrigin"].Locations:FindFirstChild("Mirage Island") then
                     if not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
                         buyb = TPP(CFrame.new(-16210.8408203125, 9.06057357788086, 474.26141357421875))
-                    
-                            if buyb then buyb:Stop() end wait(1)
+                            if buyb then buyb:Stop()
                             local args = {
                                 [1] = "BuyBoat",
                                 [2] = "MarineBrigade"
                             }
 
                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-                            if (CFrame.new(-16133.875, 10.883333206176758, 434.06011962890625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                            if (CFrame.new(-16210.8408203125, 9.06057357788086, 474.26141357421875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                         end
+                    end
                     elseif game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
                         if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
                             TPP(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
