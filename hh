@@ -1973,17 +1973,17 @@ for i,v in pairs(game:GetService("Workspace").Map.MysticIsland:GetChildren()) do
 end
 end
 
+----------Tween
 
 
 
 
-    
     
         --// Tween Island
         function TP2(P1)
         local Distance = (P1.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
         if Distance >= 1 then
-        Speed = 150
+        Speed = 350
         end
         game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/Speed, Enum.EasingStyle.Linear), {
           CFrame = P1
@@ -2003,9 +2003,9 @@ end
  function Tween(Pos)
         Distance = (Pos.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
         if game.Players.LocalPlayer.Character.Humanoid.Sit == true then game.Players.LocalPlayer.Character.Humanoid.Sit = true end
-        pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/300, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
+        pcall(function() tween = game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart,TweenInfo.new(Distance/350, Enum.EasingStyle.Linear),{CFrame = Pos}) end)
         tween:Play()
-        if Distance <= 150 then
+        if Distance <= 350 then
             tween:Cancel()
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos
         end
@@ -2015,8 +2015,7 @@ end
         end
     end
     
-
---function TP to Boat/Ship
+    --function TP to Boat/Ship
     function TPB(CFgo)
         local tween_s = game:service"TweenService"
         local info = TweenInfo.new((game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame.Position - CFgo.Position).Magnitude/300, Enum.EasingStyle.Linear)
@@ -2105,7 +2104,6 @@ spawn(function()
 
 
 -- [Body Gyro]
-
    spawn(function()
 			while task.wait() do
 				pcall(function()
@@ -2125,8 +2123,6 @@ spawn(function()
 		end)
 
 	
-
-
 --//No CLip Auto Farm
 spawn(function()
   pcall(function()
@@ -2141,7 +2137,6 @@ spawn(function()
       end)
     end)
   end)
-
 
 
 --Check Material
@@ -2213,15 +2208,15 @@ spawn(function()
 spawn(function()
     while wait(.1) do
         Type = 1
-        wait(0.5)
+        wait(1)
         Type = 2
-        wait(0.5)
+        wait(1)
         Type = 3
-        wait(0.5)
+        wait(1)
         Type = 4
-        wait(0.5)
+        wait(1)
         Type = 5
-        wait(0.5)
+        wait(1)
     end
 end)
 
@@ -2240,7 +2235,6 @@ function BTP(P)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = P
 	until (P.Position-game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 2000
 end
-
 
 function BTP(p)
 		pcall(function()
