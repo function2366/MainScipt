@@ -3702,50 +3702,50 @@ ToggleSeaBeAst:OnChanged(function(Value)
             pcall(function()
                 if _G.Auto_Seabest then
                     if not game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") then
-                        if not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then 
-                            if not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
-                                if not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
-                                    buyb = TPP(CFrame.new(-4569.759765625, 16.420740127563477, -2786.94189453125))
-                                    if (CFrame.new(-4485.486328125, 10.883736610412598, -2747.4326171875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                        if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then 
+                            if not game:GetService("Workspace").Boats:FindFirstChild("PirateBasic") then
+                                if not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
+                                    buyb = TPP(CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625))
+                                    if (CFrame.new(-4513.90087890625, 16.76398277282715, -2658.820556640625).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                         if buyb then buyb:Stop() end
                                         local args = {
                                             [1] = "BuyBoat",
-                                            [2] = "MarineBrigade"
+                                            [2] = "PirateBrigade"
                                         }
             
                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
                                     end
-                                elseif game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
+                                elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                                     if game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == false then
-                                        TPP(game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
+                                        TPP(game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame * CFrame.new(0,1,0))
                                     elseif game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit == true then
                                         repeat wait()
-                                            if (game:GetService("Workspace").Boats.MarineBrigade.VehicleSeat.CFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
+                                            if (game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 10 then
                                                 TPB(CFrame.new(35.04552459716797, 17.750778198242188, 4819.267578125))
                                             end
                                         until game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") or _G.Auto_Seabest == false
                                     end
                                 end
-                            elseif game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
+                            elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                                 for is,vs in pairs(game:GetService("Workspace").Boats:GetChildren()) do
-                                    if vs.Name == "MarineBrigade" then
+                                    if vs.Name == "PirateBrigade" then
                                         if vs:FindFirstChild("VehicleSeat") then
                                             repeat wait()
                                                 game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
                                                 TPP(vs.VehicleSeat.CFrame * CFrame.new(0,1,0))
-                                            until not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") or _G.Auto_Seabest == false
+                                            until not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") or _G.Auto_Seabest == false
                                         end
                                     end
                                 end
                             end
-                        elseif game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") then
+                        elseif game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") then
                             for iss,v in pairs(game:GetService("Workspace").Boats:GetChildren()) do
-                                if v.Name == "MarineBrigade" then
+                                if v.Name == "PirateBrigade" then
                                     if v:FindFirstChild("VehicleSeat") then
                                         repeat wait()
                                             game.Players.LocalPlayer.Character:WaitForChild("Humanoid").Sit = false
                                             TPP(v.VehicleSeat.CFrame * CFrame.new(0,1,0))
-                                        until not game:GetService("Workspace").Boats:FindFirstChild("MarineBrigade") or _G.Auto_Seabest == false
+                                        until not game:GetService("Workspace").Boats:FindFirstChild("PirateBrigade") or _G.Auto_Seabest == false
                                     end
                                 end
                             end
