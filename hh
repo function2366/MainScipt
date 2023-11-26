@@ -3355,10 +3355,12 @@ spawn(function()
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
                                         Tween(v.HumanoidRootPart.CFrame * Pos)
                                        Click()
+									   BringMobs = false
                                         sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
                                     until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0
                                 end
                             end
+							BringMobs = true
                         end
                     elseif game.ReplicatedStorage:FindFirstChild(_G.SelectBoss) then
 						if ((game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 1500 then
@@ -3366,6 +3368,7 @@ spawn(function()
 						else
 							BTP(game.ReplicatedStorage:FindFirstChild(_G.SelectBoss).HumanoidRootPart.CFrame)
 					    end
+						BringMobs = true
                     end
                 end)
             end
@@ -3388,9 +3391,11 @@ spawn(function()
                                         v.HumanoidRootPart.Size = Vector3.new(80,80,80)                             
                                         Tween(v.HumanoidRootPart.CFrame * Pos)
                                         Click()
+										BringMobs = false
                                         sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
                                     until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0
                                 end
+								BringMobs = true
                             end
                         end
                     else
@@ -3399,6 +3404,7 @@ spawn(function()
                         end
                     end
                 end)
+				BringMobs = true
             end
         end
     end)
