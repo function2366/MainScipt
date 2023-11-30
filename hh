@@ -2108,7 +2108,7 @@ spawn(function()
    spawn(function()
 			while task.wait() do
 				pcall(function()
-					if _G.TeleportIsland or _G.AutoQuestRace or _G.AutoBuyBoat or _G.dao or _G.AutoMirage or AutoFarmAcient or _G.AutoQuestRace or Auto_Law or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.AutoSeaBeast or AutoFarmNearestMob or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+					if _G.TeleportIsland or _G.AutoQuestRace or _G.AutoBuyBoat or _G.dao or _G.AutoMirage or AutoFarmAcient or _G.AutoQuestRace or Auto_Law or _G.AutoAllBoss or _G.Autotushita or _G.AutoHolyTorch or _G.AutoTerrorshark or _G.farmpiranya or _G.DriveMytic or _G.AutoDoughKingV2 or PirateShip or _G.AutoSeaBeast or _G.AutoNear or _G.BossRaid or _G.GrabChest or AutoCitizen or _G.Ecto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or _G.AutoLevel or _G.Clip2 or AutoFarmNoQuest or _G.AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or _G.AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or _G.CakePrince or _G.AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or _G.AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or _G.Ecto then
 						if not game:GetService("Players").LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyClip") then
 							local Noclip = Instance.new("BodyVelocity")
 							Noclip.Name = "BodyClip"
@@ -2128,7 +2128,7 @@ spawn(function()
 spawn(function()
   pcall(function()
     game:GetService("RunService").Stepped:Connect(function()
-      if _G.TeleportIsland or _G.AutoQuestRace or _G.AutoBuyBoat or _G.dao or AutoFarmAcient or _G.AutoMirage or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or AutoFarmNearestMob or _G.AutoDoughKingV2 or PirateShip or _G.AutoSeaBeast or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or AutoEcto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or AutoFarmQuest or _G.Clip2 or AutoFarmNoQuest or AutoFarmBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or AutoFarmBossNoQuest or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or AutoCakePrince or AutoEliteHunter or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or AutoFarmMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or AutoEcto then
+      if _G.TeleportIsland or _G.AutoQuestRace or _G.AutoBuyBoat or _G.dao or AutoFarmAcient or _G.AutoMirage or Auto_Law or _G.AutoQuestRace or _G.AutoAllBoss or _G.AutoHolyTorch or _G.Autotushita or _G.farmpiranya or _G.AutoTerrorshark or _G.AutoNear or _G.AutoDoughKingV2 or PirateShip or _G.AutoSeaBeast or _G.DriveMytic or _G.BossRaid or _G.GrabChest or AutoCitizen or _G.Ecto or AutoEvoRace or AutoBartilo or AutoFactory or BringChestz or BringFruitz or _G.AutoLevel or _G.Clip2 or AutoFarmNoQuest or _G.AutoBone or AutoFarmSelectMonsterQuest or AutoFarmSelectMonsterNoQuest or _G.AutoBoss or AutoFarmBossQuest or AutoFarmMasGun or AutoFarmMasDevilFruit or AutoFarmSelectArea or AutoSecondSea or AutoThirdSea or AutoDeathStep or AutoSuperhuman or AutoSharkman or AutoElectricClaw or AutoDragonTalon or AutoGodhuman or AutoRengoku or AutoBuddySword or AutoPole or AutoHallowSycthe or AutoCavander or AutoTushita or AutoDarkDagger or _G.CakePrince or _G.AutoElite or AutoRainbowHaki or AutoSaber or AutoFarmKen or AutoKenHop or AutoKenV2 or KillPlayerMelee or KillPlayerGun or KillPlayerFruit or AutoDungeon or AutoNextIsland or AutoAdvanceDungeon or Musketeer or RipIndra or Auto_Serpent_Bow or AutoTorch or AutoSoulGuitar or Auto_Cursed_Dual_Katana or _G.AutoMaterial or Auto_Quest_Yama_1 or Auto_Quest_Yama_2 or Auto_Quest_Yama_3 or Auto_Quest_Tushita_1 or Auto_Quest_Tushita_2 or Auto_Quest_Tushita_3 or _G.Factory or _G.SwanGlasses or AutoBartilo or AutoEvoRace or _G.Ecto then
       for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
       if v:IsA("BasePart") then
       v.CanCollide = false
@@ -2186,22 +2186,41 @@ end
 
 
 
+
+---Method Wait Mob
+Type11 = 1
+spawn(function()
+    while wait(.1) do
+        if Type1 == 1 then
+            Pos2 = CFrame.new(120,60,0)
+        elseif Type1 == 2 then
+            Pos2 = CFrame.new(-120,60,0)
+        end
+        end
+    end)
+
+spawn(function()
+    while wait(.1) do
+        Type1 = 1
+        wait(2)
+        Type1 = 2
+        wait(2)
+    end
+end)
+
+
 ---Method Farm
-Type = 1
+Type1 = 1
 spawn(function()
     while wait(.1) do
         if Type == 1 then
-            Pos = CFrame.new(-30,0,0)
+            Pos = CFrame.new(0,60,0)
         elseif Type == 2 then
-            Pos = CFrame.new(0,30,0)
+            Pos = CFrame.new(-30,0,-30)
         elseif Type == 3 then
-            Pos = CFrame.new(0,0,-30)
+            Pos = CFrame.new(0,0,-60)
         elseif Type == 4 then
-            Pos = CFrame.new(-30,0,0)	
-        elseif Type == 5 then
-            Pos = CFrame.new(0,30,0)
-        elseif Type == 6 then
-            Pos = CFrame.new(0,0,-30)
+            Pos = CFrame.new(-60,0,0)	
         end
         end
     end)
@@ -2215,8 +2234,6 @@ spawn(function()
         Type = 3
         wait(1)
         Type = 4
-        wait(1)
-        Type = 5
         wait(1)
     end
 end)
@@ -2362,7 +2379,7 @@ coroutine.wrap(YTZCAJC_fake_script)()
 --------------------------------------------------------------------------------------------------------------------------------------------
 -- Hehe
 local posX = 0
-local posY = 30
+local posY = 60
 local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
@@ -2424,12 +2441,12 @@ local posZ = 0
 
     local ToggleAutoFarmLevel = Tabs.Main:AddToggle("ToggleAutoFarmLevel", {Title = "Auto Farm Level", Default = false })
     ToggleAutoFarmLevel:OnChanged(function(Value)
-        AutoFarmQuest = Value
+        _G.AutoLevel = Value
     end)
     Options.ToggleAutoFarmLevel:SetValue(false)
     spawn(function()
         while task.wait() do
-        if AutoFarmQuest then
+        if _G.AutoLevel then
         pcall(function()
           CheckLevel()
           if not string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text, NameMon) or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
@@ -2462,7 +2479,7 @@ local posZ = 0
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
           Click()
-          until not AutoFarmQuest or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
+          until not _G.AutoLevel or not v.Parent or v.Humanoid.Health <= 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name) or game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false
           end   
           end
           end
@@ -2474,7 +2491,7 @@ local posZ = 0
           end
           end
           end
-          Tween(CFrameQ)
+          Tween(v.HumanoidRootPart.CFrame * Pos2)
           end)
         end
         end
@@ -2490,12 +2507,12 @@ local posZ = 0
 
     local ToggleMobAura = Tabs.Main:AddToggle("ToggleMobAura", {Title = "Auto Near Mob", Default = false })
     ToggleMobAura:OnChanged(function(Value)
-        AutoFarmNearestMob = Value
+        _G.AutoNear = Value
     end)
     Options.ToggleMobAura:SetValue(false)
     spawn(function()
         while wait(.1) do
-        if AutoFarmNearestMob then
+        if _G.AutoNear then
         pcall(function()
           for i,v in pairs (game.Workspace.Enemies:GetChildren()) do
           if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -2513,7 +2530,7 @@ local posZ = 0
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
           Click()
-          until not AutoFarmNearestMob or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
+          until not _G.AutoNear or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
           end
           end
           end
@@ -3155,7 +3172,7 @@ Tabs.Main:AddParagraph({
 
 local ToggleBone = Tabs.Main:AddToggle("ToggleBone", {Title = "Auto Farm Bone", Default = false })
 ToggleBone:OnChanged(function(Value)
-    AutoFarmBone = Value
+    _G.AutoBone = Value
 end)
 Options.ToggleBone:SetValue(false)
 local FaiFaoQuestBone =  CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
@@ -3163,7 +3180,7 @@ local FaiFaoQuestBone =  CFrame.new(-9515.75, 174.8521728515625, 6079.40625)
 
 spawn(function()
     while wait() do
-        if AutoFarmBone then
+        if _G.AutoBone then
             pcall(function()
                 local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
                 if not string.find(QuestTitle, "Demonic Soul") then
@@ -3204,7 +3221,7 @@ spawn(function()
                                             FarmPos = v.HumanoidRootPart.CFrame
                                             MonFarm = v.Name
                                             Click()
-                                        until not AutoFarmBone or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
+                                        until not _G.AutoBone or v.Humanoid.Health <= 0 or not v.Parent or game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false
                                     else
                                         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
                                     end
@@ -3213,9 +3230,10 @@ spawn(function()
                         end
                     else
                         if game:GetService("ReplicatedStorage"):FindFirstChild("Demonic Soul") then
-                         Tween(game:GetService("ReplicatedStorage"):FindFirstChild("Demonic Soul").HumanoidRootPart.CFrame * CFrame.new(15,10,2))
+                        Tween(v.HumanoidRootPart.CFrame * Pos2)
                         end
                     end
+                    
                 end
             end)
         end
@@ -3225,18 +3243,18 @@ end)
 
 local ToggleCake = Tabs.Main:AddToggle("ToggleCake", {Title = "Auto Farm Cake Prince", Default = false })
 ToggleCake:OnChanged(function(Value)
- AutoCakePrince = Value
+ _G.CakePrince = Value
 end)
 Options.ToggleCake:SetValue(false)
 
 spawn(function()
     while task.wait() do
-    if AutoCakePrince then
+    if _G.CakePrince then
     game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner")
     if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
     if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
     for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-    if AutoCakePrince and v.Name == "Cake Prince" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
+    if _G.CakePrince and v.Name == "Cake Prince" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
     repeat task.wait()
     AutoHaki()
     EquipTool(SelectWeapon)
@@ -3251,7 +3269,7 @@ spawn(function()
     game:GetService'VirtualUser':CaptureController()
     game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672),workspace.CurrentCamera.CFrame)
 	BringMobs = false
-    until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
+    until not _G.CakePrince or not v.Parent or v.Humanoid.Health <= 0
 	BringMobs = true
     end
     end
@@ -3279,7 +3297,7 @@ spawn(function()
     MonFarm = v.Name
     game:GetService'VirtualUser':CaptureController()
     game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672),workspace.CurrentCamera.CFrame)
-    until not AutoCakePrince or not v.Parent or v.Humanoid.Health <= 0
+    until not _G.CakePrince or not v.Parent or v.Humanoid.Health <= 0
     end
     end
     end
@@ -3293,7 +3311,7 @@ spawn(function()
     Tween(cakepos)
     end
     else
-      Tween(cakepos)
+    Tween(v.HumanoidRootPart.CFrame * Pos2)
     end
     end
     end
@@ -3305,14 +3323,14 @@ spawn(function()
 
     local ToggleVatChatKiDi = Tabs.Main:AddToggle("ToggleVatChatKiDi", {Title = "Auto Farm Ectoplasm", Default = false })
     ToggleVatChatKiDi:OnChanged(function(Value)
-        AutoEcto = Value
+        _G.Ecto = Value
     end)
     Options.ToggleVatChatKiDi:SetValue(false)
 
     spawn(function()
         while wait(.1) do
             pcall(function()
-                if AutoEcto then
+                if _G.Ecto then
                     if game:GetService("Workspace").Enemies:FindFirstChild("Ship Deckhand") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Engineer") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Steward") or game:GetService("Workspace").Enemies:FindFirstChild("Ship Officer") then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
                             if v.Name == "Ship Steward" or v.Name == "Ship Engineer" or v.Name == "Ship Deckhand" or v.Name == "Ship Officer" and v:FindFirstChild("Humanoid") then
@@ -3331,7 +3349,7 @@ spawn(function()
                                         FarmPos = v.HumanoidRootPart.CFrame
                                         MonFarm = v.Name
                                         Click()
-                                    until AutoEcto == false or not v.Parent or v.Humanoid.Health == 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
+                                    until _G.Ecto == false or not v.Parent or v.Humanoid.Health == 0 or not game:GetService("Workspace").Enemies:FindFirstChild(v.Name)
                                 end
                             end
                         end
@@ -3387,13 +3405,13 @@ spawn(function()
 	local ToggleAutoFarmBoss = Tabs.Main:AddToggle("ToggleAutoFarmBoss", {Title = "Killing Boss", Default = false })
 
     ToggleAutoFarmBoss:OnChanged(function(Value)
-		AutoFarmBossNoQuest = Value
+		_G.AutoBoss = Value
     end)
 
     Options.ToggleAutoFarmBoss:SetValue(false)
 	spawn(function()
         while wait() do
-            if AutoFarmBossNoQuest and BypassTP then
+            if _G.AutoBoss and BypassTP then
                 pcall(function()
                     if game:GetService("Workspace").Enemies:FindFirstChild(_G.SelectBoss) then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3409,7 +3427,7 @@ spawn(function()
                                        Click()
 									   BringMobs = false
                                         sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
-                                    until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.AutoBoss or not v.Parent or v.Humanoid.Health <= 0
                                 end
                             end
 							BringMobs = true
@@ -3429,7 +3447,7 @@ spawn(function()
     
     spawn(function()
         while wait() do
-            if AutoFarmBossNoQuest and not BypassTP then
+            if _G.AutoBoss and not BypassTP then
                 pcall(function()
                     if game:GetService("Workspace").Enemies:FindFirstChild(_G.SelectBoss) then
                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3444,8 +3462,7 @@ spawn(function()
                                         Tween(v.HumanoidRootPart.CFrame * Pos)
                                         Click()
 										BringMobs = false
-                                        sethiddenproperty(game:GetService("Players").LocalPlayer,"SimulationRadius",math.huge)
-                                    until not AutoFarmBossNoQuest or not v.Parent or v.Humanoid.Health <= 0
+                                    until not _G.AutoBoss or not v.Parent or v.Humanoid.Health <= 0
                                 end
 								BringMobs = true
                             end
@@ -3497,12 +3514,12 @@ spawn(function()
     local ToggleMaterial = Tabs.Main:AddToggle("ToggleMaterial", {Title = "Auto Farm Material", Default = false })
 
     ToggleMaterial:OnChanged(function(Value)
-        AutoFarmMaterial = Value
+        _G.AutoMaterial = Value
     end)
     Options.ToggleMaterial:SetValue(false)
     spawn(function()
         while task.wait() do
-        if AutoFarmMaterial then
+        if _G.AutoMaterial then
         pcall(function()
           MaterialMon(SelectMaterial)
           if BypassTP then
@@ -3530,7 +3547,7 @@ spawn(function()
           FarmPos = v.HumanoidRootPart.CFrame
           MonFarm = v.Name
           Click()
-          until not AutoFarmMaterial or not v.Parent or v.Humanoid.Health <= 0
+          until not _G.AutoMaterial or not v.Parent or v.Humanoid.Health <= 0
           end
           end
           end
@@ -3744,12 +3761,12 @@ if Third_Sea then
     local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter", Default = false })
 
     ToggleElite:OnChanged(function(Value)
-       AutoEliteHunter = Value
+       _G.AutoElite = Value
        end)
        Options.ToggleElite:SetValue(false)
        spawn(function()
            while task.wait() do
-               if AutoEliteHunter then
+               if _G.AutoElite then
                    pcall(function()
                        if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == true then
                            if string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
@@ -3773,7 +3790,7 @@ if Third_Sea then
                                                    MonFarm = v.Name
                                                    v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
                                                    BringMobs = false
-                                               until AutoEliteHunter == false or v.Humanoid.Health <= 0 or not v.Parent
+                                               until _G.AutoElite == false or v.Humanoid.Health <= 0 or not v.Parent
                                            end
                                            BringMobs = true
                                        end
